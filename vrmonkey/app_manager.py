@@ -1,4 +1,4 @@
-"""Application management functionality for opening, closing, and navigating apps."""
+
 
 import os
 import time
@@ -13,7 +13,7 @@ import pointer_recognize
 
 
 class AppManager:
-    """Manages application launching, closing, and navigation."""
+    
 
     def __init__(self, config: Config, esp32, screenshot_manager=None, omniparser_client=None):
         self.config = config
@@ -24,23 +24,23 @@ class AppManager:
         self.app_cache: Dict[str, AppCacheEntry] = {}
         self._load_app_cache()
 
-        # Initialize mouse controller if not already set
+        
         from mouse_controller import MouseController
         self.mouse_controller = MouseController(self.config, self.esp32)
 
-        # Initialize pointer recognition and mouse alignment once
+        
         self._initialize_mouse_system()
 
     def _initialize_mouse_system(self):
-        """Initialize pointer recognition and perform mouse alignment once."""
+        
         try:
             self.logger.info("Initializing mouse system...")
 
-            # Initialize pointer template analysis
+            
             pointer_recognize.analyze_pointer_template()
             self.logger.info("Pointer template analyzed")
 
-            # Perform mouse alignment if screenshot manager is available
+            
             if self.screenshot_manager:
                 if self._align_mouse():
                     self.logger.info("Mouse alignment completed successfully")
@@ -53,26 +53,18 @@ class AppManager:
             self.logger.error(f"Mouse system initialization failed: {e}")
 
     def open_app(self, app_name: Optional[str] = None) -> Tuple[bool, Optional[Tuple[int, int]]]:
-        """
-        Open an application using Spotlight search.
-
-        Args:
-            app_name: Name of the application to open. If None, uses config app name.
-
-        Returns:
-            Tuple of (success, (target_x, target_y)) or (False, None)
-        """
+        
         if app_name is None:
             app_name = self.config.app.name
 
         self.logger.info(f"Opening app: {app_name}")
 
         try:
-            # Open Spotlight
+            
             self.esp32.keypress_action("SPOTLIGHT")
-            time.sleep(1)  # Wait for Spotlight to open
+            time.sleep(1)  
 
-            # Type the app name in chunks (max 16 chars per chunk)
+            
             max_chunk_size = 16
             if len(app_name) > max_chunk_size:
                 self.logger.info(f"App name is too long, sending in chunks")
@@ -81,19 +73,19 @@ class AppManager:
                 self.esp32.print_text(app_name[max_chunk_size:])
             else:
                 self.esp32.print_text(app_name)
-            time.sleep(1)  # Wait for search results
+            time.sleep(1)  
 
-            # Press Enter to open the app
+            
             self.esp32.write_key("ENTER")
-            time.sleep(2)  # Wait for app to open
+            time.sleep(2)  
 
-            # Close Spotlight
+            
             self.esp32.keypress_action("SPOTLIGHT")
-            time.sleep(1)  # Wait for Spotlight to close
-            time.sleep(15)  # Wait for the program to init
+            time.sleep(1)  
+            time.sleep(15)  
 
             self.logger.info(f"Successfully opened {app_name}")
-            # Return success without position (position not needed for Spotlight method)
+            
             return True, None
 
         except Exception as e:
@@ -101,34 +93,26 @@ class AppManager:
             return False, None
 
     def close_all_apps(self, exclude_system_apps: bool = True) -> bool:
-        """
-        Close all applications in the task manager.
-
-        Args:
-            exclude_system_apps: If True, skips system apps like Finder, System Preferences
-
-        Returns:
-            True if operation completed successfully
-        """
+        
         self.logger.info("Closing all applications...")
 
         try:
-            # Move to top-left corner
+            
             max_pixel = self.config.mouse.max_pixel
             self._move_mouse_pixel(-max_pixel, -max_pixel)
             time.sleep(1)
 
-            # Open task manager
+            
             self.esp32.keypress_action("FNH")
             time.sleep(1)
             self.esp32.open_task_manager()
-            time.sleep(4)  # Wait for task manager to open
+            time.sleep(4)  
 
-            # Recenter view to ensure pointer is in task manager window
+            
             self.esp32.recenter_view()
             time.sleep(1) 
 
-            # Stabilize pointer
+            
             self._move_mouse_pixel(max_pixel, -max_pixel)
             self._bounce_leg()
 
@@ -153,7 +137,7 @@ class AppManager:
 
             apps_closed = 0
 
-            # Click confirmation
+            
             self._move_mouse_to_target(force_quit_pos[0], force_quit_pos[1] - 225)
             self.esp32.click_mouse(1)
             time.sleep(1)
@@ -163,7 +147,7 @@ class AppManager:
 
             self.esp32.recenter_view()
             time.sleep(1)
-            # Close task manager
+            
             self._move_mouse_to_target(force_quit_pos[0] - 255, force_quit_pos[1] - 650)
             self.esp32.click_mouse(1)
             time.sleep(1)
@@ -175,52 +159,29 @@ class AppManager:
             return False
 
     def force_quit_all_apps(self) -> bool:
-        """
-        Force quit all applications without discrimination.
-        This is a more aggressive version that doesn't exclude system apps.
-
-        Returns:
-            True if operation completed successfully
-        """
+        
         self.logger.warning("Force quitting ALL applications...")
         return self.close_all_apps(exclude_system_apps=False)
 
     def close_app(self, app_name: Optional[str] = None) -> bool:
-        """
-        Close all applications (not just a specific one).
-        This ensures a clean environment by closing everything.
-
-        Args:
-            app_name: Name of the app to close (ignored, kept for API compatibility)
-
-        Returns:
-            True if apps were closed successfully
-        """
+        
         if app_name is None:
             app_name = self.config.app.name
 
         self.logger.info(f"Closing all apps (triggered by request to close {app_name})")
 
-        # Close all apps instead of just one
+        
         return self.close_all_apps(exclude_system_apps=True)
 
     def restart_app(self, app_name: Optional[str] = None) -> bool:
-        """
-        Restart an application by closing and reopening it.
-
-        Args:
-            app_name: Name of the app to restart. If None, uses config app name.
-
-        Returns:
-            True if the app was restarted successfully
-        """
+        
         if app_name is None:
             app_name = self.config.app.name
 
         self.logger.info(f"Restarting app: {app_name}")
 
         if self.close_app(app_name):
-            time.sleep(2)  # Wait for app to fully close
+            time.sleep(2)  
             success, _ = self.open_app(app_name)
             return success
         else:
@@ -228,11 +189,11 @@ class AppManager:
             return False
 
     def _find_app_on_cached_page(self, app_name: str, page: int) -> Tuple[bool, Optional[Tuple[int, int]]]:
-        """Find an app on a specific cached page."""
-        # Navigate to the cached page
+        
+        
         self._navigate_to_page(page)
 
-        # Get UI elements
+        
         if not self.omniparser_client:
             return False, None
 
@@ -240,7 +201,7 @@ class AppManager:
         if not ui_elements:
             return False, None
 
-        # Look for the app
+        
         for element in ui_elements:
             if 'ocr' not in element.get('source', ''):
                 continue
@@ -254,7 +215,7 @@ class AppManager:
         return False, None
 
     def _search_app_through_pages(self, app_name: str) -> Tuple[bool, Optional[Tuple[int, int]]]:
-        """Search for an app through multiple pages."""
+        
         max_pages = self.config.exploration.max_search_pages
         current_page = 0
         previous_elements = []
@@ -267,17 +228,17 @@ class AppManager:
             if not ui_elements:
                 continue
 
-            # Check if we've reached the end (same content as previous page)
+            
             if self._is_same_page_content(ui_elements, previous_elements):
                 self.logger.info("Reached end of app pages")
                 break
 
-            # Cache all apps on this page
+            
             for element in ui_elements:
                 if 'ocr' in element.get('source', ''):
                     self._update_app_cache(element.get('content', ''), current_page)
 
-            # Look for target app
+            
             for element in ui_elements:
                 if 'ocr' not in element.get('source', ''):
                     continue
@@ -289,7 +250,7 @@ class AppManager:
                     self._update_app_cache(app_name, current_page)
                     return True, position
 
-            # Move to next page
+            
             previous_elements = ui_elements
             self._next_page()
             current_page += 1
@@ -299,12 +260,12 @@ class AppManager:
         return False, None
 
     def _navigate_to_first_page(self):
-        """Navigate to the first page of apps."""
+        
         for _ in range(20):
             self._prev_page()
 
     def _navigate_to_page(self, target_page: int, current_page: int = 0):
-        """Navigate to a specific page number."""
+        
         if target_page == current_page:
             return
 
@@ -319,17 +280,17 @@ class AppManager:
             time.sleep(1)
 
     def _next_page(self):
-        """Scroll to next page."""
+        
         self.esp32.scroll_mouse(0, 80)
         self.esp32.scroll_mouse(0, 80)
 
     def _prev_page(self):
-        """Scroll to previous page."""
+        
         self.esp32.scroll_mouse(0, -80)
         self.esp32.scroll_mouse(0, -80)
 
     def _is_same_page_content(self, current_elements: List[Dict], previous_elements: List[Dict]) -> bool:
-        """Check if two pages have the same content."""
+        
         if not previous_elements:
             return False
 
@@ -340,7 +301,7 @@ class AppManager:
         return similarity > 0.8
 
     def _get_element_center(self, element: Dict) -> Tuple[int, int]:
-        """Get the center coordinates of a UI element."""
+        
         bbox = element.get('bbox', [0, 0, 0, 0])
         screen_width, screen_height = self.screenshot_manager.get_screen_dimensions()
 
@@ -350,13 +311,13 @@ class AppManager:
         return center_x, center_y
 
     def _load_app_cache(self):
-        """Load the app cache from file."""
+        
         try:
             cache_path = self.config.paths.app_cache_file
             if os.path.exists(cache_path):
                 with open(cache_path, 'rb') as f:
                     cache_data = pickle.load(f)
-                    # Convert old format to new format if needed
+                    
                     for app_name, data in cache_data.items():
                         if isinstance(data, dict) and 'page' in data and 'timestamp' in data:
                             self.app_cache[app_name] = AppCacheEntry(
@@ -371,7 +332,7 @@ class AppManager:
             self.app_cache = {}
 
     def _save_app_cache(self):
-        """Save the app cache to file."""
+        
         try:
             cache_path = self.config.paths.app_cache_file
             cache_data = {}
@@ -387,7 +348,7 @@ class AppManager:
             self.logger.error(f"Error saving app cache: {e}")
 
     def _get_cached_app_info(self, app_name: str) -> Optional[AppCacheEntry]:
-        """Get cached information for an app."""
+        
         for cached_name, entry in self.app_cache.items():
             similarity = StateGraph.text_similarity(app_name, cached_name)
             if similarity > 0.8:
@@ -395,13 +356,13 @@ class AppManager:
         return None
 
     def _update_app_cache(self, app_name: str, page: int):
-        """Update the cache with app page information."""
-        # Check if app already exists in cache
+        
+        
         for cached_name in list(self.app_cache.keys()):
             similarity = StateGraph.text_similarity(app_name, cached_name)
             if similarity > 0.8:
                 if cached_name != app_name:
-                    # Update key to use current name
+                    
                     entry = self.app_cache.pop(cached_name)
                     self.app_cache[app_name] = AppCacheEntry(page=page, timestamp=time.time())
                 else:
@@ -409,37 +370,37 @@ class AppManager:
                 self._save_app_cache()
                 return
 
-        # Add new entry
+        
         self.app_cache[app_name] = AppCacheEntry(page=page, timestamp=time.time())
         self._save_app_cache()
 
     def _move_mouse_pixel(self, x: int, y: int) -> bool:
-        """Move mouse by pixel amount (simplified version)."""
-        # Always use ESP32 directly - mouse_controller has its own ratio handling
-        # which would conflict with the ratio already applied in this method
+        
+        
+        
         return self.esp32.move_mouse(x, y)
 
     def _move_mouse_to_target(self, x: int, y: int) -> bool:
-        """Move mouse to target coordinates (simplified version)."""
-        # This would use the mouse controller if available
+        
+        
         if hasattr(self, 'mouse_controller') and self.mouse_controller:
             result = self.mouse_controller.move_to_target(x, y, self.screenshot_manager)
             return result.success
         else:
             print("No mouse controller available, using fallback implementation")
-            # Fallback implementation
+            
             return True
 
     def _find_current_pointer(self) -> Optional[Tuple[int, int]]:
-        """Find current pointer position using screenshot and pointer recognition."""
+        
         try:
             if self.screenshot_manager:
                 screenshot_result = self.screenshot_manager.take_screenshot()
-                # Extract file path from ScreenshotResult object
+                
                 if hasattr(screenshot_result, 'file_path'):
                     screenshot_path = screenshot_result.file_path
                 else:
-                    # Fallback if it's already a string
+                    
                     screenshot_path = screenshot_result
 
                 if screenshot_path:
@@ -450,12 +411,12 @@ class AppManager:
         return None
 
     def _align_mouse(self) -> bool:
-        """Align and calibrate mouse movement by testing all four corners."""
+        
         try:
             self.logger.info("Starting mouse alignment...")
             max_pixel = self.config.mouse.max_pixel
 
-            # Move to top-left corner
+            
             if not self._move_mouse_pixel(-max_pixel, -max_pixel):
                 self.logger.error("Failed to move to top-left corner during alignment")
                 return False
@@ -467,7 +428,7 @@ class AppManager:
             time.sleep(0.5)
             left_top = self._find_current_pointer()
 
-            # Move to bottom-right corner
+            
             if not self._move_mouse_pixel(max_pixel, max_pixel):
                 self.logger.error("Failed to move to bottom-right corner during alignment")
                 return False
@@ -475,7 +436,7 @@ class AppManager:
             time.sleep(0.5)
             right_bottom = self._find_current_pointer()
 
-            # Move to bottom-left corner
+            
             if not self._move_mouse_pixel(-max_pixel, max_pixel):
                 self.logger.error("Failed to move to bottom-left corner during alignment")
                 return False
@@ -483,7 +444,7 @@ class AppManager:
             time.sleep(0.5)
             left_bottom = self._find_current_pointer()
 
-            # Move to top-right corner
+            
             if not self._move_mouse_pixel(max_pixel, -max_pixel):
                 self.logger.error("Failed to move to top-right corner during alignment")
                 return False
@@ -497,18 +458,18 @@ class AppManager:
 
             self.logger.info(f"Corner positions: left_top={left_top}, right_top={right_top}, left_bottom={left_bottom}, right_bottom={right_bottom}")
 
-            # Calculate screen dimensions if all corners were found
+            
             if all(pos is not None for pos in [left_top, right_top, left_bottom, right_bottom]):
                 window_w = right_top[0] - left_top[0]
                 window_h = left_bottom[1] - left_top[1]
                 self.logger.info(f"Detected screen dimensions: {window_w}x{window_h}")
 
-                # Move back to top-left
+                
                 if not self._move_mouse_pixel(-max_pixel, -max_pixel):
                     self.logger.error("Failed to move to top-left corner after alignment")
                     return False
 
-                # Calculate mouse ratio (simplified version)
+                
                 self._calc_mouse_ratio(window_w/2, window_h/2)
 
             self.logger.info("Mouse alignment completed successfully")
@@ -519,7 +480,7 @@ class AppManager:
             return False
 
     def _calc_mouse_ratio(self, delta_x=500, delta_y=500):
-        """Calculate mouse movement ratio for precise targeting."""
+        
         try:
             time.sleep(2)
             current_pos = self._find_current_pointer()
@@ -537,12 +498,7 @@ class AppManager:
             self.logger.warning(f"Mouse ratio calculation failed: {e}")
 
     def _is_task_manager_closed(self) -> bool:
-        """
-        Check if task manager is closed by detecting presence of 'Force Quit' text.
-
-        Returns:
-            True if task manager is closed (no Force Quit found), False otherwise
-        """
+        
         if not self.omniparser_client:
             self.logger.warning("OmniParser not available, assuming task manager closed")
             return True
@@ -552,7 +508,7 @@ class AppManager:
             if not ui_elements:
                 return True
 
-            # Look for Force Quit text
+            
             for element in ui_elements:
                 content = element.get('content', '').lower()
                 if 'force quit' in content or 'force_quit' in content:
@@ -564,17 +520,17 @@ class AppManager:
 
         except Exception as e:
             self.logger.warning(f"Error checking task manager status: {e}")
-            return True  # Assume closed on error
+            return True  
 
     def _bounce_leg(self):
-        """Perform stabilizing movement."""
+        
         for _ in range(2):
             self.esp32.move_mouse(self.config.mouse.bouncing_leg_step, 0)
             time.sleep(0.1)
         self.config.mouse.bouncing_leg_step *= -1
 
     def display_app_cache(self):
-        """Display all cached app information for debugging."""
+        
         if not self.app_cache:
             print("App cache is empty")
             return

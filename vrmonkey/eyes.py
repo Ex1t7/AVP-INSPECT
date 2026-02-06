@@ -13,7 +13,7 @@ from gradio_client import Client, handle_file
 
 mouse_ratio=1.0
 
-# Define a function to take a screenshot and save it with a timestamp
+
 def take_screenshot(remote = True):
     global screenshot_width, screenshot_height
     timestamp = time.strftime("%Y%m%d-%H%M%S")
@@ -25,8 +25,8 @@ def take_screenshot(remote = True):
         bytes_buffer = b''
         for chunk in stream.iter_content(chunk_size=1024):
             bytes_buffer += chunk
-            a = bytes_buffer.find(b'\xff\xd8')  # JPEG start
-            b = bytes_buffer.find(b'\xff\xd9')  # JPEG end
+            a = bytes_buffer.find(b'\xff\xd8')  
+            b = bytes_buffer.find(b'\xff\xd9')  
             if a != -1 and b != -1:
                 jpg = bytes_buffer[a:b+2]
                 bytes_buffer = bytes_buffer[b+2:]
@@ -36,40 +36,40 @@ def take_screenshot(remote = True):
                 cv2.imwrite(local_path, img)
                 return local_path, timestamp
         
-    # Get the current timestamp to name the screenshot file
+    
     
     
 
     screenshot = pyautogui.screenshot()
-    # Resize the screenshot to 1080p resolution (1920 x 1080)
     
-    # screenshot_resized = screenshot.resize((1920, 1080), Image.LANCZOS)
-    # Define the file path
+    
+    
+    
     screenshot.save(local_path)
-    # screenshot_resized.save(local_path)
+    
     print(f"Screenshot saved to {local_path}")
     
     screenshot_width, screenshot_height = screenshot.size
     return local_path, timestamp
 
-# Function to upload the file to the remote server using the SCP command
 
 
-# Function to run OmniParser on the remote server
+
+
 def run_OmniParser_on_server_and_get_masks(image_path):
     try:
-        # Build the SSH command to activate Conda in zsh and run the OmniParser script
+        
         ssh_command = [
             'ssh', REMOTE_ALIAS,
             'zsh -l -c "source ~/miniconda3/etc/profile.d/conda.sh && conda activate base && cd /mnt/ssd2/VR_Monkey/OmniParser/ && python3 {0} --image {1}"'.format(OmniParserV2_SCRIPT_PATH, image_path)
         ]
-        # Run the SSH command and capture the output
+        
         print(ssh_command)
         result = subprocess.run(ssh_command, capture_output=True, text=True)
         if result.returncode == 0:
-            # Parse the output as JSON
+            
             start  = result.stdout.index('[{')
-            # print(result.stdout[start:])
+            
             masks = json.loads(result.stdout[start:])
             return masks
         else:
@@ -80,9 +80,9 @@ def run_OmniParser_on_server_and_get_masks(image_path):
         print(f"Error executing OmniParser on server: {e}")
         return None
 
-# Example usage
+
 def move_from_to_percentage(x,y,x_target,y_target):
-    # for 20 [(1536, 983), (2049, 999), (2094, 1518)] each 20 go 25.8
+    
     delta_x = x_target-x
     delta_y = y_target-y
     rightn = int(delta_x * screenshot_width/MOVE_STEP)
@@ -96,7 +96,7 @@ def move_from_to_percentage(x,y,x_target,y_target):
 
 def query_omniParser():
     local_path, timestamp = take_screenshot()
-    # Upload the screenshot to the remote server
+    
     
     result = client.predict(
         image_input=handle_file(local_path),
@@ -106,26 +106,26 @@ def query_omniParser():
         imgsz=640,
         api_name="/process"
     )
-    # print(result)
+    
     icons = json.loads(result[1])
-    # print(icons)
+    
     labeled_img_path = result[0]
     pil_img = Image.open(labeled_img_path) 
     print(labeled_img_path)
     cv2.imshow('omniparser_result', np.array(pil_img))
     pointer = find_pointer_centers(local_path)
-    # print(pointer)
-    # print(len(icons))
+    
+    
     return pointer,icons
 
 def click_close_button():
     move_mouse_pixel(screenshot_width,screenshot_height)
     move_mouse_pixel(-1*screenshot_width,screenshot_height)
-    # esp32.click_mouse(1)
+    
     
 def click_back_button():
     move_mouse_pixel(-1*screenshot_width,-1*screenshot_height)
-    # esp32.click_mouse(1)
+    
 
 def check_same_state(icons_pre,icons_after):
     if abs(len(icons_after) - len(icons_pre)) < 3: return True
@@ -151,7 +151,7 @@ def explore_all_icons(pointer=None,icons=None):
         move_mouse_pixel(delta_x,delta_y)
         x_now,y_now = x_target,y_target
         p,icons = query_omniParser()
-        # print(p)
+        
         print("\n".join(f"{i}: {x}" for i, x in enumerate(icons)))
         esp32.click_mouse(1)
         time.sleep(2)
@@ -169,15 +169,13 @@ def explore_all_icons(pointer=None,icons=None):
 def start_explorer():
     calc_mouse_ratio(delta=500)
     
-    # Upload the screenshot to the remote server
+    
     pointer,icons = query_omniParser()
     explore_all_icons(pointer,icons)
     
       
 def on_keypress(key):
-    """
-    Handle key press events.
-    """
+    
     try:
         if key.char:
             if key.char.lower() == 't' or key.char.lower() == 'j':
@@ -191,16 +189,16 @@ def on_keypress(key):
             elif key.char.lower() == 'k':
                 move_mouse_pixel(500,500)
             elif key.char.lower() == 'w':
-                esp32.move_mouse(0, -1*MOVE_STEP)  # Move up
+                esp32.move_mouse(0, -1*MOVE_STEP)  
             elif key.char.lower() == 'a':
-                esp32.move_mouse(-1*MOVE_STEP, 0)  # Move left
+                esp32.move_mouse(-1*MOVE_STEP, 0)  
             elif key.char.lower() == 't':
                 esp32.move_mouse(MOVE_STEP, MOVE_STEP)
                 esp32.move_mouse(1,1)
             elif key.char.lower() == 's':
-                esp32.move_mouse(0, MOVE_STEP)  # Move down
+                esp32.move_mouse(0, MOVE_STEP)  
             elif key.char.lower() == 'd':
-                esp32.move_mouse(MOVE_STEP, 0)  # Move right
+                esp32.move_mouse(MOVE_STEP, 0)  
             elif key.char.lower() == 'e':
                 explore_all_icons()    
             elif key.char.lower() == 'l':
@@ -218,13 +216,13 @@ def on_keypress(key):
                 pointer2 = find_pointer_centers(local_path)
                 pointers = [pointer0,pointer1,pointer2]
                 print(pointers)
-                # [(1549, 966), (1786, 971), (1813, 1153)]
-                # [(1840, 1149), (2025, 1148), (2028, 1320)]
+                
+                
             elif key.char.lower() == 'q':
                 print("Exiting...")
-                return False  # Stop listener
+                return False  
     except AttributeError:
-        # Handle special keys
+        
         pass
 
 
@@ -297,22 +295,22 @@ def move_mouse_pixel(x,y,mouse_ratio=1.0):
 def main():
     print("Press 'j' to take a screenshot and send it to the server. Press 'esc' to exit.")
     listener = keyboard.Listener(on_press=on_keypress)
-    listener.start()  # Start the listener in a separate thread
-    listener.join()   # Wait for the listener to finish
+    listener.start()  
+    listener.join()   
 
 
 
 
 client = Client("http://localhost:7861/")
 
-# Remote server configuration
+
 REMOTE_ALIAS = 'gpu_rustdesk'
 USERNAME = 'ex1t'
-SSH_KEY_PATH = '～/.ssh/id_rsa'  # Path to your private SSH key
+SSH_KEY_PATH = '～/.ssh/id_rsa'  
 screenshot_width, screenshot_height = 3024,1964
 
-REMOTE_PATH = '/mnt/ssd2/VR_Monkey/avp_images/test/'  # Directory on remote server to store screenshots
-OmniParserV2_SCRIPT_PATH = '/mnt/ssd2/VR_Monkey/OmniParser/parse_image.py'  # Path to the OmniParser script on the server
+REMOTE_PATH = '/mnt/ssd2/VR_Monkey/avp_images/test/'  
+OmniParserV2_SCRIPT_PATH = '/mnt/ssd2/VR_Monkey/OmniParser/parse_image.py'  
 local_path = ''
 MOVE_STEP = 10
 step20 = 30.28705877324809
@@ -322,4 +320,4 @@ if __name__ == '__main__':
     esp32 = ESP32Mouse(port="/dev/cu.usbmodemDCDA0C20E1782")
     
     main()     
-# Main loop to listen for the 'j' key press
+

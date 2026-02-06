@@ -5,28 +5,20 @@ import subprocess
 import Quartz
 from AppKit import NSWorkspace, NSScreen, NSImage
 from Foundation import NSMakeRect
-import pyautogui  # For fallback and supplementary functionality
+import pyautogui  
 
 def create_screenshots_dir():
-    """Create screenshots directory if it doesn't exist"""
+    
     if not os.path.exists("screenshots"):
         os.makedirs("screenshots")
     return os.path.abspath("screenshots")
 
 def get_timestamp():
-    """Get current timestamp formatted for filenames"""
+    
     return datetime.now().strftime("%Y%m%d_%H%M%S")
 
 def take_fullscreen_screenshot(filename=None):
-    """
-    Take a screenshot of the entire screen using macOS native screencapture
     
-    Parameters:
-    filename (str): Optional. Custom filename for the screenshot.
-    
-    Returns:
-    str: Path to the saved screenshot file
-    """
     screenshots_dir = create_screenshots_dir()
     
     if filename is None:
@@ -37,19 +29,19 @@ def take_fullscreen_screenshot(filename=None):
     
     filepath = os.path.join(screenshots_dir, filename)
     
-    # Use macOS built-in screencapture command
+    
     subprocess.run(["screencapture", "-x", filepath])
     
     print(f"Full screen screenshot saved: {filepath}")
     return filepath
 
 def get_active_window_info():
-    """Get information about the currently active window in macOS"""
-    # Get the frontmost application
+    
+    
     frontmost_app = NSWorkspace.sharedWorkspace().frontmostApplication()
     app_name = frontmost_app.localizedName()
     
-    # Get window information using Quartz
+    
     window_list = Quartz.CGWindowListCopyWindowInfo(
         Quartz.kCGWindowListOptionOnScreenOnly | Quartz.kCGWindowListExcludeDesktopElements,
         Quartz.kCGNullWindowID
@@ -70,18 +62,10 @@ def get_active_window_info():
     return None
 
 def capture_active_window(filename=None):
-    """
-    Capture the currently active window in macOS
     
-    Parameters:
-    filename (str): Optional. Custom filename for the screenshot.
-    
-    Returns:
-    str: Path to the saved screenshot file
-    """
     screenshots_dir = create_screenshots_dir()
     
-    # Get active window info
+    
     window_info = get_active_window_info()
     
     if not window_info:
@@ -99,10 +83,10 @@ def capture_active_window(filename=None):
     
     filepath = os.path.join(screenshots_dir, filename)
     
-    # Use macOS built-in screencapture command with window bounds
+    
     subprocess.run([
         "screencapture", 
-        "-x",  # No sound
+        "-x",  
         "-R", f"{window_info['x']},{window_info['y']},{window_info['width']},{window_info['height']}",
         filepath
     ])
@@ -112,7 +96,7 @@ def capture_active_window(filename=None):
     return filepath
 
 def list_all_windows():
-    """List all visible windows on the system"""
+    
     window_list = Quartz.CGWindowListCopyWindowInfo(
         Quartz.kCGWindowListOptionOnScreenOnly | Quartz.kCGWindowListExcludeDesktopElements,
         Quartz.kCGNullWindowID
@@ -130,7 +114,7 @@ def list_all_windows():
         app_name = window.get('kCGWindowOwnerName', 'Unknown')
         window_name = window.get('kCGWindowName', 'Unnamed Window')
         
-        # Skip windows without names or system windows
+        
         if not window_name or app_name in ['Dock', 'Window Server']:
             continue
             
@@ -148,15 +132,7 @@ def list_all_windows():
     return windows
 
 def capture_specific_window(filename=None):
-    """
-    Allow user to select a specific window to capture
     
-    Parameters:
-    filename (str): Optional. Custom filename for the screenshot.
-    
-    Returns:
-    str: Path to the saved screenshot file
-    """
     screenshots_dir = create_screenshots_dir()
     
     windows = list_all_windows()
@@ -186,10 +162,10 @@ def capture_specific_window(filename=None):
     
     filepath = os.path.join(screenshots_dir, filename)
     
-    # Use macOS built-in screencapture command with window bounds
+    
     subprocess.run([
         "screencapture", 
-        "-x",  # No sound
+        "-x",  
         "-R", f"{bounds['X']},{bounds['Y']},{bounds['Width']},{bounds['Height']}",
         filepath
     ])
@@ -199,15 +175,7 @@ def capture_specific_window(filename=None):
     return filepath
 
 def interactive_region_selection(filename=None):
-    """
-    Let user select a region for screenshot using macOS native selection
     
-    Parameters:
-    filename (str): Optional. Custom filename for the screenshot.
-    
-    Returns:
-    str: Path to the saved screenshot file
-    """
     screenshots_dir = create_screenshots_dir()
     
     if filename is None:
@@ -220,7 +188,7 @@ def interactive_region_selection(filename=None):
     
     print("Please select a region on your screen...")
     
-    # Use macOS built-in screencapture command with interactive selection
+    
     subprocess.run(["screencapture", "-i", "-x", filepath])
     
     if os.path.exists(filepath) and os.path.getsize(filepath) > 0:
@@ -233,13 +201,7 @@ def interactive_region_selection(filename=None):
         return None
 
 def timed_screenshots(interval=10, duration=60):
-    """
-    Take screenshots at regular intervals for a specified duration
     
-    Parameters:
-    interval (int): Time between screenshots in seconds
-    duration (int): Total duration in seconds
-    """
     screenshots_dir = create_screenshots_dir()
     num_screenshots = duration // interval
     
@@ -253,7 +215,7 @@ def timed_screenshots(interval=10, duration=60):
             filename = f"timed_{i+1}_{get_timestamp()}.png"
             filepath = os.path.join(screenshots_dir, filename)
             
-            # Use macOS built-in screencapture
+            
             subprocess.run(["screencapture", "-x", filepath])
             
             print(f"Screenshot {i+1}/{num_screenshots} saved: {filename}")
@@ -267,15 +229,7 @@ def timed_screenshots(interval=10, duration=60):
         print("\nTimed screenshots stopped by user")
 
 def capture_all_screens(filename=None):
-    """
-    Capture all screens/displays connected to the Mac
     
-    Parameters:
-    filename (str): Optional. Base filename for the screenshots.
-    
-    Returns:
-    list: Paths to the saved screenshot files
-    """
     screenshots_dir = create_screenshots_dir()
     screens = NSScreen.screens()
     filepaths = []
@@ -297,12 +251,12 @@ def capture_all_screens(filename=None):
         
         filepath = os.path.join(screenshots_dir, screen_filename)
         
-        # Get screen frame
+        
         frame = screen.frame()
         x, y = int(frame.origin.x), int(frame.origin.y)
         width, height = int(frame.size.width), int(frame.size.height)
         
-        # Use macOS built-in screencapture command with screen bounds
+        
         subprocess.run([
             "screencapture", 
             "-x",
@@ -316,7 +270,7 @@ def capture_all_screens(filename=None):
     return filepaths
 
 def main():
-    """Main menu function"""
+    
     print("\n🖼  macOS Screenshot Utility 🖼")
     
     while True:

@@ -1,4 +1,4 @@
-"""State exploration engine for automatic UI testing."""
+
 
 import os
 import time
@@ -15,7 +15,7 @@ from metrics_manager import MetricsManager
 
 
 class StateExplorer:
-    """Main state exploration engine."""
+    
 
     def __init__(self, config: Config, state_graph: StateGraph,
                  mouse_controller: MouseController, screenshot_manager: ScreenshotManager,
@@ -34,17 +34,17 @@ class StateExplorer:
         self.current_state: Optional[State] = None
         self.clicks_since_new_state = 0
         self.last_trigger_button: Optional[Tuple[State, Button]] = None
-        self.home_return_count = 0  # Track how many times we've returned to home
+        self.home_return_count = 0  
         
-        # Click tracking for saving clicked button images
+        
         self.click_counter = 0
         self.clicked_buttons_dir = ""
         self._setup_clicked_buttons_dir()
 
     def _setup_clicked_buttons_dir(self):
-        """Setup directory for saving clicked button images."""
+        
         try:
-            # Get the app directory from metrics manager
+            
             app_dir = self.metrics_manager.get_app_dir()
             if app_dir:
                 self.clicked_buttons_dir = os.path.join(app_dir, "clicked_buttons")
@@ -54,21 +54,12 @@ class StateExplorer:
             self.logger.warning(f"Could not setup clicked buttons directory: {e}")
 
     def save_clicked_button_image(self, button: Button, screenshot_path: str) -> Optional[str]:
-        """
-        Save an image with the clicked button highlighted with a bounding box.
         
-        Args:
-            button: The button that was clicked
-            screenshot_path: Path to the current screenshot
-            
-        Returns:
-            Path to the saved image, or None if failed
-        """
         if not self.clicked_buttons_dir or not os.path.exists(screenshot_path):
             return None
             
         try:
-            # Read the screenshot
+            
             img = cv2.imread(screenshot_path)
             if img is None:
                 self.logger.warning(f"Could not read screenshot: {screenshot_path}")
@@ -76,39 +67,39 @@ class StateExplorer:
             
             height, width = img.shape[:2]
             
-            # Convert normalized bbox to pixel coordinates
+            
             x_min, y_min, x_max, y_max = button.bbox
             x1 = int(x_min * width)
             y1 = int(y_min * height)
             x2 = int(x_max * width)
             y2 = int(y_max * height)
             
-            # Draw a rectangle around the button (red color, thickness 3)
+            
             cv2.rectangle(img, (x1, y1), (x2, y2), (0, 0, 255), 3)
             
-            # Add label with button content above the box
+            
             label = f"#{self.click_counter}: {button.content[:30]}" if button.content else f"#{self.click_counter}"
             font = cv2.FONT_HERSHEY_SIMPLEX
             font_scale = 0.8
             thickness = 2
             
-            # Get text size to create background
+            
             (text_width, text_height), baseline = cv2.getTextSize(label, font, font_scale, thickness)
             
-            # Position label above the button box
+            
             text_x = x1
             text_y = max(y1 - 10, text_height + 5)
             
-            # Draw background rectangle for text
+            
             cv2.rectangle(img, 
                          (text_x - 2, text_y - text_height - 5),
                          (text_x + text_width + 2, text_y + 5),
                          (0, 0, 255), -1)
             
-            # Draw white text
+            
             cv2.putText(img, label, (text_x, text_y), font, font_scale, (255, 255, 255), thickness)
             
-            # Save the image
+            
             timestamp = time.strftime("%Y%m%d_%H%M%S")
             filename = f"click_{self.click_counter:04d}_{timestamp}.jpg"
             save_path = os.path.join(self.clicked_buttons_dir, filename)
@@ -123,38 +114,30 @@ class StateExplorer:
             return None
 
     def check_current_state(self, clicked_button_id: Optional[str] = None) -> Tuple[bool, Optional[State]]:
-        """
-        Capture and analyze the current state of the app.
-
-        Args:
-            clicked_button_id: The ID of the button that was clicked to reach this state
-
-        Returns:
-            Tuple of (is_known_state, state)
-        """
+        
         timing_start = time.time()
 
-        # Check timeout
+        
         if self.metrics_manager.is_timeout_reached():
             timeout_minutes = self.config.exploration.timeout_minutes
             self.logger.info(f"Exploration timeout reached ({timeout_minutes} minutes)")
             raise TimeoutError(f"Exploration timeout reached ({timeout_minutes} minutes)")
 
-        # Get UI elements from OmniParser
+        
         try:
             omniparser_start = time.time()
             ui_elements = self.omniparser_client.get_ui_elements()
             omniparser_time = time.time() - omniparser_start
             self.logger.info(f"⏱️ OmniParser took {omniparser_time:.2f}s")
 
-            # Note: ui_elements is now always a list (empty list [] if no elements found)
-            # Empty list is OK - it means plain background with no buttons
+            
+            
 
         except Exception as e:
             self.logger.error(f"Failed to get UI elements: {e}")
             return False, None
 
-        # Convert to Button objects
+        
         processing_start = time.time()
         buttons = []
         for element in ui_elements:
@@ -168,16 +151,16 @@ class StateExplorer:
                 )
                 buttons.append(button)
 
-        # Record metrics
+        
         self.metrics_manager.record_button_found(len(buttons))
         if clicked_button_id is not None:
             self.metrics_manager.record_button_explored()
 
-        # Get screen dimensions and create state with center-based button sorting
+        
         screen_width, screen_height = self.screenshot_manager.get_screen_dimensions()
         new_state = State(buttons, screen_width, screen_height)
 
-        # Check if this state already exists
+        
         state_check_start = time.time()
         similar_state = self.graph.find_similar_state(new_state)
         state_check_time = time.time() - state_check_start
@@ -185,10 +168,10 @@ class StateExplorer:
         total_time = time.time() - timing_start
         self.logger.info(f"⏱️ State check total: {total_time:.2f}s (OmniParser: {omniparser_time:.2f}s, state comparison: {state_check_time:.2f}s)")
         if similar_state:
-            # State already known
+            
             if (self.current_state and self.current_state != similar_state and
                 clicked_button_id is not None):
-                # Add edge from previous state
+                
                 clicked_button = self._find_button_by_id(self.current_state, clicked_button_id)
                 if clicked_button:
                     self.graph.add_edge(self.current_state, similar_state, clicked_button)
@@ -196,18 +179,18 @@ class StateExplorer:
             self.current_state = similar_state
             return True, similar_state
 
-        # New state found
+        
         was_added = self.graph.add_state(new_state)
         if was_added:
             self.metrics_manager.record_state_found()
 
-            # Save state image
+            
             state_index = len(self.graph.nodes) - 1
             labeled_image_path = self.omniparser_client.get_last_labeled_image()
             if labeled_image_path:
                 self.metrics_manager.save_state_image(state_index, labeled_image_path)
 
-        # Add edge if we came from another state
+        
         if self.current_state and clicked_button_id is not None:
             clicked_button = self._find_button_by_id(self.current_state, clicked_button_id)
             if clicked_button:
@@ -217,12 +200,7 @@ class StateExplorer:
         return False, new_state
 
     def explore_state(self, state: State) -> None:
-        """
-        Explore all unexplored buttons in a state.
-
-        Args:
-            state: State to explore
-        """
+        
         self.metrics_manager.record_state_explored()
 
         button_count = 0
@@ -230,7 +208,7 @@ class StateExplorer:
             iteration_start = time.time()
             button_count += 1
 
-            # Check timeout
+            
             if self.metrics_manager.is_timeout_reached():
                 self.logger.info("Timeout reached during state exploration")
                 return
@@ -239,7 +217,7 @@ class StateExplorer:
             if not button:
                 break
 
-            # Skip dead buttons
+            
             if self.graph.is_dead_button(state.state_id, button.id):
                 self.logger.debug(f"Skipping dead button {button.id}")
                 continue
@@ -248,25 +226,25 @@ class StateExplorer:
             self.logger.info(f"🔘 Button {button_count}: Exploring '{button.content}' (ID: {button.id})")
             self.logger.info(f"{'='*60}")
 
-            # Move to and click the button
+            
             success = self._click_button(button)
             if not success:
                 self.logger.warning(f"Failed to click button {button.id}")
 
-                # Check if we're stuck (dead-end detection)
+                
                 no_movement_count = self.mouse_controller.get_consecutive_no_movement()
                 if no_movement_count >= self.config.exploration.max_no_movement_attempts:
                     self.logger.error(f"🚫 Button {button.id} is unreachable: Pointer stuck after {no_movement_count} attempts!")
                     self.logger.info(f"Marking button '{button.content}' as dead and continuing...")
-                    # Mark this button as dead since we can't reach it
+                    
                     self.graph.add_dead_button(state.state_id, button.id)
-                    # Reset counter and continue to next button
+                    
                     self.mouse_controller.reset_no_movement_counter()
                     continue
 
                 continue
 
-            # Check new state
+            
             try:
                 check_state_start = time.time()
                 is_known_state, new_state = self.check_current_state(button.id)
@@ -282,18 +260,18 @@ class StateExplorer:
                     self.clicks_since_new_state += 1
                     self.logger.debug(f"Reached known state (clicks since new: {self.clicks_since_new_state})")
 
-                    # Check if we returned to home state
+                    
                     if self.config.exploration.enable_home_detection and self._handle_home_return(new_state):
                         return
 
-                    # Check if we need to restart
+                    
                     if self.clicks_since_new_state >= self.config.exploration.max_clicks_without_new_state:
                         self.logger.info("Too many clicks without new state, restarting")
                         self._restart_app_and_resume()
                         return
 
                 else:
-                    # New state found
+                    
                     self.clicks_since_new_state = 0
                     self.last_trigger_button = (state, button)
 
@@ -301,11 +279,11 @@ class StateExplorer:
                     remaining_time = self.metrics_manager.get_remaining_time()
                     self.logger.info(f"⏱️ Time remaining: {remaining_time/60:.1f} minutes")
 
-                    # Log metrics and graph structure
+                    
                     self.metrics_manager.log_metrics()
                     self.logger.debug(self.graph.print_graph_structure())
 
-                    # Recursively explore the new state
+                    
                     self.logger.info(f"🔍 Recursively exploring new state...")
                     self.explore_state(new_state)
 
@@ -317,15 +295,15 @@ class StateExplorer:
                 continue
 
     def explore_all_states(self) -> None:
-        """Main exploration loop that explores all discoverable states."""
+        
         try:
-            # Start with initial app state (home state should already be set in run())
+            
             _, initial_state = self.check_current_state()
             if initial_state is None:
                 self.logger.error("Could not capture initial app state")
                 return
 
-            # CRITICAL CHECK: If initial_state is the same as home_state, app failed to open!
+            
             if self.graph.is_home_state(initial_state):
                 self.logger.error("❌ APP FAILED TO OPEN! Current state is still the home screen (state_0)")
                 self.logger.error("The app did not launch successfully. Cannot explore home screen as app state.")
@@ -342,23 +320,23 @@ class StateExplorer:
             self._finalize_exploration()
 
     def _click_button(self, button: Button) -> bool:
-        """Click a button and handle the action."""
+        
         try:
             click_start = time.time()
             
-            # Increment click counter
+            
             self.click_counter += 1
 
-            # Calculate target coordinates
+            
             screen_width, screen_height = self.screenshot_manager.get_screen_dimensions()
             target_x, target_y = button.get_center(screen_width, screen_height)
 
-            # Take a screenshot BEFORE clicking to save the button image
+            
             pre_click_screenshot = self.screenshot_manager.take_screenshot()
             if pre_click_screenshot.success and pre_click_screenshot.file_path:
                 self.save_clicked_button_image(button, pre_click_screenshot.file_path)
 
-            # Move to button
+            
             move_start = time.time()
             result = self.mouse_controller.move_to_target(
                 target_x, target_y, self.screenshot_manager
@@ -369,23 +347,23 @@ class StateExplorer:
             if not result.success:
                 self.logger.warning(f"Failed to move to button {button.id}: {result.error_message}")
 
-                # Check if failure was due to password input dialog
+                
                 if result.password_detected:
                     self.logger.warning("🔐 Button led to password input - marking as dead and restarting app")
-                    # Mark the button as dead
+                    
                     self.graph.add_dead_button(self.current_state.state_id, button.id)
-                    # Restart app
+                    
                     self._restart_app_and_resume()
 
                 return False
 
-            # Record successful movement
+            
             if result.accuracy is not None:
                 self.metrics_manager.record_pointer_move_success(result.accuracy)
 
-            # Click the button
+            
             self.esp32.click_mouse(1)
-            time.sleep(1)  # Wait for UI response
+            time.sleep(1)  
 
             total_click_time = time.time() - click_start
             self.logger.info(f"⏱️ Total click action took {total_click_time:.2f}s")
@@ -398,51 +376,43 @@ class StateExplorer:
             return False
 
     def _handle_home_return(self, new_state: State) -> bool:
-        """
-        Handle returning to the home state.
-
-        Args:
-            new_state: The state we just reached
-
-        Returns:
-            True if we should stop exploring the current branch, False otherwise
-        """
+        
         if not self.graph.is_home_state(new_state):
             return False
 
         self.logger.warning(f"🏠 Returned to home state! This button exits the app.")
 
-        # Mark the button that led us back to home as dead (it exits the app)
+        
         if self.last_trigger_button:
             last_state, last_button = self.last_trigger_button
             self.graph.add_dead_button(last_state.state_id, last_button.id)
             self.logger.info(f"Marked button '{last_button.content}' as dead (exits to home screen)")
 
-        # Immediately restart app to continue exploring inside the app
+        
         self.logger.info("Restarting app to continue exploration inside the app")
         self._restart_app_and_resume()
 
-        # Reset counters
+        
         self.clicks_since_new_state = 0
-        self.home_return_count = 0  # Reset home return counter after restart
-        return True  # Stop exploring this branch (we're restarting)
+        self.home_return_count = 0  
+        return True  
 
     def _restart_app_and_resume(self):
-        """Restart the app and resume exploration."""
+        
         self.logger.info("🔄 Restarting app and resuming exploration")
 
-        # Mark last trigger button as dead
+        
         if self.last_trigger_button:
             last_state, last_button = self.last_trigger_button
             self.graph.add_dead_button(last_state.state_id, last_button.id)
             self.logger.info(f"Marked button '{last_button.content}' as dead")
 
-        # Check if there are any unexplored buttons left in the entire graph
+        
         unexplored_states = self.graph.get_unexplored_states()
         if not unexplored_states:
             self.logger.info("🏁 NO UNEXPLORED BUTTONS REMAINING - Exploration complete!")
             self.logger.info("All reachable states have been explored. Ending exploration.")
-            # Log final stats
+            
             stats = self.graph.get_stats()
             self.logger.info(f"Final stats: {stats['total_states']} states, "
                            f"{stats['exploration_progress']:.1f}% explored")
@@ -450,42 +420,42 @@ class StateExplorer:
 
         self.logger.info(f"📊 States with unexplored buttons remaining: {len(unexplored_states)}")
 
-        # Actually restart the app if app_manager is available
+        
         if self.app_manager:
             self.logger.info("Closing and reopening app...")
             if self.app_manager.restart_app():
                 self.logger.info("✅ App restarted successfully")
-                time.sleep(3)  # Wait for app to stabilize
+                time.sleep(3)  
             else:
                 self.logger.error("❌ Failed to restart app")
         else:
             self.logger.warning("No app_manager available, cannot restart app")
 
-        # Reset counters
+        
         self.clicks_since_new_state = 0
         self.last_trigger_button = None
-        self.home_return_count = 0  # Reset home return counter
-        self.mouse_controller.reset_no_movement_counter()  # Reset dead-end counter
+        self.home_return_count = 0  
+        self.mouse_controller.reset_no_movement_counter()  
 
     def _find_button_by_id(self, state: State, button_id: str) -> Optional[Button]:
-        """Find a button in a state by its ID."""
+        
         for button in state.buttons:
             if button.id == button_id:
                 return button
         return None
 
     def _finalize_exploration(self):
-        """Finalize the exploration session."""
+        
         self.logger.info("Finalizing exploration session")
 
-        # Log final statistics
+        
         stats = self.graph.get_stats()
         self.logger.info(f"Exploration completed:")
         self.logger.info(f"- Total states discovered: {stats['total_states']}")
         self.logger.info(f"- Total buttons found: {stats['total_buttons']}")
         self.logger.info(f"- Exploration progress: {stats['exploration_progress']:.1f}%")
 
-        # Export graph data
+        
         try:
             import json
             graph_data = self.graph.export_to_json()
@@ -496,5 +466,5 @@ class StateExplorer:
         except Exception as e:
             self.logger.error(f"Failed to export state graph: {e}")
 
-        # Finalize metrics
+        
         self.metrics_manager.finalize()

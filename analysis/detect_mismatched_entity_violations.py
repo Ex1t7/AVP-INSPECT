@@ -1,17 +1,11 @@
-#!/usr/bin/env python3
-"""
-Detect Mismatched Entity Disclosure violations.
 
-For a specific data type, if both flow and policy have it (compliant),
-but the entity is different (e.g., policy claims 1st party but flow is 3rd party),
-record it as a Mismatched Entity Disclosure violation.
-"""
+
 
 import pandas as pd
 from pathlib import Path
 import re
 
-# Paths
+
 ROOT = Path('/mnt/ssd2/VR_monkey')
 ROOT_306 = Path('/mnt/ssd2/VR_monkey/large_scale_analysis_306')
 DATA_FLOWS_FILE = ROOT_306 / 'data_flows_with_appid.csv'
@@ -22,7 +16,7 @@ OUTPUT_FILE = ROOT_306 / 'mismatched_entity_violations.csv'
 
 
 def extract_domain_from_bundle_id(bundle_id: str) -> str:
-    """Extract domain from bundle_id."""
+    
     if pd.isna(bundle_id) or not isinstance(bundle_id, str):
         return None
     parts = bundle_id.split('.')
@@ -34,7 +28,7 @@ def extract_domain_from_bundle_id(bundle_id: str) -> str:
 
 
 def simplify_entity(destination: str) -> str:
-    """Simplify destination domain to entity name."""
+    
     if not isinstance(destination, str):
         return 'Unknown'
     
@@ -83,7 +77,7 @@ def simplify_entity(destination: str) -> str:
 
 
 def is_1st_party_domain(destination: str, app_domain: str) -> bool:
-    """Check if destination is 1st party based on app's bundle_id domain."""
+    
     if not isinstance(destination, str) or not app_domain:
         return False
     d = destination.lower()
@@ -92,7 +86,7 @@ def is_1st_party_domain(destination: str, app_domain: str) -> bool:
 
 
 def is_1st_party_policy_entity(entity: str) -> bool:
-    """Check if policy entity is 1st party (only first person pronouns)."""
+    
     if pd.isna(entity):
         return False
     e = str(entity).lower().strip()
@@ -105,7 +99,7 @@ def main():
     print("Detecting Mismatched Entity Disclosure Violations")
     print("="*60)
     
-    # 1. Load IPA info to get bundle_id -> domain mapping
+    
     print("\n1. Loading IPA info...")
     df_ipa = pd.read_csv(IPA_INFO_FILE)
     def extract_app_id_from_filename(filename):
@@ -125,19 +119,19 @@ def main():
                      if pd.notna(row['app_id']) and pd.notna(row['domain'])}
     print(f"   Mapped {len(app_domain_map)} apps to domains")
     
-    # 2. Load data flows
+    
     print("\n2. Loading data flows...")
     df_flows = pd.read_csv(DATA_FLOWS_FILE)
     print(f"   Total flows: {len(df_flows)}")
     
-    # Add entity and 1st party info to flows
+    
     df_flows['traffic_entity'] = df_flows['destination'].apply(simplify_entity)
     df_flows['traffic_is_1st_party'] = df_flows.apply(
         lambda row: is_1st_party_domain(row['destination'], app_domain_map.get(int(row['app_id']))),
         axis=1
     )
     
-    # Get unique (app_id, data_type) -> entity info from flows
+    
     flow_entity_map = {}
     for _, row in df_flows.iterrows():
         key = (int(row['app_id']), str(row['data_type']))
@@ -154,12 +148,12 @@ def main():
     
     print(f"   Unique (app_id, data_type) pairs in flows: {len(flow_entity_map)}")
     
-    # 3. Load policy triplets
+    
     print("\n3. Loading policy triplets...")
     df_policy = pd.read_csv(POLICY_FILE)
     print(f"   Total policy triplets: {len(df_policy)}")
     
-    # Get unique (app_id, data_type) -> entity info from policy
+    
     policy_entity_map = {}
     for _, row in df_policy.iterrows():
         key = (int(row['app_id']), str(row['data_type']))
@@ -175,12 +169,12 @@ def main():
     
     print(f"   Unique (app_id, data_type) pairs in policy: {len(policy_entity_map)}")
     
-    # 4. Find compliant cases (exist in both policy and flow)
+    
     print("\n4. Finding compliant cases (exist in both policy and flow)...")
     compliant_keys = set(flow_entity_map.keys()) & set(policy_entity_map.keys())
     print(f"   Compliant (app_id, data_type) pairs: {len(compliant_keys)}")
     
-    # 5. Detect mismatched entity violations
+    
     print("\n5. Detecting mismatched entity violations...")
     mismatched_violations = []
     
@@ -189,9 +183,9 @@ def main():
         flow_info = flow_entity_map[key]
         policy_info = policy_entity_map[key]
         
-        # Check if 1st/3rd party mismatch
+        
         if flow_info['is_1st_party'] != policy_info['is_1st_party']:
-            # Get representative entity (first one)
+            
             flow_entity = list(flow_info['entities'])[0] if flow_info['entities'] else None
             policy_entity = list(policy_info['entities'])[0] if policy_info['entities'] else None
             flow_destination = list(flow_info['destinations'])[0] if flow_info['destinations'] else None
@@ -213,11 +207,11 @@ def main():
     
     print(f"   Found {len(mismatched_violations)} mismatched entity violations")
     
-    # 6. Create DataFrame
+    
     if mismatched_violations:
         df_mismatched = pd.DataFrame(mismatched_violations)
         
-        # Statistics
+        
         print("\n6. Statistics:")
         print(f"   Total mismatched violations: {len(df_mismatched)}")
         print(f"   Policy 1st party -> Flow 3rd party: {len(df_mismatched[df_mismatched['mismatch_type'] == '1st_to_3rd'])}")
@@ -225,13 +219,13 @@ def main():
         print(f"   Unique apps: {df_mismatched['app_id'].nunique()}")
         print(f"   Unique data types: {df_mismatched['data_type'].nunique()}")
         
-        # Top mismatches
+        
         print("\n   Top 10 policy entities (mismatched):")
         print(df_mismatched['policy_entity'].value_counts().head(10))
         print("\n   Top 10 traffic entities (mismatched):")
         print(df_mismatched['traffic_entity'].value_counts().head(10))
         
-        # 7. Save
+        
         print(f"\n7. Saving mismatched entity violations...")
         df_mismatched.to_csv(OUTPUT_FILE, index=False)
         print(f"   ✓ Saved to: {OUTPUT_FILE}")
@@ -242,7 +236,7 @@ def main():
     else:
         print("\n   No mismatched entity violations found.")
         print("   Creating empty CSV file...")
-        # Create empty DataFrame with correct columns
+        
         df_mismatched = pd.DataFrame(columns=[
             'app_id', 'data_type', 'source', 'violation_type', 'collected_type',
             'policy_entity', 'policy_is_1st_party', 'traffic_entity', 

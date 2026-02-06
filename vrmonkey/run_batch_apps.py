@@ -1,8 +1,5 @@
-#!/usr/bin/env python3
-"""
-Batch runner for exploring multiple apps sequentially using the refactored state explorer.
-Supports loading apps from CSV and resuming from where it left off.
-"""
+
+
 
 import sys
 import time
@@ -17,22 +14,22 @@ from esp32_mouse import ESP32Mouse
 from screenshot_manager import ScreenshotManager
 from config import Config
 
-# Status tracking file will be set based on the CSV file name
+
 STATUS_FILE = "batch_run_status.json"
 
 def get_status_file_for_csv(csv_path):
-    """Generate a status file name based on the CSV file name."""
-    # Extract base name without extension
+    
+    
     base_name = os.path.splitext(os.path.basename(csv_path))[0]
     return f"{base_name}_status.json"
 
 def load_apps_from_csv(csv_path):
-    """Load app names from CSV file."""
+    
     apps = []
     with open(csv_path, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f)
         for row in reader:
-            # Priority: CFBundleDisplayName > Decoded_App_Name > CFBundle_Name > App_Name
+            
             app_name = (
                 row.get('CFBundleDisplayName') or
                 row.get('Decoded_App_Name') or
@@ -45,19 +42,19 @@ def load_apps_from_csv(csv_path):
     return apps
 
 def load_status(status_file):
-    """Load previous run status from JSON file."""
+    
     if os.path.exists(status_file):
         with open(status_file, 'r') as f:
             return json.load(f)
     return {}
 
 def save_status(status, status_file):
-    """Save current run status to JSON file."""
+    
     with open(status_file, 'w') as f:
         json.dump(status, f, indent=2)
 
 def main():
-    # Parse command line arguments
+    
     parser = argparse.ArgumentParser(
         description="Batch App Explorer - Run multiple apps sequentially"
     )
@@ -90,10 +87,10 @@ def main():
     )
     args = parser.parse_args()
 
-    # Get status file based on CSV file name
+    
     status_file = get_status_file_for_csv(args.app_list)
     
-    # Load apps from CSV
+    
     print("Loading app list from CSV...")
     apps_to_explore = load_apps_from_csv(args.app_list)
 
@@ -102,10 +99,10 @@ def main():
 
     print(f"Loaded {len(apps_to_explore)} apps")
 
-    # Load previous status
+    
     status = load_status(status_file) if args.resume else {}
 
-    # Filter out already completed apps if resuming
+    
     if args.resume and status:
         completed = [app for app, info in status.items() if info.get('status') == 'Success']
         print(f"Found {len(completed)} previously completed apps")
@@ -128,12 +125,12 @@ def main():
     print("\nStarting exploration in 5 seconds...")
     time.sleep(5)
 
-    # Setup once at the beginning (reuse for all apps)
+    
     print("\n=== Initial Setup ===")
     print("Setting up ESP32 and components (one-time setup)...")
 
     try:
-        # Create a temporary app instance just for setup and closing apps
+        
         temp_app = StateExplorerApp("temp", timeout_minutes=args.timeout)
         temp_app.esp32 = ESP32Mouse(port=temp_app.config.app.esp32_port, debug=temp_app.config.app.esp32_debug)
         temp_app.screenshot_manager = ScreenshotManager(temp_app.config)
@@ -155,16 +152,16 @@ def main():
         start_time = datetime.now()
 
         try:
-            # Create StateExplorerApp instance with configured timeout
-            # Note: Previous app is already closed by its cleanup() method
+            
+            
             app = StateExplorerApp(app_name, timeout_minutes=args.timeout)
 
-            # Enable video recording if requested
+            
             if args.enable_recording:
                 app.config.video_recorder.enabled = True
                 print(f"📹 Video recording enabled for {app_name}")
 
-            # Setup the application
+            
             print(f"Setting up {app_name}...")
             if not app.setup():
                 print(f"❌ Failed to setup {app_name}")
@@ -176,10 +173,10 @@ def main():
                 save_status(status, status_file)
                 continue
 
-            # Show configuration
+            
             app.print_system_info()
 
-            # Run the exploration
+            
             print(f"\nStarting exploration of {app_name}...")
             success = app.run()
 
@@ -214,12 +211,12 @@ def main():
             }
             save_status(status, status_file)
 
-        # Brief pause between apps
+        
         if i < len(apps_to_explore):
             print(f"\nMoving to next app in 5 seconds...")
             time.sleep(5)
 
-    # Print summary
+    
     print(f"\n\n{'='*60}")
     print("EXPLORATION SUMMARY")
     print(f"{'='*60}")
@@ -242,13 +239,13 @@ def main():
     print(f"Failed/Incomplete: {len(failed_apps)}")
     print(f"{'='*60}")
 
-    # Save final summary
+    
     if failed_apps:
         print(f"\n📝 Apps that need to be re-run:")
         for app in failed_apps:
             print(f"  - {app}")
 
-        # Save to file for easy resume
+        
         with open("failed_apps.txt", "w") as f:
             for app in failed_apps:
                 f.write(f"{app}\n")

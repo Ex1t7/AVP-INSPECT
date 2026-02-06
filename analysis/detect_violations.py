@@ -1,21 +1,5 @@
-#!/usr/bin/env python3
-"""
-Privacy Violation Detection
-----------------------------
-比较 data flows 和 privacy labels，检测两种 violations：
 
-1. Neglect Disclosure: 收集了数据但未在 privacy label 中声明
-2. Contrary Disclosure: 声明 "Data Not Collected" 但实际收集了数据
 
-输入：
-- data_flows.csv: <app, data_type, destination>
-- privacy_label_id*.json: Apple privacy labels
-- app_store_data/: app name -> app_id mapping
-
-输出：
-- violations.csv: 所有 violations
-- violations_summary.json: 统计信息
-"""
 
 import json
 import os
@@ -34,7 +18,7 @@ from ontology_mapping import (
 )
 
 
-# ========== 配置 ==========
+
 DATA_FLOWS_PATH = "/mnt/ssd2/VR_monkey/ppaudit_analysis/data_flows_output_v2/data_flows.csv"
 PRIVACY_LABELS_DIR = "/mnt/ssd2/VR_monkey/privacy_details"
 APP_STORE_DATA_DIR = "/mnt/ssd2/VR_monkey/app_store_data"
@@ -42,27 +26,27 @@ OUTPUT_DIR = "/mnt/ssd2/VR_monkey/ppaudit_analysis/violations_output"
 
 
 def load_app_id_mapping() -> Dict[str, str]:
-    """加载 app name -> app_id 映射"""
+    
     mapping = {}
     
     for fname in os.listdir(APP_STORE_DATA_DIR):
         if not fname.startswith("app_") or not fname.endswith(".json"):
             continue
         
-        # 从文件名提取 app_id 和 app_name
-        # 格式: app_{app_id}_{app_name}.json
-        parts = fname[4:-5].split("_", 1)  # 去掉 "app_" 和 ".json"
+        
+        
+        parts = fname[4:-5].split("_", 1)  
         if len(parts) >= 2:
             app_id = parts[0]
             app_name_from_file = parts[1].replace("_", " ")
             
-            # 读取 JSON 获取真实 app name
+            
             try:
                 with open(os.path.join(APP_STORE_DATA_DIR, fname), 'r') as f:
                     data = json.load(f)
                     app_name = data.get('trackName', app_name_from_file)
                     mapping[app_name] = app_id
-                    # 也添加文件名版本
+                    
                     mapping[app_name_from_file] = app_id
             except:
                 mapping[app_name_from_file] = app_id
@@ -71,7 +55,7 @@ def load_app_id_mapping() -> Dict[str, str]:
 
 
 def load_privacy_label(app_id: str) -> Optional[dict]:
-    """加载 app 的 privacy label"""
+    
     label_path = os.path.join(PRIVACY_LABELS_DIR, f"privacy_label_id{app_id}.json")
     
     if not os.path.exists(label_path):
@@ -86,12 +70,7 @@ def load_privacy_label(app_id: str) -> Optional[dict]:
 
 
 def extract_declared_types(privacy_label: dict) -> Tuple[Set[str], bool]:
-    """
-    从 privacy label 提取所有声明的 data types
     
-    Returns:
-        (declared_types: Set[str], data_not_collected: bool)
-    """
     declared_types = set()
     data_not_collected = False
     
@@ -102,12 +81,12 @@ def extract_declared_types(privacy_label: dict) -> Tuple[Set[str], bool]:
         for pt in privacy_types:
             identifier = pt.get('identifier', '')
             
-            # 检查 DATA_NOT_COLLECTED
+            
             if identifier == 'DATA_NOT_COLLECTED':
                 data_not_collected = True
                 continue
             
-            # 从 dataCategories 提取
+            
             for dc in pt.get('dataCategories', []):
                 for dt in dc.get('dataTypes', []):
                     if isinstance(dt, str):
@@ -115,7 +94,7 @@ def extract_declared_types(privacy_label: dict) -> Tuple[Set[str], bool]:
                     elif isinstance(dt, dict):
                         declared_types.add(dt.get('dataType', ''))
             
-            # 从 purposes 提取
+            
             for purpose in pt.get('purposes', []):
                 for dc in purpose.get('dataCategories', []):
                     for dt in dc.get('dataTypes', []):
@@ -130,12 +109,7 @@ def extract_declared_types(privacy_label: dict) -> Tuple[Set[str], bool]:
 
 
 def load_data_flows() -> Dict[str, Set[Tuple[str, str]]]:
-    """
-    加载 data flows
     
-    Returns:
-        {app_name: {(data_type, destination), ...}}
-    """
     app_flows = defaultdict(set)
     
     with open(DATA_FLOWS_PATH, 'r') as f:
@@ -150,10 +124,10 @@ def load_data_flows() -> Dict[str, Set[Tuple[str, str]]]:
 
 
 def detect_violations():
-    """检测所有 violations"""
+    
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     
-    # 加载数据
+    
     print("Loading app ID mapping...")
     app_id_mapping = load_app_id_mapping()
     print(f"Loaded {len(app_id_mapping)} app mappings")
@@ -162,10 +136,10 @@ def detect_violations():
     app_flows = load_data_flows()
     print(f"Loaded flows for {len(app_flows)} apps")
     
-    # 检测 violations
+    
     print("\nDetecting violations...")
     
-    all_violations = []  # [{app, data_type, destination, violation_type, expected_types, declared_types}, ...]
+    all_violations = []  
     app_summaries = {}
     
     apps_with_label = 0
@@ -173,11 +147,11 @@ def detect_violations():
     apps_data_not_collected = 0
     
     for app_name, flows in app_flows.items():
-        # 获取 app_id
+        
         app_id = app_id_mapping.get(app_name)
         
         if not app_id:
-            # 尝试模糊匹配
+            
             for stored_name, stored_id in app_id_mapping.items():
                 if app_name.lower() in stored_name.lower() or stored_name.lower() in app_name.lower():
                     app_id = stored_id
@@ -197,7 +171,7 @@ def detect_violations():
             }
             continue
         
-        # 加载 privacy label
+        
         privacy_label = load_privacy_label(app_id)
         
         if not privacy_label:
@@ -216,37 +190,37 @@ def detect_violations():
         
         apps_with_label += 1
         
-        # 提取声明的 types
+        
         declared_types, data_not_collected = extract_declared_types(privacy_label)
         
         if data_not_collected:
             apps_data_not_collected += 1
         
-        # 获取收集的 unique data types
+        
         collected_types = set(f[0] for f in flows)
         
-        # 检测 violations
+        
         app_violations = []
         neglect_count = 0
         contrary_count = 0
         
         for data_type, destination in flows:
-            # 获取 violation 详情（基于 ontology 关系）
+            
             details = get_violation_details(data_type, declared_types)
             
-            # 如果没有 ontology 映射，跳过（不报 violation）
+            
             if not details['has_ontology_mapping']:
                 continue
             
-            # 检查是否有 violation
+            
             if details['is_violation']:
                 apple_types = details['expected_apple_types']
                 if data_not_collected:
-                    # Contrary Disclosure: 声明不收集但实际收集
+                    
                     violation_type = "Contrary Disclosure"
                     contrary_count += 1
                 else:
-                    # Neglect Disclosure: 收集但未声明
+                    
                     violation_type = "Neglect Disclosure"
                     neglect_count += 1
                 
@@ -273,7 +247,7 @@ def detect_violations():
             'contrary_count': contrary_count,
         }
     
-    # 输出统计
+    
     print("\n" + "=" * 70)
     print("Violation Detection Results")
     print("=" * 70)
@@ -282,7 +256,7 @@ def detect_violations():
     total_contrary = sum(s['contrary_count'] for s in app_summaries.values())
     apps_with_violations = sum(1 for s in app_summaries.values() if s['neglect_count'] + s['contrary_count'] > 0)
     
-    # 计算 unique violations (by app + data_type)
+    
     unique_violations = set()
     for v in all_violations:
         unique_violations.add((v['app'], v['data_type']))
@@ -296,7 +270,7 @@ def detect_violations():
     print(f"  - Neglect Disclosure: {total_neglect}")
     print(f"  - Contrary Disclosure: {total_contrary}")
     
-    # 保存 violations.csv
+    
     violations_csv = os.path.join(OUTPUT_DIR, 'violations.csv')
     with open(violations_csv, 'w', newline='') as f:
         writer = csv.DictWriter(f, fieldnames=['app', 'app_id', 'data_type', 'destination', 
@@ -309,11 +283,11 @@ def detect_violations():
             writer.writerow(row)
     print(f"\nSaved violations to: {violations_csv}")
     
-    # 保存 unique violations
+    
     unique_violations_csv = os.path.join(OUTPUT_DIR, 'violations_unique.csv')
     unique_violation_list = []
     for app, data_type in unique_violations:
-        # 找到对应的 violation 详情
+        
         for v in all_violations:
             if v['app'] == app and v['data_type'] == data_type:
                 unique_violation_list.append({
@@ -333,7 +307,7 @@ def detect_violations():
             writer.writerow(row)
     print(f"Saved unique violations to: {unique_violations_csv}")
     
-    # 保存 summary
+    
     summary = {
         'total_apps': len(app_flows),
         'apps_with_labels': apps_with_label,
@@ -347,14 +321,14 @@ def detect_violations():
         'app_summaries': app_summaries,
     }
     
-    # 按 violation 数量排序的 apps
+    
     apps_by_violations = sorted(
         [(app, s['neglect_count'] + s['contrary_count']) for app, s in app_summaries.items()],
         key=lambda x: -x[1]
     )
     summary['top_violating_apps'] = apps_by_violations[:20]
     
-    # 按 data type 统计 violations
+    
     violation_by_type = defaultdict(int)
     for v in all_violations:
         violation_by_type[v['data_type']] += 1
@@ -365,13 +339,13 @@ def detect_violations():
         json.dump(summary, f, indent=2, default=str)
     print(f"Saved summary to: {summary_path}")
     
-    # Top violating apps
+    
     print("\nTop 10 Apps by Violations:")
     for app, count in apps_by_violations[:10]:
         s = app_summaries[app]
         print(f"  {app:<40} {count:>4} violations (N:{s['neglect_count']}, C:{s['contrary_count']})")
     
-    # Top violated data types
+    
     print("\nTop 10 Violated Data Types:")
     for dt, count in list(summary['violations_by_data_type'].items())[:10]:
         print(f"  {dt:<25} {count:>5} violations")

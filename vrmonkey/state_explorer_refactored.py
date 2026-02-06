@@ -1,15 +1,5 @@
-#!/usr/bin/env python3
-"""
-Refactored ESP32 Mouse State Explorer
 
-A modular, well-organized application for automated UI state exploration using ESP32 mouse control.
-This refactored version improves upon the original by providing:
-- Clean separation of concerns
-- Configurable settings
-- Better error handling
-- Comprehensive logging
-- Maintainable code structure
-"""
+
 
 import sys
 import time
@@ -17,7 +7,7 @@ import logging
 import argparse
 from typing import Optional
 
-# Import all our refactored modules
+
 from config import Config
 from screenshot_manager import ScreenshotManager
 from mouse_controller import MouseController
@@ -32,29 +22,23 @@ import pointer_recognize
 
 
 class StateExplorerApp:
-    """Main application class that coordinates all components."""
+    
 
     def __init__(self, app_name: str, timeout_minutes: int = 10):
-        """
-        Initialize the state explorer application.
-
-        Args:
-            app_name: Name of the application to explore
-            timeout_minutes: Exploration timeout in minutes
-        """
+        
         self.app_name = app_name
         self.timeout_minutes = timeout_minutes
 
-        # Initialize configuration
+        
         self.config = Config(app_name)
         self.config.exploration.timeout_minutes = timeout_minutes
         self.config.update_from_env()
         self.config.validate()
 
-        # Initialize logging
+        
         self._setup_logging()
 
-        # Component instances (initialized in setup)
+        
         self.esp32: Optional[ESP32Mouse] = None
         self.screenshot_manager: Optional[ScreenshotManager] = None
         self.mouse_controller: Optional[MouseController] = None
@@ -68,78 +52,73 @@ class StateExplorerApp:
         self.logger = logging.getLogger(__name__)
 
     def _setup_logging(self):
-        """Setup logging configuration."""
-        # Configure root logger
+        
+        
         logging.basicConfig(
             level=logging.INFO,
             format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
             handlers=[logging.StreamHandler()]
         )
 
-        # Adjust log levels for different components
+        
         logging.getLogger('gradio_client').setLevel(logging.WARNING)
         logging.getLogger('httpx').setLevel(logging.WARNING)
 
     def setup(self) -> bool:
-        """
-        Setup all components and verify they're working.
-
-        Returns:
-            True if setup was successful, False otherwise
-        """
+        
         self.logger.info(f"Setting up State Explorer for app: {self.app_name}")
 
         try:
-            # Initialize ESP32 connection
+            
             self.logger.info("Initializing ESP32 connection...")
             self.esp32 = ESP32Mouse(
                 port=self.config.app.esp32_port,
                 debug=self.config.app.esp32_debug
             )
 
-            # Initialize pointer recognition
+            
             self.logger.info("Initializing pointer recognition...")
             pointer_recognize.analyze_pointer_template()
 
-            # Initialize screenshot manager
+            
             self.logger.info("Initializing screenshot manager...")
             self.screenshot_manager = ScreenshotManager(self.config)
 
-            # Test screenshot functionality
+            
             test_screenshot = self.screenshot_manager.take_screenshot()
             if not test_screenshot.success:
                 raise Exception(f"Screenshot test failed: {test_screenshot.error_message}")
 
-            # Initialize mouse controller
+            
             self.logger.info("Initializing mouse controller...")
             self.mouse_controller = MouseController(self.config, self.esp32)
 
-            # Initialize OmniParser client
+            
             self.logger.info("Initializing OmniParser client...")
             self.omniparser_client = OmniParserClient(self.config, self.screenshot_manager)
 
-            # Test OmniParser connection
+            
             if not self.omniparser_client.test_connection():
                 raise Exception("OmniParser connection test failed")
 
-            # Initialize state graph
+            
             self.logger.info("Initializing state graph...")
             self.state_graph = StateGraph()
 
-            # Initialize metrics manager
+            
             self.logger.info("Initializing metrics manager...")
             self.metrics_manager = MetricsManager(self.config)
             if not self.metrics_manager.initialize(self.timeout_minutes):
                 raise Exception("Metrics manager initialization failed")
 
-            # Initialize app manager
+            
             self.logger.info("Initializing app manager...")
             self.app_manager = AppManager(
                 self.config, self.esp32,
                 self.screenshot_manager, self.omniparser_client
             )
 
-            # Initialize state explorer
+            
             self.logger.info("Initializing state explorer...")
             self.state_explorer = StateExplorer(
                 self.config, self.state_graph, self.mouse_controller,
@@ -147,7 +126,7 @@ class StateExplorerApp:
                 self.metrics_manager, self.esp32, self.app_manager
             )
 
-            # Initialize video recorder client (optional)
+            
             if self.config.video_recorder.enabled:
                 self.logger.info("Initializing video recorder client...")
                 self.video_recorder = VideoRecorderClient(
@@ -169,16 +148,11 @@ class StateExplorerApp:
             return False
 
     def run(self) -> bool:
-        """
-        Run the complete exploration process.
-
-        Returns:
-            True if exploration completed successfully, False otherwise
-        """
+        
         try:
             self.logger.info(f"Starting exploration of {self.app_name} with {self.timeout_minutes}-minute timeout")
 
-            # Start video recording if enabled
+            
             if self.video_recorder and self.config.video_recorder.enabled:
                 success, message = self.video_recorder.start_recording(self.app_name)
                 if success:
@@ -186,21 +160,21 @@ class StateExplorerApp:
                 else:
                     self.logger.warning(f"Could not start video recording: {message}")
 
-            # Display current app cache for debugging
-            # self.app_manager.display_app_cache()
+            
+            
 
-            # Capture home state BEFORE opening app (iOS/visionOS home screen)
+            
             if self.config.exploration.enable_home_detection:
                 self.logger.info("📱 Capturing home screen state before opening app...")
                 _, home_state = self.state_explorer.check_current_state()
 
-                # If home state is empty (no UI elements), open home menu first
+                
                 if home_state and len(home_state.buttons) == 0:
                     self.logger.info("🏠 Home menu not visible, opening it with FNH...")
-                    self.esp32.keypress_action("FNH")  # Open Home View (using ESP32)
-                    time.sleep(2)  # Wait for home menu to appear
+                    self.esp32.keypress_action("FNH")  
+                    time.sleep(2)  
 
-                    # Try capturing home state again
+                    
                     _, home_state = self.state_explorer.check_current_state()
 
                 if home_state:
@@ -209,7 +183,7 @@ class StateExplorerApp:
                 else:
                     self.logger.warning("Could not capture home screen state")
 
-            # Open the target application
+            
             self.logger.info(f"Opening application: {self.app_name}")
             app_success, app_position = self.app_manager.open_app()
             if not app_success:
@@ -217,16 +191,16 @@ class StateExplorerApp:
 
             self.logger.info(f"App opened successfully using Spotlight")
 
-            # Calibrate mouse if needed
+            
             self.logger.info("Calibrating mouse...")
             if not self._calibrate_mouse():
                 raise Exception("Mouse calibration failed")
 
-            # App is already opened and focused via Spotlight
-            # Just wait a bit more to ensure it's ready
-            time.sleep(3)  # Wait for app to fully load
+            
+            
+            time.sleep(3)  
 
-            # Start the exploration
+            
             self.logger.info("Beginning state exploration...")
             self.state_explorer.explore_all_states()
 
@@ -235,7 +209,7 @@ class StateExplorerApp:
 
         except TimeoutError:
             self.logger.info("Exploration stopped due to timeout")
-            return True  # Timeout is a normal completion condition
+            return True  
         except Exception as e:
             self.logger.error(f"Exploration failed: {e}")
             return False
@@ -243,21 +217,21 @@ class StateExplorerApp:
             self._cleanup()
 
     def _calibrate_mouse(self) -> bool:
-        """Calibrate the mouse for accurate movement."""
+        
         try:
-            # Simplified calibration - just test that we can move and find the pointer
+            
             self.logger.info("Testing mouse movement and pointer detection...")
 
-            # Take initial screenshot
+            
             screenshot_result = self.screenshot_manager.take_screenshot()
             if not screenshot_result.success:
                 return False
 
-            # Find initial pointer
+            
             initial_pointer = self.mouse_controller.find_pointer(screenshot_result.file_path)
             if initial_pointer is None:
                 self.logger.warning("Cannot find initial pointer, attempting recovery...")
-                # Try to move pointer to a visible area
+                
                 max_pixel = self.config.mouse.max_pixel
                 if not self.mouse_controller.move_pixel(-max_pixel, -max_pixel):
                     return False
@@ -271,7 +245,7 @@ class StateExplorerApp:
                 if initial_pointer is None:
                     return False
 
-            # Perform calibration movement
+            
             calibration_result = self.mouse_controller.calibrate_ratio(
                 self.screenshot_manager, delta_x=300, delta_y=300
             )
@@ -288,11 +262,11 @@ class StateExplorerApp:
             return False
 
     def _cleanup(self):
-        """Cleanup resources and close connections."""
+        
         self.logger.info("Cleaning up resources...")
 
         try:
-            # Stop video recording if active
+            
             if self.video_recorder and self.config.video_recorder.enabled:
                 if self.video_recorder.is_recording:
                     success, message, video_path = self.video_recorder.stop_recording()
@@ -301,7 +275,7 @@ class StateExplorerApp:
                     else:
                         self.logger.warning(f"Error stopping video recording: {message}")
 
-            # Close all apps after exploration to ensure clean environment
+            
             self.logger.info("🧹 Closing all applications after exploration...")
             if self.app_manager:
                 close_success = self.app_manager.close_all_apps(exclude_system_apps=True)
@@ -309,13 +283,13 @@ class StateExplorerApp:
                     self.logger.info("✅ All apps closed successfully")
                 else:
                     self.logger.warning("⚠️ Some apps may not have been closed")
-                time.sleep(2)  # Wait for apps to fully close
+                time.sleep(2)  
 
-            # Close ESP32 connection
+            
             if self.esp32:
                 self.esp32.close()
 
-            # Finalize metrics
+            
             if self.metrics_manager:
                 self.metrics_manager.finalize()
 
@@ -325,15 +299,7 @@ class StateExplorerApp:
             self.logger.error(f"Error during cleanup: {e}")
 
     def close_all_apps(self, exclude_system_apps: bool = True) -> bool:
-        """
-        Close all applications using the task manager.
-
-        Args:
-            exclude_system_apps: If True, attempts to skip system apps
-
-        Returns:
-            True if operation completed successfully
-        """
+        
         if not self.app_manager:
             self.logger.error("App manager not initialized")
             return False
@@ -341,12 +307,7 @@ class StateExplorerApp:
         return self.app_manager.close_all_apps(exclude_system_apps)
 
     def force_quit_all_apps(self) -> bool:
-        """
-        Force quit ALL applications without discrimination.
-
-        Returns:
-            True if operation completed successfully
-        """
+        
         if not self.app_manager:
             self.logger.error("App manager not initialized")
             return False
@@ -354,7 +315,7 @@ class StateExplorerApp:
         return self.app_manager.force_quit_all_apps()
 
     def get_config_info(self) -> dict:
-        """Get configuration information for debugging."""
+        
         return {
             'app_name': self.app_name,
             'timeout_minutes': self.timeout_minutes,
@@ -365,7 +326,7 @@ class StateExplorerApp:
         }
 
     def print_system_info(self):
-        """Print system and configuration information."""
+        
         info = self.get_config_info()
         print(f"\n=== State Explorer Configuration ===")
         for key, value in info.items():
@@ -374,7 +335,7 @@ class StateExplorerApp:
 
 
 def main():
-    """Main entry point for the application."""
+    
     parser = argparse.ArgumentParser(
         description="ESP32 Mouse State Explorer - Automated UI Testing",
         formatter_class=argparse.RawDescriptionHelpFormatter,
@@ -439,23 +400,23 @@ Examples:
 
     args = parser.parse_args()
 
-    # Set debug logging if requested
+    
     if args.debug:
         logging.getLogger().setLevel(logging.DEBUG)
 
-    # Create and setup the application
+    
     app = StateExplorerApp(args.app_name, args.timeout)
 
-    # Enable video recording if requested
+    
     if args.enable_recording:
         app.config.video_recorder.enabled = True
 
-    # Show config info if requested
+    
     if args.config_info:
         app.print_system_info()
         return 0
 
-    # Handle special operations that don't require full app exploration
+    
     if args.close_all_apps or args.force_quit_all:
         if not app.setup():
             print("Failed to setup the application for task management.")
@@ -470,20 +431,20 @@ Examples:
         if args.force_quit_all:
             print("⚠️  FORCE QUITTING ALL APPLICATIONS INCLUDING SYSTEM APPS!")
             print("This will close everything. Are you sure? (Press Ctrl+C to cancel)")
-            time.sleep(3)  # Give user a chance to cancel
+            time.sleep(3)  
             success = app.force_quit_all_apps()
             print(f"Force quit all: {'Success' if success else 'Failed'}")
             return 0 if success else 1
 
-    # Setup the application
+    
     if not app.setup():
         print("Failed to setup the application. Check logs for details.")
         return 1
 
-    # Show configuration
+    
     app.print_system_info()
 
-    # Create run time tracking file
+    
     run_file = f"{args.app_name}_run.txt"
     try:
         with open(run_file, 'w') as f:
@@ -491,7 +452,7 @@ Examples:
     except Exception as e:
         print(f"Warning: Could not create run file: {e}")
 
-    # Run the exploration
+    
     try:
         success = app.run()
         exit_code = 0 if success else 1
@@ -502,7 +463,7 @@ Examples:
         print(f"Unexpected error: {e}")
         exit_code = 1
 
-    # Update run time tracking file
+    
     try:
         with open(run_file, 'a') as f:
             f.write(f"{args.app_name} exploration ended: {time.strftime('%Y-%m-%d %H:%M:%S')}\n")
@@ -513,19 +474,9 @@ Examples:
     return exit_code
 
 
-# Function to maintain compatibility with the original script
+
 def state_explorer_metric(name: str, timeout_minutes: int = 10) -> bool:
-    """
-    Run the state explorer with metrics enabled for the given app name.
-    This function maintains compatibility with the original interface.
-
-    Args:
-        name: Name of the app to explore
-        timeout_minutes: Timeout in minutes (default: 10)
-
-    Returns:
-        True if exploration was successful
-    """
+    
     app = StateExplorerApp(name, timeout_minutes)
     if not app.setup():
         return False

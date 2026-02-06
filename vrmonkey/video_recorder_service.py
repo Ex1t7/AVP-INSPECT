@@ -11,7 +11,7 @@ app = Flask(__name__)
 RECORDINGS_DIR = os.path.join(os.path.dirname(__file__), 'recordings')
 os.makedirs(RECORDINGS_DIR, exist_ok=True)
 
-# Global state
+
 recording_thread = None
 recording_active = False
 current_app_name = None
@@ -22,7 +22,7 @@ STREAM_URL = 'http://192.168.1.15:5050/stream'
 
 
 def mjpeg_stream_reader(stream_url):
-    """Generator that yields JPEG frames from an MJPEG stream."""
+    
     print(f"Connecting to MJPEG stream at {stream_url}")
     try:
         stream = requests.get(stream_url, stream=True, timeout=10)
@@ -37,12 +37,12 @@ def mjpeg_stream_reader(stream_url):
         if not chunk:
             continue
         bytes_buffer += chunk
-        a = bytes_buffer.find(b'\xff\xd8')  # JPEG start
-        b = bytes_buffer.find(b'\xff\xd9')  # JPEG end
+        a = bytes_buffer.find(b'\xff\xd8')  
+        b = bytes_buffer.find(b'\xff\xd9')  
         if a != -1 and b != -1 and b > a:
             jpg = bytes_buffer[a:b+2]
             bytes_buffer = bytes_buffer[b+2:]
-            # Validate that we have actual data
+            
             if len(jpg) > 2:
                 try:
                     img = cv2.imdecode(np.frombuffer(jpg, dtype=np.uint8), cv2.IMREAD_COLOR)
@@ -58,11 +58,11 @@ def mjpeg_stream_reader(stream_url):
 
 def record_stream(app_name, stop_event):
     global current_video_path
-    timestamp = time.strftime('%Y%m%d-%H%M')  # Use minute precision
+    timestamp = time.strftime('%Y%m%d-%H%M')  
     filename = f"{app_name}_{timestamp}.mp4"
     video_path = os.path.join(RECORDINGS_DIR, filename)
     current_video_path = video_path
-    fourcc = cv2.VideoWriter_fourcc('m', 'p', '4', 'v')  # Use explicit chars for mp4v
+    fourcc = cv2.VideoWriter_fourcc('m', 'p', '4', 'v')  
     out = None
     fps = 15
     frame_count = 0
@@ -117,7 +117,7 @@ def stop_recording():
     global recording_thread, recording_active, current_app_name, current_video_path, recording_stop_event
     if not recording_active or recording_thread is None:
         return jsonify({'status': 'error', 'message': 'No recording in progress'}), 400
-    # Signal the thread to stop
+    
     if recording_stop_event:
         recording_stop_event.set()
     recording_thread.join(timeout=5)

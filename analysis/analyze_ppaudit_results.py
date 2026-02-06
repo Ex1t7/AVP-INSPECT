@@ -1,12 +1,5 @@
-#!/usr/bin/env python3
-"""
-分析 PPAudit 提取的 CUS Term Tuples 结果
 
-功能：
-1. 汇总每个 app 的数据收集情况
-2. 统计最常见的数据类型
-3. 生成可与 Apple Privacy Labels 比较的格式
-"""
+
 
 import json
 import csv
@@ -14,7 +7,7 @@ from pathlib import Path
 from collections import Counter, defaultdict
 from typing import Dict, List, Any
 
-# 路径配置
+
 PPAUDIT_ROOT = Path("/mnt/ssd2/PPAudit")
 VR_MONKEY_ROOT = Path("/mnt/ssd2/VR_monkey")
 CUS_TERM_TUPLES = PPAUDIT_ROOT / "output" / "cus_term_tuples"
@@ -22,11 +15,11 @@ OUTPUT_DIR = VR_MONKEY_ROOT / "ppaudit_analysis"
 
 
 def load_all_term_tuples() -> Dict[str, List[Dict]]:
-    """加载所有 term tuple 文件"""
+    
     all_data = {}
 
     for json_file in CUS_TERM_TUPLES.glob("*.json"):
-        # 跳过 error 文件
+        
         if ".error-" in json_file.name:
             continue
 
@@ -34,8 +27,8 @@ def load_all_term_tuples() -> Dict[str, List[Dict]]:
             with open(json_file, 'r', encoding='utf-8') as f:
                 data = json.load(f)
 
-            # 从文件名提取 app_id
-            # 格式: 1069509450_apple_com_privacy_policy_cleaned.json
+            
+            
             app_id = json_file.stem.split("_")[0]
             all_data[app_id] = data
 
@@ -46,9 +39,9 @@ def load_all_term_tuples() -> Dict[str, List[Dict]]:
 
 
 def analyze_single_app(app_id: str, tuples: List[Dict]) -> Dict[str, Any]:
-    """分析单个 app 的数据收集情况"""
+    
 
-    # 按 entity_term 分组
+    
     first_party_collect = set()
     first_party_not_collect = set()
     third_party_collect = set()
@@ -97,13 +90,13 @@ def analyze_single_app(app_id: str, tuples: List[Dict]) -> Dict[str, Any]:
 
 
 def generate_summary_report(all_analysis: List[Dict]) -> Dict:
-    """生成汇总报告"""
+    
 
-    # 全局统计
+    
     total_apps = len(all_analysis)
     total_tuples = sum(a["total_tuples"] for a in all_analysis)
 
-    # 数据类型频率
+    
     data_type_freq = Counter()
     first_party_data_freq = Counter()
     third_party_data_freq = Counter()
@@ -128,7 +121,7 @@ def generate_summary_report(all_analysis: List[Dict]) -> Dict:
 
 
 def export_per_app_csv(all_analysis: List[Dict], output_file: Path):
-    """导出每个 app 的汇总 CSV"""
+    
 
     with open(output_file, 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
@@ -161,7 +154,7 @@ def export_per_app_csv(all_analysis: List[Dict], output_file: Path):
 
 
 def export_data_types_csv(summary: Dict, output_file: Path):
-    """导出数据类型频率 CSV"""
+    
 
     with open(output_file, 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
@@ -184,7 +177,7 @@ def export_data_types_csv(summary: Dict, output_file: Path):
 
 
 def export_detailed_json(all_analysis: List[Dict], summary: Dict, output_file: Path):
-    """导出详细 JSON"""
+    
 
     output = {
         "summary": summary,
@@ -202,29 +195,29 @@ def main():
     print("PPAudit Results Analyzer")
     print("="*60)
 
-    # 创建输出目录
+    
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    # 加载数据
+    
     print("\n1. 加载 CUS Term Tuples...")
     all_data = load_all_term_tuples()
     print(f"   加载了 {len(all_data)} 个 app 的数据")
 
-    # 分析每个 app
+    
     print("\n2. 分析每个 app...")
     all_analysis = []
     for app_id, tuples in all_data.items():
         analysis = analyze_single_app(app_id, tuples)
         all_analysis.append(analysis)
 
-    # 按 app_id 排序
+    
     all_analysis.sort(key=lambda x: x["app_id"])
 
-    # 生成汇总报告
+    
     print("\n3. 生成汇总报告...")
     summary = generate_summary_report(all_analysis)
 
-    # 打印关键统计
+    
     print(f"\n{'='*60}")
     print("汇总统计")
     print("="*60)
@@ -245,7 +238,7 @@ def main():
     for dt, count in summary["top_third_party_data"][:10]:
         print(f"    {dt:30s} : {count} apps")
 
-    # 导出结果
+    
     print("\n4. 导出结果...")
     export_per_app_csv(all_analysis, OUTPUT_DIR / "ppaudit_per_app_summary.csv")
     export_data_types_csv(summary, OUTPUT_DIR / "ppaudit_data_types_freq.csv")

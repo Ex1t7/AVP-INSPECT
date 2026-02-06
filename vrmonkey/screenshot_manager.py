@@ -1,4 +1,4 @@
-"""Screenshot management and capture functionality."""
+
 
 import time
 import socket
@@ -14,23 +14,14 @@ from core_types import ScreenshotResult
 
 
 class ScreenshotManager:
-    """Manages screenshot capture from various sources."""
+    
 
     def __init__(self, config: Config):
         self.config = config
         self.logger = logging.getLogger(__name__)
 
     def take_screenshot(self, source: Optional[str] = None) -> ScreenshotResult:
-        """
-        Take a screenshot from the specified source.
-
-        Args:
-            source: Screenshot source ('remote', 'airplay', 'gstreamer').
-                   If None, uses config default.
-
-        Returns:
-            ScreenshotResult with success status and file path.
-        """
+        
         if source is None:
             source = self.config.app.screenshot_source
 
@@ -64,7 +55,7 @@ class ScreenshotManager:
             )
 
     def _capture_airplay(self, file_path: str, timestamp: str) -> ScreenshotResult:
-        """Capture screenshot using MSS (airplay monitor)."""
+        
         try:
             with mss.mss() as sct:
                 monitor = sct.monitors[self.config.screen.monitor_number]
@@ -72,7 +63,7 @@ class ScreenshotManager:
                 frame = np.array(screenshot)
                 frame = cv2.cvtColor(frame, cv2.COLOR_BGRA2BGR)
 
-                # Update screen dimensions
+                
                 self.config.screen.height, self.config.screen.width = frame.shape[:2]
 
                 cv2.imwrite(file_path, frame)
@@ -87,7 +78,7 @@ class ScreenshotManager:
             raise Exception(f"Airplay capture failed: {str(e)}")
 
     def _capture_remote_stream(self, file_path: str, timestamp: str) -> ScreenshotResult:
-        """Capture screenshot from remote HTTP stream."""
+        
         try:
             url = self.config.network.remote_stream_url
             stream = requests.get(url, stream=True, timeout=10)
@@ -95,8 +86,8 @@ class ScreenshotManager:
 
             for chunk in stream.iter_content(chunk_size=1024):
                 bytes_buffer += chunk
-                jpeg_start = bytes_buffer.find(b'\xff\xd8')  # JPEG start
-                jpeg_end = bytes_buffer.find(b'\xff\xd9')    # JPEG end
+                jpeg_start = bytes_buffer.find(b'\xff\xd8')  
+                jpeg_end = bytes_buffer.find(b'\xff\xd9')    
 
                 if jpeg_start != -1 and jpeg_end != -1:
                     jpg = bytes_buffer[jpeg_start:jpeg_end + 2]
@@ -108,7 +99,7 @@ class ScreenshotManager:
                     )
 
                     if img is not None:
-                        # Update screen dimensions
+                        
                         self.config.screen.height, self.config.screen.width = img.shape[:2]
 
                         cv2.imwrite(file_path, img)
@@ -126,17 +117,17 @@ class ScreenshotManager:
             raise Exception(f"Remote stream capture failed: {str(e)}")
 
     def _capture_gstreamer(self, file_path: str, timestamp: str) -> ScreenshotResult:
-        """Capture screenshot from GStreamer TCP stream."""
+        
         sock = None
         try:
-            # Create socket connection
+            
             sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             sock.settimeout(10)
 
             self.logger.debug(f"Connecting to {self.config.network.gstreamer_host}:{self.config.network.gstreamer_port}")
             sock.connect((self.config.network.gstreamer_host, self.config.network.gstreamer_port))
 
-            # Receive data
+            
             buffer = b''
             jpeg_start = b'\xff\xd8'
             jpeg_end = b'\xff\xd9'
@@ -148,20 +139,20 @@ class ScreenshotManager:
 
                 buffer += data
 
-                # Look for JPEG markers
+                
                 start_idx = buffer.find(jpeg_start)
                 if start_idx != -1:
                     end_idx = buffer.find(jpeg_end, start_idx)
                     if end_idx != -1:
-                        # Found complete JPEG frame
+                        
                         jpeg_data = buffer[start_idx:end_idx + 2]
 
-                        # Decode JPEG
+                        
                         nparr = np.frombuffer(jpeg_data, np.uint8)
                         frame = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 
                         if frame is not None:
-                            # Update screen dimensions
+                            
                             self.config.screen.height, self.config.screen.width = frame.shape[:2]
 
                             cv2.imwrite(file_path, frame)
@@ -173,7 +164,7 @@ class ScreenshotManager:
                                 timestamp=timestamp
                             )
 
-                        # Clear processed data
+                        
                         buffer = buffer[end_idx + 2:]
                         break
 
@@ -188,5 +179,5 @@ class ScreenshotManager:
                 sock.close()
 
     def get_screen_dimensions(self) -> Tuple[int, int]:
-        """Get current screen dimensions."""
+        
         return self.config.screen.width, self.config.screen.height
