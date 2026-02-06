@@ -65,12 +65,10 @@ def extract_domain(url_or_dest):
 
 
 def build_unique_domain_map():
-    
-    print("Step 1: 扫描 per-app JSONL 文件...")
+
     domain_to_apps = defaultdict(set)
 
     jsonl_files = sorted(glob.glob(os.path.join(PER_APP_JSONL_DIR, '*.jsonl')))
-    print(f"  找到 {len(jsonl_files)} 个 per-app JSONL 文件")
 
     for jf in jsonl_files:
         app_fname = os.path.basename(jf).replace('.jsonl', '')
@@ -93,29 +91,12 @@ def build_unique_domain_map():
         if len(apps) == 1:
             unique_map[domain] = list(apps)[0]
 
-    
-    shared_2 = sum(1 for apps in domain_to_apps.values() if len(apps) == 2)
-    shared_many = sum(1 for apps in domain_to_apps.values() if len(apps) > 2)
-    print(f"  总 non-3P domains: {len(domain_to_apps)}")
-    print(f"  Unique to 1 app: {len(unique_map)}")
-    print(f"  Shared by 2 apps: {shared_2}")
-    print(f"  Shared by 3+ apps: {shared_many}")
-
-    
-    app_unique_count = defaultdict(int)
-    for domain, app in unique_map.items():
-        app_unique_count[app] += 1
-    apps_with_unique = len(app_unique_count)
-    print(f"  Apps with unique domains: {apps_with_unique}")
-
     return unique_map, domain_to_apps
 
 
 def clean_data_flows(unique_domain_map):
-    
-    print(f"\nStep 2: 清洗 data flows...")
+
     df = pd.read_csv(INPUT_FILE)
-    print(f"  原始行数: {len(df)}")
 
     
     df['dest_domain'] = df['destination'].apply(extract_domain)
@@ -160,71 +141,14 @@ def clean_data_flows(unique_domain_map):
                 kept_rows.append(idx)
 
     df_cleaned = df.loc[kept_rows].drop(columns=['dest_domain'])
-    df_removed = df.loc[removed_rows]
-
-    print(f"  移除行数: {len(removed_rows)} ({100*len(removed_rows)/len(df):.1f}%)")
-    print(f"  保留行数: {len(kept_rows)}")
-
-    
-    affected_apps = df_removed['app'].nunique()
-    print(f"  受影响的 apps: {affected_apps}")
-
-    
-    print(f"\n  Top 污染来源 (destination 属于哪个 app 但出现在其他 app 中):")
-    source_counts = defaultdict(int)
-    for victim, sources in contamination_stats.items():
-        for source, count in sources.items():
-            source_counts[source] += count
-    for source, count in sorted(source_counts.items(), key=lambda x: -x[1])[:15]:
-        victims = sum(1 for v in contamination_stats.values() if source in v)
-        print(f"    {source}: {count} flows 污染了 {victims} 个 app")
-
-    
-    print(f"\n  Top 受害 app (被移除最多 flows 的):")
-    victim_counts = {app: sum(sources.values()) for app, sources in contamination_stats.items()}
-    for app, count in sorted(victim_counts.items(), key=lambda x: -x[1])[:15]:
-        sources_str = ', '.join(f"{s}({c})" for s, c in
-                                sorted(contamination_stats[app].items(), key=lambda x: -x[1])[:3])
-        print(f"    {app}: -{count} flows (来自: {sources_str})")
 
     return df_cleaned
 
 
 def main():
-    print("=" * 60)
-    print("清洗 data_flows_with_appid.csv 中的交叉污染流量")
-    print("=" * 60)
-
     unique_domain_map, domain_to_apps = build_unique_domain_map()
     df_cleaned = clean_data_flows(unique_domain_map)
-
-    
     df_cleaned.to_csv(OUTPUT_FILE, index=False)
-    print(f"\n已保存清洗后的数据到: {OUTPUT_FILE}")
-
-    
-    df_orig = pd.read_csv(INPUT_FILE)
-    print(f"\n{'='*60}")
-    print("清洗前后对比:")
-    print(f"{'='*60}")
-    print(f"  原始 flows: {len(df_orig):,}")
-    print(f"  清洗后 flows: {len(df_cleaned):,}")
-    print(f"  移除: {len(df_orig) - len(df_cleaned):,} ({100*(len(df_orig)-len(df_cleaned))/len(df_orig):.1f}%)")
-    print(f"  原始 unique apps: {df_orig['app'].nunique()}")
-    print(f"  清洗后 unique apps: {df_cleaned['app'].nunique()}")
-    print(f"  原始 unique destinations: {df_orig['destination'].nunique()}")
-    print(f"  清洗后 unique destinations: {df_cleaned['destination'].nunique()}")
-
-    
-    print(f"\n  Per-app flow count 变化 (变化最大的):")
-    orig_counts = df_orig.groupby('app').size()
-    clean_counts = df_cleaned.groupby('app').size()
-    diff = (orig_counts - clean_counts.reindex(orig_counts.index, fill_value=0)).sort_values(ascending=False)
-    for app in diff.head(20).index:
-        o = orig_counts.get(app, 0)
-        c = clean_counts.get(app, 0)
-        if o > c:
-            print(f"    {app}: {o} → {c} (-{o-c}, {100*(o-c)/o:.0f}%)")
 
 
 if __name__ == "__main__":

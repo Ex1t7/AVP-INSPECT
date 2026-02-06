@@ -150,7 +150,6 @@ def export_per_app_csv(all_analysis: List[Dict], output_file: Path):
                 "|".join(a["third_party_collect"])
             ])
 
-    print(f"Exported: {output_file}")
 
 
 def export_data_types_csv(summary: Dict, output_file: Path):
@@ -173,7 +172,6 @@ def export_data_types_csv(summary: Dict, output_file: Path):
                 third_party_dict.get(dt, 0)
             ])
 
-    print(f"Exported: {output_file}")
 
 
 def export_detailed_json(all_analysis: List[Dict], summary: Dict, output_file: Path):
@@ -187,64 +185,25 @@ def export_detailed_json(all_analysis: List[Dict], summary: Dict, output_file: P
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
 
-    print(f"Exported: {output_file}")
 
 
 def main():
-    print("="*60)
-    print("PPAudit Results Analyzer")
-    print("="*60)
-
-    
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    
-    print("\n1. 加载 CUS Term Tuples...")
     all_data = load_all_term_tuples()
-    print(f"   加载了 {len(all_data)} 个 app 的数据")
 
-    
-    print("\n2. 分析每个 app...")
     all_analysis = []
     for app_id, tuples in all_data.items():
         analysis = analyze_single_app(app_id, tuples)
         all_analysis.append(analysis)
 
-    
     all_analysis.sort(key=lambda x: x["app_id"])
 
-    
-    print("\n3. 生成汇总报告...")
     summary = generate_summary_report(all_analysis)
 
-    
-    print(f"\n{'='*60}")
-    print("汇总统计")
-    print("="*60)
-    print(f"  总 Apps: {summary['total_apps']}")
-    print(f"  总 Tuples: {summary['total_tuples']}")
-    print(f"  平均 Tuples/App: {summary['avg_tuples_per_app']:.1f}")
-    print(f"  唯一数据类型: {summary['unique_data_types']}")
-
-    print(f"\n最常见的数据类型 (Top 15):")
-    for dt, count in summary["top_data_types"][:15]:
-        print(f"    {dt:30s} : {count} apps")
-
-    print(f"\n第一方最常收集的数据 (Top 10):")
-    for dt, count in summary["top_first_party_data"][:10]:
-        print(f"    {dt:30s} : {count} apps")
-
-    print(f"\n第三方最常收集的数据 (Top 10):")
-    for dt, count in summary["top_third_party_data"][:10]:
-        print(f"    {dt:30s} : {count} apps")
-
-    
-    print("\n4. 导出结果...")
     export_per_app_csv(all_analysis, OUTPUT_DIR / "ppaudit_per_app_summary.csv")
     export_data_types_csv(summary, OUTPUT_DIR / "ppaudit_data_types_freq.csv")
     export_detailed_json(all_analysis, summary, OUTPUT_DIR / "ppaudit_detailed_analysis.json")
-
-    print(f"\n✅ 分析完成! 结果保存在: {OUTPUT_DIR}")
 
 
 if __name__ == "__main__":

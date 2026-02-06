@@ -75,7 +75,7 @@ if __name__ == "__main__":
     
     test_image = "/mnt/ssd2/VR_monkey/screenshots/screenshot_20250820-051759.png"
     detected = quick_detect_center_ui(test_image)
-    print(f"快速检测结果: {detected}")
+    print(f"Detection result: {detected}")
     
     
     image_list = [
@@ -83,4 +83,4 @@ if __name__ == "__main__":
         
     ]
     results = batch_detect(image_list)
-    print(f"批量检测结果: {results}")
+    print(f"Batch detection results: {results}")

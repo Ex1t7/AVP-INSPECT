@@ -4,13 +4,13 @@
 #include "BleCombo.h" // Ensure you have the BleCombo library installed
 #include <ESP32Servo.h>
 
-#define rotation_angle 15   // 舵机偏转角度
+#define rotation_angle 15
 #define servo2_rotation_angle 25
-#define default_angle 90    // 舵机复位角度
-#define delay_time 2500     // 保持时间
+#define default_angle 90
+#define delay_time 2500
 
-Servo servo1;  // 控制连接到 D4(GPIO2) 的舵机
-Servo servo2;  // 控制连接到 D3(GPIO0) 的舵机
+Servo servo1;
+Servo servo2;
 
 void setup() {
   Serial.begin(115200);
@@ -22,7 +22,7 @@ void setup() {
   servo1.attach(12); // D2 -> GPIO5
   servo2.attach(13); // D3 -> GPIO6
 
-  servo1.write(default_angle); // 初始归位
+  servo1.write(default_angle);
   servo2.write(default_angle);
 }
 
@@ -47,19 +47,17 @@ void loop() {
       }
       else if (command.startsWith("TASKMGR")) {
         Serial.println("Using Servo to open Task Manager");
-        servo1.write(default_angle - rotation_angle); // 向左转
-        servo2.write(default_angle + servo2_rotation_angle); // 第二个舵机向右转
+        servo1.write(default_angle - rotation_angle);
+        servo2.write(default_angle + servo2_rotation_angle);
         delay(delay_time);
         servo1.write(default_angle);
-        servo2.write(default_angle); // 复位
+        servo2.write(default_angle);
       }
       else if (command.startsWith("HoldHome")) {
         Serial.println("Using Servo to hold Home button");
-        servo1.write(default_angle - rotation_angle); // 向左转
-        // servo2.write(default_angle + servo2_rotation_angle); // 第二个舵机向右转
+        servo1.write(default_angle - rotation_angle);
         delay(1500);
         servo1.write(default_angle);
-        // servo2.write(default_angle); // 复位
       }
       else if (command.startsWith("CLICK")) {
         // Format: CLICK button

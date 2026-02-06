@@ -23,13 +23,13 @@ CUS_TERM_TUPLES = PPAUDIT_ROOT / "output" / "cus_term_tuples"
 def step1_copy_policies(force=False):
     
     print("\n" + "="*60)
-    print("Step 1: 复制 cleaned_policies → pp_txts")
+    print("Step 1: Copy cleaned_policies → pp_txts")
     print("="*60)
 
     PP_TXTS.mkdir(parents=True, exist_ok=True)
 
     txt_files = list(CLEANED_POLICIES.glob("*.txt"))
-    print(f"找到 {len(txt_files)} 个 cleaned policy 文件")
+    print(f"Found {len(txt_files)} cleaned policy files")
 
     copied = 0
     skipped = 0
@@ -50,14 +50,14 @@ def step1_copy_policies(force=False):
         shutil.copy2(src_file, dst_file)
         copied += 1
 
-    print(f"  复制: {copied}, 跳过: {skipped}, 空文件: {empty}")
+    print(f"  Copied: {copied}, Skipped: {skipped}, Empty: {empty}")
     return True
 
 
 def step2_preprocess(force=False):
     
     print("\n" + "="*60)
-    print("Step 2: 预处理（分句）→ pp_txts_processed")
+    print("Step 2: Preprocess (sentence splitting) → pp_txts_processed")
     print("="*60)
 
     import nltk
@@ -72,7 +72,7 @@ def step2_preprocess(force=False):
     PP_TXTS_PROCESSED.mkdir(parents=True, exist_ok=True)
 
     txt_files = list(PP_TXTS.glob("*.txt"))
-    print(f"找到 {len(txt_files)} 个文件待处理")
+    print(f"Found {len(txt_files)} files to process")
 
     processed = 0
     skipped = 0
@@ -102,25 +102,25 @@ def step2_preprocess(force=False):
 
         processed += 1
         if processed % 50 == 0:
-            print(f"  已处理: {processed}")
+            print(f"  Processed: {processed}")
 
-    print(f"  处理: {processed}, 跳过: {skipped}")
+    print(f"  Processed: {processed}, Skipped: {skipped}")
     return True
 
 
 def step3_component_infer(force=False):
     
     print("\n" + "="*60)
-    print("Step 3: 组件分类 → pp_components")
+    print("Step 3: Component classification → pp_components")
     print("="*60)
 
     script_path = PP_COMPONENTS / "component_infer.py"
 
     if not script_path.exists():
-        print(f"  错误: 找不到 {script_path}")
+        print(f"  Error: Cannot find {script_path}")
         return False
 
-    
+
     os.chdir(PP_COMPONENTS)
     result = subprocess.run(
         [sys.executable, str(script_path)],
@@ -133,13 +133,13 @@ def step3_component_infer(force=False):
 def step4_extract_cus_tuples(force=False):
     
     print("\n" + "="*60)
-    print("Step 4: 提取 CUS phrase 三元组 → cus_phrase_tuples")
+    print("Step 4: Extract CUS phrase triplets → cus_phrase_tuples")
     print("="*60)
 
     script_path = PPAUDIT_ROOT / "cus_extract" / "extract_cus_phrase_tuple.py"
 
     if not script_path.exists():
-        print(f"  错误: 找不到 {script_path}")
+        print(f"  Error: Cannot find {script_path}")
         return False
 
     os.chdir(PPAUDIT_ROOT / "cus_extract")
@@ -154,13 +154,13 @@ def step4_extract_cus_tuples(force=False):
 def step5_phrase_to_term(force=False):
     
     print("\n" + "="*60)
-    print("Step 5: Phrase 到 Term 映射 → cus_term_tuples")
+    print("Step 5: Phrase to Term mapping → cus_term_tuples")
     print("="*60)
 
     script_path = PPAUDIT_ROOT / "phrase_to_term" / "phrase_to_term.py"
 
     if not script_path.exists():
-        print(f"  错误: 找不到 {script_path}")
+        print(f"  Error: Cannot find {script_path}")
         return False
 
     os.chdir(PPAUDIT_ROOT / "phrase_to_term")
@@ -175,7 +175,7 @@ def step5_phrase_to_term(force=False):
 def print_summary():
     
     print("\n" + "="*60)
-    print("Pipeline 完成统计")
+    print("Pipeline Summary")
     print("="*60)
 
     def count_files(path, pattern="*.json"):
@@ -183,21 +183,21 @@ def print_summary():
             return len(list(path.glob(pattern)))
         return 0
 
-    print(f"  pp_txts:           {count_files(PP_TXTS, '*.txt')} 文件")
-    print(f"  pp_txts_processed: {count_files(PP_TXTS_PROCESSED, '*.txt')} 文件")
-    print(f"  pp_components:     {count_files(PP_COMPONENTS)} 文件")
-    print(f"  cus_phrase_tuples: {count_files(CUS_PHRASE_TUPLES)} 文件")
-    print(f"  cus_term_tuples:   {count_files(CUS_TERM_TUPLES)} 文件")
+    print(f"  pp_txts:           {count_files(PP_TXTS, '*.txt')} files")
+    print(f"  pp_txts_processed: {count_files(PP_TXTS_PROCESSED, '*.txt')} files")
+    print(f"  pp_components:     {count_files(PP_COMPONENTS)} files")
+    print(f"  cus_phrase_tuples: {count_files(CUS_PHRASE_TUPLES)} files")
+    print(f"  cus_term_tuples:   {count_files(CUS_TERM_TUPLES)} files")
 
 
 def main():
     parser = argparse.ArgumentParser(description="PPAudit Pipeline Runner")
     parser.add_argument("--step", type=int, default=1, choices=[1,2,3,4,5],
-                        help="从指定步骤开始 (1-5)")
+                        help="Start from step (1-5)")
     parser.add_argument("--force", action="store_true",
-                        help="强制重新处理已存在的文件")
+                        help="Force reprocess existing files")
     parser.add_argument("--only", type=int, choices=[1,2,3,4,5],
-                        help="只运行指定步骤")
+                        help="Run only specified step")
     args = parser.parse_args()
 
     print("="*60)
@@ -205,10 +205,10 @@ def main():
     print("="*60)
 
     steps = [
-        (1, "复制 policies", step1_copy_policies),
-        (2, "预处理（分句）", step2_preprocess),
-        (3, "组件分类", step3_component_infer),
-        (4, "提取 CUS 三元组", step4_extract_cus_tuples),
+        (1, "Copy policies", step1_copy_policies),
+        (2, "Preprocess", step2_preprocess),
+        (3, "Component classification", step3_component_infer),
+        (4, "Extract CUS triplets", step4_extract_cus_tuples),
         (5, "Phrase → Term", step5_phrase_to_term),
     ]
 
@@ -220,11 +220,11 @@ def main():
     for step_num, step_name, step_func in steps:
         success = step_func(force=args.force)
         if not success:
-            print(f"\n步骤 {step_num} ({step_name}) 失败!")
+            print(f"\nStep {step_num} ({step_name}) failed!")
             sys.exit(1)
 
     print_summary()
-    print("\n✅ Pipeline 完成!")
+    print("\nPipeline completed!")
 
 
 if __name__ == "__main__":
