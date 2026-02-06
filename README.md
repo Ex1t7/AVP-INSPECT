@@ -80,7 +80,7 @@ An automated UI exploration tool for visionOS applications. It uses:
 **Usage:**
 ```bash
 # Explore a single app
-python vrmonkey/main.py --app "AppName" --timeout 10
+python vrmonkey/main.py --app "AppName"
 
 # Batch exploration
 python vrmonkey/run_batch_apps.py --csv apps.csv
