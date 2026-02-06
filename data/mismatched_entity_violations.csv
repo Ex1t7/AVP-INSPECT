@@ -1,0 +1,451 @@
+app_id,data_type,source,violation_type,collected_type,policy_entity,policy_is_1st_party,traffic_entity,traffic_is_1st_party,traffic_destination,mismatch_type
+6472496232,error report,policy,mismatched_entity_disclosure,error report,we,True,Unity,False,perf-events.cloud.unity3d.com,1st_to_3rd
+410395246,identifier,policy,mismatched_entity_disclosure,identifier,microsoft,True,Rebuyengine,False,www.facebook.com,1st_to_3rd
+6474687296,account,policy,mismatched_entity_disclosure,account,we,True,Rebuyengine,False,rebuyengine.com,1st_to_3rd
+6474687296,information,policy,mismatched_entity_disclosure,information,we,True,Aggle,False,oirt.aggle.net,1st_to_3rd
+410395246,face,policy,mismatched_entity_disclosure,face,we,True,Restockrocket,False,www.facebook.com,1st_to_3rd
+1446075923,email addr,policy,mismatched_entity_disclosure,email addr,we,True,Biltapp,False,publishers.biltapp.com,1st_to_3rd
+6472555496,password,policy,mismatched_entity_disclosure,password,we,True,Adobe,False,auth.services.adobe.com,1st_to_3rd
+493619333,phone num,policy,mismatched_entity_disclosure,phone num,we,True,Cloudfront,False,installations.youversionapi.com,1st_to_3rd
+6466742380,face,policy,mismatched_entity_disclosure,face,we,True,Google APIs,False,play.google.com,1st_to_3rd
+1614950275,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Aptabase,False,eu.aptabase.com,1st_to_3rd
+410395246,ip addr,policy,mismatched_entity_disclosure,ip addr,microsoft,True,Impact,False,trkapi.impact.com,1st_to_3rd
+1542143627,user id,policy,mismatched_entity_disclosure,user id,we,True,Adkernel,False,aol.tt.omtrdc.net,1st_to_3rd
+6474096371,system ver,policy,mismatched_entity_disclosure,system ver,we,True,Datadog,False,firebase-settings.crashlytics.com,1st_to_3rd
+6466820347,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Illusion,False,metrics.illusion.tech,1st_to_3rd
+282935706,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Redbull,False,publishers.biltapp.com,1st_to_3rd
+6473833932,person name,policy,mismatched_entity_disclosure,person name,we,True,Redbull,False,api.arte.tv,1st_to_3rd
+875319874,email addr,policy,mismatched_entity_disclosure,email addr,we,True,Discomax,False,telegraph.prd.api.discomax.com,1st_to_3rd
+1636872963,pii,policy,mismatched_entity_disclosure,pii,we,True,Atmo-aura,False,firebasestorage.googleapis.com,1st_to_3rd
+835599320,language,policy,mismatched_entity_disclosure,language,we,True,RevenueCat,False,firebase-settings.crashlytics.com,1st_to_3rd
+6476616491,information,policy,mismatched_entity_disclosure,information,we,True,Disney,False,disney.connections.edge.bamgrid.com,1st_to_3rd
+6472496232,user id,policy,mismatched_entity_disclosure,user id,we,True,Cloudfunctions,False,us-central1-tripp-prod.cloudfunctions.net,1st_to_3rd
+6451395577,pii,policy,mismatched_entity_disclosure,pii,we,True,Rebuyengine,False,geo.rebuyengine.com,1st_to_3rd
+6466659366,person name,policy,mismatched_entity_disclosure,person name,we,True,Gorgias,False,config.gorgias.help,1st_to_3rd
+530168168,identifier,policy,mismatched_entity_disclosure,identifier,we,True,Sentry,False,o4508239543730176.ingest.us.sentry.io,1st_to_3rd
+1630222596,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Google APIs,False,disney.api.edge.bamgrid.com,1st_to_3rd
+1229460906,person name,policy,mismatched_entity_disclosure,person name,we,True,Google APIs,False,fcmtoken.googleapis.com,1st_to_3rd
+1460319993,password,policy,mismatched_entity_disclosure,password,we,True,Icandiapps,False,api2.icandiapps.com,1st_to_3rd
+6479699008,type,policy,mismatched_entity_disclosure,type,we,True,Amazon,False,unagi.amazon.com,1st_to_3rd
+493619333,usage time,policy,mismatched_entity_disclosure,usage time,we,True,Biltapp,False,disney.api.edge.bamgrid.com,1st_to_3rd
+410395246,user id,policy,mismatched_entity_disclosure,user id,microsoft,True,DynamicYield,False,async-px.dynamicyield.com,1st_to_3rd
+1502142828,gameplay,policy,mismatched_entity_disclosure,gameplay,we,True,Atmo-aura,False,api.atmo-aura.fr,1st_to_3rd
+530168168,ip addr,policy,mismatched_entity_disclosure,ip addr,we,True,Paramountplus,False,www.paramountplus.com,1st_to_3rd
+6477569162,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Nissandime,False,analytics.twitter.com,1st_to_3rd
+1449511522,ip addr,policy,mismatched_entity_disclosure,ip addr,we,True,Braze,False,sdk.fra-02.braze.eu,1st_to_3rd
+6479699008,information,policy,mismatched_entity_disclosure,information,we,True,Amazon,False,www.amazon.com,1st_to_3rd
+6473833932,email addr,policy,mismatched_entity_disclosure,email addr,we,True,Biltapp,False,publishers.biltapp.com,1st_to_3rd
+546505307,employment,policy,mismatched_entity_disclosure,employment,we,True,Doubleclick,False,api.company-target.com,1st_to_3rd
+1448744070,system ver,policy,mismatched_entity_disclosure,system ver,we,True,Demdex,False,173bf10e.akstat.io,1st_to_3rd
+6450958030,pii,policy,mismatched_entity_disclosure,pii,we,True,Apple,False,edge-194.usqas5.icloud-content.com,1st_to_3rd
+6496682427,pii,policy,mismatched_entity_disclosure,pii,we,True,Rebuyengine,False,geo.rebuyengine.com,1st_to_3rd
+6475262918,pii,policy,mismatched_entity_disclosure,pii,we,True,Trip,False,ubt-sgp.trip.com,1st_to_3rd
+1616385207,person name,policy,mismatched_entity_disclosure,person name,we,True,Bamgrid,False,pcs.bamgrid.com,1st_to_3rd
+6472496232,type,policy,mismatched_entity_disclosure,type,we,True,Medium,False,us-central1-tripp-prod.cloudfunctions.net,1st_to_3rd
+6472555496,person name,policy,mismatched_entity_disclosure,person name,we,True,Adobe,False,siteintercept.qualtrics.com,1st_to_3rd
+6474687296,geo location,policy,mismatched_entity_disclosure,geo location,we,True,Liadm,False,i.liadm.com,1st_to_3rd
+282935706,gameplay,policy,mismatched_entity_disclosure,gameplay,we,True,Biltapp,False,publishers.biltapp.com,1st_to_3rd
+1472875808,system ver,policy,mismatched_entity_disclosure,system ver,we,True,RevenueCat,False,api.revenuecat.com,1st_to_3rd
+1271546805,pii,policy,mismatched_entity_disclosure,pii,we,True,Rebuyengine,False,geo.rebuyengine.com,1st_to_3rd
+410395246,type,policy,mismatched_entity_disclosure,type,microsoft,True,Hsprotect,False,collector-pxzc5j78di.hsprotect.net,1st_to_3rd
+364899325,system ver,policy,mismatched_entity_disclosure,system ver,we,True,RevenueCat,False,api.revenuecat.com,1st_to_3rd
+6473639841,information,policy,mismatched_entity_disclosure,information,we,True,Mixpanel,False,api.mixpanel.com,1st_to_3rd
+1523968394,pii,policy,mismatched_entity_disclosure,pii,we,True,Firebase,False,firebaseremoteconfig.googleapis.com,1st_to_3rd
+1493916909,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Mixpanel,False,api.mixpanel.com,1st_to_3rd
+282935706,browser type,policy,mismatched_entity_disclosure,browser type,we,True,Redbull,False,metrics-a.wbx2.com,1st_to_3rd
+6476938283,information,policy,mismatched_entity_disclosure,information,we,True,Tvsquared,False,collector-29673.us.tvsquared.com,1st_to_3rd
+410395246,information,policy,mismatched_entity_disclosure,information,microsoft,True,Aggle,False,oirt.aggle.net,1st_to_3rd
+546505307,vr movement,policy,mismatched_entity_disclosure,vr movement,we,True,Spotify,False,pixels.spotify.com,1st_to_3rd
+1644376309,billing,policy,mismatched_entity_disclosure,billing,we,True,Unity,False,config.uca.cloud.unity3d.com,1st_to_3rd
+6472496232,audio,policy,mismatched_entity_disclosure,audio,we,True,Cloudfunctions,False,us-central1-tripp-prod.cloudfunctions.net,1st_to_3rd
+6472555496,email addr,policy,mismatched_entity_disclosure,email addr,we,True,Adobe,False,server.messaging.adobe.com,1st_to_3rd
+546505307,usage info,policy,mismatched_entity_disclosure,usage info,platform provider,True,Amplitude,False,collector-29673.us.tvsquared.com,1st_to_3rd
+6477764879,information,policy,mismatched_entity_disclosure,information,we,True,Aggle,False,oirt.aggle.net,1st_to_3rd
+835599320,password,policy,mismatched_entity_disclosure,password,we,True,Mixpanel,False,api.mixpanel.com,1st_to_3rd
+6476616491,pii,policy,mismatched_entity_disclosure,pii,we,True,Bamgrid,False,disney.api.edge.bamgrid.com,1st_to_3rd
+1460319993,person name,policy,mismatched_entity_disclosure,person name,we,True,Mubi,False,api.mubi.com,1st_to_3rd
+6473833932,geo location,policy,mismatched_entity_disclosure,geo location,we,True,Arte,False,metrics-a.wbx2.com,1st_to_3rd
+6479699008,app ver,policy,mismatched_entity_disclosure,app ver,we,True,Amazon,False,www.amazon.com,1st_to_3rd
+6472360919,pii,policy,mismatched_entity_disclosure,pii,we,True,Widgetsmith,False,gcs-us-00002.content-storage-download.googleapis.com,1st_to_3rd
+493619333,device id,policy,mismatched_entity_disclosure,device id,we,True,Unity,False,disney.api.edge.bamgrid.com,1st_to_3rd
+1264730676,geo location,policy,mismatched_entity_disclosure,geo location,we,True,Amplitude,False,api.company-target.com,1st_to_3rd
+1542143627,billing,policy,mismatched_entity_disclosure,billing,we,True,Aol,False,help.aol.com,1st_to_3rd
+1630222596,person name,policy,mismatched_entity_disclosure,person name,we,True,Bamgrid,False,pcs.bamgrid.com,1st_to_3rd
+1644376309,pii,policy,mismatched_entity_disclosure,pii,we,True,Apple,False,play.google.com,1st_to_3rd
+6479699008,pii,policy,mismatched_entity_disclosure,pii,we,True,Amazon,False,www.amazon.com,1st_to_3rd
+1449511522,account,policy,mismatched_entity_disclosure,account,we,True,TelemetryDeck,False,nom.telemetrydeck.com,1st_to_3rd
+6472496232,billing,policy,mismatched_entity_disclosure,billing,we,True,Unity,False,us-central1-tripp-prod.cloudfunctions.net,1st_to_3rd
+6472496232,sexuality,policy,mismatched_entity_disclosure,sexuality,we,True,Cloudfunctions,False,us-central1-tripp-prod.cloudfunctions.net,1st_to_3rd
+282935706,phone num,policy,mismatched_entity_disclosure,phone num,we,True,Cloudfront,False,sdk.fra-02.braze.eu,1st_to_3rd
+1478757472,geo location,policy,mismatched_entity_disclosure,geo location,we,True,Arte,False,id.arte.tv,1st_to_3rd
+1460319993,email addr,policy,mismatched_entity_disclosure,email addr,we,True,RevenueCat,False,api.revenuecat.com,1st_to_3rd
+1502142828,usage time,policy,mismatched_entity_disclosure,usage time,we,True,Bluemoonsolitaire,False,content.bluemoonsolitaire.com,1st_to_3rd
+6472496232,app ver,policy,mismatched_entity_disclosure,app ver,we,True,Cloudfunctions,False,restcountries.com,1st_to_3rd
+1542143627,geo location,policy,mismatched_entity_disclosure,geo location,we,True,Aol,False,aol.tt.omtrdc.net,1st_to_3rd
+6466659366,system ver,policy,mismatched_entity_disclosure,system ver,we,True,Lijit,False,www.facebook.com,1st_to_3rd
+1542143627,pii,policy,mismatched_entity_disclosure,pii,we,True,Liadm,False,login.aol.com,1st_to_3rd
+478686126,pii,policy,mismatched_entity_disclosure,pii,we,True,Cloudfront,False,us-central1-heyaiku.cloudfunctions.net,1st_to_3rd
+6502086753,ip addr,policy,mismatched_entity_disclosure,ip addr,we,True,Impact,False,trkapi.impact.com,1st_to_3rd
+6473833932,device info,policy,mismatched_entity_disclosure,device info,we,True,Redbull,False,publishers.biltapp.com,1st_to_3rd
+1630222596,phone num,policy,mismatched_entity_disclosure,phone num,we,True,Youversionapi,False,installations.youversionapi.com,1st_to_3rd
+6474687296,ip addr,policy,mismatched_entity_disclosure,ip addr,we,True,Impact,False,trkapi.impact.com,1st_to_3rd
+410395246,app ver,policy,mismatched_entity_disclosure,app ver,we,True,Rebuyengine,False,www.facebook.com,1st_to_3rd
+6472496232,pii,policy,mismatched_entity_disclosure,pii,we,True,Cloudfunctions,False,restcountries.com,1st_to_3rd
+6472555496,geo location,policy,mismatched_entity_disclosure,geo location,we,True,Adobe,False,geo2.adobe.com,1st_to_3rd
+546505307,gameplay,policy,mismatched_entity_disclosure,gameplay,we,True,Amplitude,False,alb.reddit.com,1st_to_3rd
+6473833932,network,policy,mismatched_entity_disclosure,network,we,True,Wbx2,False,metrics-a.wbx2.com,1st_to_3rd
+576588894,person name,policy,mismatched_entity_disclosure,person name,we,True,Amplitude,False,sparlit.us.auth0.com,1st_to_3rd
+282935706,usage time,policy,mismatched_entity_disclosure,usage time,we,True,Biltapp,False,metrics-a.wbx2.com,1st_to_3rd
+1446075923,user id,policy,mismatched_entity_disclosure,user id,we,True,Biltapp,False,publishers.biltapp.com,1st_to_3rd
+6476938283,pii,policy,mismatched_entity_disclosure,pii,we,True,T,False,id.rlcdn.com,1st_to_3rd
+6475634958,system ver,policy,mismatched_entity_disclosure,system ver,we,True,RevenueCat,False,api.revenuecat.com,1st_to_3rd
+6473833932,identifier,policy,mismatched_entity_disclosure,identifier,we,True,Redbull,False,tv-api.redbull.com,1st_to_3rd
+410395246,pii,policy,mismatched_entity_disclosure,pii,microsoft,True,Rebuyengine,False,www.facebook.com,1st_to_3rd
+6478573714,ip addr,policy,mismatched_entity_disclosure,ip addr,we,True,Impact,False,trkapi.impact.com,1st_to_3rd
+1448744070,type,policy,mismatched_entity_disclosure,type,we,True,T,False,analytics.twitter.com,1st_to_3rd
+6472496232,age,policy,mismatched_entity_disclosure,age,we,True,Cloudfunctions,False,us-central1-tripp-prod.cloudfunctions.net,1st_to_3rd
+1523968394,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Mixpanel,False,api.mixpanel.com,1st_to_3rd
+867539680,pii,policy,mismatched_entity_disclosure,pii,we,True,Apple,False,www.youtube.com,1st_to_3rd
+1502142828,system ver,policy,mismatched_entity_disclosure,system ver,we,True,Google APIs,False,analytics-router-api-xm7votlrlq-uk.a.run.app,1st_to_3rd
+1448744070,information,policy,mismatched_entity_disclosure,information,we,True,Boomtrain,False,www.google.com,1st_to_3rd
+6476047156,pii,policy,mismatched_entity_disclosure,pii,we,True,Firebase,False,firebaseremoteconfig.googleapis.com,1st_to_3rd
+1449511522,app ver,policy,mismatched_entity_disclosure,app ver,we,True,Redbull,False,us-central1-heyaiku.cloudfunctions.net,1st_to_3rd
+1542143627,employment,policy,mismatched_entity_disclosure,employment,we,True,Doubleclick,False,www.google.com,1st_to_3rd
+282935706,language,policy,mismatched_entity_disclosure,language,we,True,Redbull,False,publishers.biltapp.com,1st_to_3rd
+1264730676,ip addr,policy,mismatched_entity_disclosure,ip addr,we,True,Company-target,False,api.company-target.com,1st_to_3rd
+6472496232,language,policy,mismatched_entity_disclosure,language,we,True,Gstatic,False,medium.com,1st_to_3rd
+6472555496,device info,policy,mismatched_entity_disclosure,device info,we,True,Adobe,False,cc-api-data.adobe.io,1st_to_3rd
+6469053057,pii,policy,mismatched_entity_disclosure,pii,law enforcement,True,Cloudfront,False,us-central1-heyaiku.cloudfunctions.net,1st_to_3rd
+961390574,pii,policy,mismatched_entity_disclosure,pii,we,True,Apple,False,edge-036.usqas5.icloud-content.com,1st_to_3rd
+1446075923,type,policy,mismatched_entity_disclosure,type,we,True,Redbull,False,disney.api.edge.bamgrid.com,1st_to_3rd
+1614950275,system ver,policy,mismatched_entity_disclosure,system ver,we,True,Aptabase,False,eu.aptabase.com,1st_to_3rd
+6472360919,usage info,policy,mismatched_entity_disclosure,usage info,third party,True,Mixpanel,False,api.mixpanel.com,1st_to_3rd
+410395246,language,policy,mismatched_entity_disclosure,language,microsoft,True,Amazonaws,False,www.facebook.com,1st_to_3rd
+1449511522,pii,policy,mismatched_entity_disclosure,pii,we,True,Redbull,False,us-central1-heyaiku.cloudfunctions.net,1st_to_3rd
+6466820347,system ver,policy,mismatched_entity_disclosure,system ver,we,True,RevenueCat,False,metrics.illusion.tech,1st_to_3rd
+6449050657,pii,policy,mismatched_entity_disclosure,pii,we,True,Themoviedb,False,api.themoviedb.org,1st_to_3rd
+493619333,person name,policy,mismatched_entity_disclosure,person name,we,True,Bamgrid,False,pcs.bamgrid.com,1st_to_3rd
+6480322995,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Mixpanel,False,api.mixpanel.com,1st_to_3rd
+1446075923,account,policy,mismatched_entity_disclosure,account,we,True,Cloudfront,False,metrics-a.wbx2.com,1st_to_3rd
+1446075923,information,policy,mismatched_entity_disclosure,information,third party,True,Disney,False,disney.connections.edge.bamgrid.com,1st_to_3rd
+1542143627,ip addr,policy,mismatched_entity_disclosure,ip addr,we,True,Aol,False,help.aol.com,1st_to_3rd
+282935706,browsing,policy,mismatched_entity_disclosure,browsing,we,True,Redbull,False,www.arte.tv,1st_to_3rd
+6473833932,user id,policy,mismatched_entity_disclosure,user id,we,True,Ziconic,False,publishers.biltapp.com,1st_to_3rd
+1644376309,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Unity,False,www.youtube.com,1st_to_3rd
+6472555496,identifier,policy,mismatched_entity_disclosure,identifier,we,True,Adobedc,False,www.facebook.com,1st_to_3rd
+6472496232,browsing,policy,mismatched_entity_disclosure,browsing,we,True,Cloudfunctions,False,play.google.com,1st_to_3rd
+6476618172,information,policy,mismatched_entity_disclosure,information,microsoft,True,Aggle,False,oirt.aggle.net,1st_to_3rd
+6475737516,system ver,policy,mismatched_entity_disclosure,system ver,we,True,RevenueCat,False,api.revenuecat.com,1st_to_3rd
+6473639841,browsing,policy,mismatched_entity_disclosure,browsing,we,True,Heypster-gif,False,heypster-gif.com,1st_to_3rd
+6502086753,information,policy,mismatched_entity_disclosure,information,we,True,Aggle,False,oirt.aggle.net,1st_to_3rd
+6479699008,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Amazon,False,pagead2.googlesyndication.com,1st_to_3rd
+6466659366,user id,policy,mismatched_entity_disclosure,user id,we,True,DynamicYield,False,async-px.dynamicyield.com,1st_to_3rd
+6474687296,gameplay,policy,mismatched_entity_disclosure,gameplay,we,True,Craft,False,alb.reddit.com,1st_to_3rd
+410395246,browsing,policy,mismatched_entity_disclosure,browsing,microsoft,True,Restockrocket,False,www.facebook.com,1st_to_3rd
+1493916909,usage time,policy,mismatched_entity_disclosure,usage time,we,True,Mixpanel,False,api.mixpanel.com,1st_to_3rd
+875319874,information,policy,mismatched_entity_disclosure,information,we,True,NBA,False,ottapp-appgw-client.nba.com,1st_to_3rd
+6476788088,device info,policy,mismatched_entity_disclosure,device info,we,True,YouTube,False,www.youtube.com,1st_to_3rd
+1542143627,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Clean,False,aol.tt.omtrdc.net,1st_to_3rd
+6469053057,device info,policy,mismatched_entity_disclosure,device info,third party,False,Redbull,True,publishers.biltapp.com,3rd_to_1st
+478686126,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Redbull,False,publishers.biltapp.com,1st_to_3rd
+1448744070,billing,policy,mismatched_entity_disclosure,billing,we,True,Nissan-api,False,us.nissan-api.net,1st_to_3rd
+493619333,email addr,policy,mismatched_entity_disclosure,email addr,we,True,Biltapp,False,publishers.biltapp.com,1st_to_3rd
+530168168,language,policy,mismatched_entity_disclosure,language,we,True,Paramountplus,False,www.paramountplus.com,1st_to_3rd
+530168168,ethnic,policy,mismatched_entity_disclosure,ethnic,we,True,Magicat,False,observatory-alpha.magicat.dev,1st_to_3rd
+576588894,geo location,policy,mismatched_entity_disclosure,geo location,we,True,Auth0,False,sparlit.us.auth0.com,1st_to_3rd
+6478573714,information,policy,mismatched_entity_disclosure,information,we,True,Aggle,False,oirt.aggle.net,1st_to_3rd
+6472496232,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Medium,False,us-central1-tripp-prod.cloudfunctions.net,1st_to_3rd
+6473639841,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Unity,False,config.uca.cloud.unity3d.com,1st_to_3rd
+6469053057,identifier,policy,mismatched_entity_disclosure,identifier,we,True,Redbull,False,tv-api.redbull.com,1st_to_3rd
+1616385207,user id,policy,mismatched_entity_disclosure,user id,we,True,Adblockpro,False,api.adblockpro.app,1st_to_3rd
+6476938283,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Amplitude,False,collector-29673.us.tvsquared.com,1st_to_3rd
+1448744070,geo location,policy,mismatched_entity_disclosure,geo location,we,True,Nissandime,False,www.infinitiusa.com,1st_to_3rd
+6472360919,gameplay,policy,mismatched_entity_disclosure,gameplay,we,True,Mixpanel,False,api.mixpanel.com,1st_to_3rd
+6472555496,user id,policy,mismatched_entity_disclosure,user id,we,True,Tiktokw,False,prod.adobeccstatic.com,1st_to_3rd
+1448744070,pii,policy,mismatched_entity_disclosure,pii,we,True,Infinitiusa,False,www.facebook.com,1st_to_3rd
+410395246,usage info,policy,mismatched_entity_disclosure,usage info,microsoft,True,Impact,False,signup.live.com,1st_to_3rd
+1446075923,billing,policy,mismatched_entity_disclosure,billing,we,True,Biltapp,False,disney.api.edge.bamgrid.com,1st_to_3rd
+6450958030,phone num,policy,mismatched_entity_disclosure,phone num,we,True,Apple,False,edge-194.usqas5.icloud-content.com,1st_to_3rd
+530168168,browsing,policy,mismatched_entity_disclosure,browsing,we,True,Paramountplus,False,www.paramountplus.com,1st_to_3rd
+6479620842,pii,policy,mismatched_entity_disclosure,pii,we,True,Rebuyengine,False,geo.rebuyengine.com,1st_to_3rd
+1264730676,information,policy,mismatched_entity_disclosure,information,we,True,Tvsquared,False,collector-29673.us.tvsquared.com,1st_to_3rd
+6472496232,password,policy,mismatched_entity_disclosure,password,we,True,Google APIs,False,www.googleapis.com,1st_to_3rd
+6476788088,ip addr,policy,mismatched_entity_disclosure,ip addr,we,True,YouTube,False,www.youtube.com,1st_to_3rd
+6466659366,information,policy,mismatched_entity_disclosure,information,we,True,Google APIs,False,gcs-us-00003.content-storage-upload.googleapis.com,1st_to_3rd
+6469053057,ip addr,policy,mismatched_entity_disclosure,ip addr,we,True,Braze,False,sdk.fra-02.braze.eu,1st_to_3rd
+1229460906,account,policy,mismatched_entity_disclosure,account,we,True,TelemetryDeck,False,nom.telemetrydeck.com,1st_to_3rd
+6476047156,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Mixpanel,False,api.mixpanel.com,1st_to_3rd
+6476806312,geo location,policy,mismatched_entity_disclosure,geo location,we,True,Amplitude,False,api.company-target.com,1st_to_3rd
+1598173381,pii,policy,mismatched_entity_disclosure,pii,we,True,Medium,False,play.google.com,1st_to_3rd
+1446075923,geo location,policy,mismatched_entity_disclosure,geo location,we,True,Youversionapi,False,metrics-a.wbx2.com,1st_to_3rd
+530168168,device id,policy,mismatched_entity_disclosure,device id,we,True,Paramountplus,False,www.paramountplus.com,1st_to_3rd
+1472875808,pii,policy,mismatched_entity_disclosure,pii,we,True,Cardpointers,False,api.cardpointers.com,1st_to_3rd
+1446075923,pii,policy,mismatched_entity_disclosure,pii,social network,True,Redbull,False,disney.api.edge.bamgrid.com,1st_to_3rd
+6479699008,browser type,policy,mismatched_entity_disclosure,browser type,we,True,Amazon,False,unagi.amazon.com,1st_to_3rd
+1542143627,information,policy,mismatched_entity_disclosure,information,social network,True,Doubleclick,False,www.google.com,1st_to_3rd
+6476618172,pii,policy,mismatched_entity_disclosure,pii,we,True,Google APIs,False,geo.rebuyengine.com,1st_to_3rd
+1365531024,pii,policy,mismatched_entity_disclosure,pii,we,True,Omnigroup,False,update.omnigroup.com,1st_to_3rd
+6474096371,error report,policy,mismatched_entity_disclosure,error report,we,True,Firebase,False,firebase-settings.crashlytics.com,1st_to_3rd
+546505307,education,policy,mismatched_entity_disclosure,education,we,True,Company-target,False,api.company-target.com,1st_to_3rd
+546505307,browsing,policy,mismatched_entity_disclosure,browsing,third party,False,Company-target,True,api.company-target.com,3rd_to_1st
+6502086753,pii,policy,mismatched_entity_disclosure,pii,we,True,Rebuyengine,False,www.facebook.com,1st_to_3rd
+1460319993,user id,policy,mismatched_entity_disclosure,user id,we,True,RevenueCat,False,api.revenuecat.com,1st_to_3rd
+1448744070,device info,policy,mismatched_entity_disclosure,device info,we,True,Shiftdigitalapps,False,tagging.shiftdigitalapps.io,1st_to_3rd
+1449511522,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Redbull,False,tv-api.redbull.com,1st_to_3rd
+6472496232,model,policy,mismatched_entity_disclosure,model,we,True,Firebase,False,firebase-settings.crashlytics.com,1st_to_3rd
+6472496232,body measure,policy,mismatched_entity_disclosure,body measure,we,True,Cloudfunctions,False,play.google.com,1st_to_3rd
+6449050657,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Mixpanel,False,api.mixpanel.com,1st_to_3rd
+1542143627,browser type,policy,mismatched_entity_disclosure,browser type,we,True,Omtrdc,False,aol.tt.omtrdc.net,1st_to_3rd
+1616385207,information,policy,mismatched_entity_disclosure,information,we,True,Disney,False,disney.connections.edge.bamgrid.com,1st_to_3rd
+875319874,pii,policy,mismatched_entity_disclosure,pii,we,True,NBA,False,core-api.nba.com,1st_to_3rd
+6472555496,information,policy,mismatched_entity_disclosure,information,social network,True,Flashtalking,False,pt.ispot.tv,1st_to_3rd
+6473833932,billing,policy,mismatched_entity_disclosure,billing,we,True,Biltapp,False,publishers.biltapp.com,1st_to_3rd
+1502142828,account,policy,mismatched_entity_disclosure,account,we,True,Unity,False,config.uca.cloud.unity3d.com,1st_to_3rd
+1636872963,browsing,policy,mismatched_entity_disclosure,browsing,we,True,Getpines,False,api.getpines.app,1st_to_3rd
+6474687296,usage time,policy,mismatched_entity_disclosure,usage time,third party,False,Decathlon,True,www.decathlon.com,3rd_to_1st
+410395246,body measure,policy,mismatched_entity_disclosure,body measure,we,True,Rebuyengine,False,analytics.google.com,1st_to_3rd
+410395246,gameplay,policy,mismatched_entity_disclosure,gameplay,we,True,Reddit,False,alb.reddit.com,1st_to_3rd
+1448744070,identifier,policy,mismatched_entity_disclosure,identifier,we,True,Nissandime,False,www.facebook.com,1st_to_3rd
+6475701291,email addr,policy,mismatched_entity_disclosure,email addr,we,True,RevenueCat,False,api.revenuecat.com,1st_to_3rd
+1264730676,app ver,policy,mismatched_entity_disclosure,app ver,we,True,Company-target,False,api.company-target.com,1st_to_3rd
+1446075923,device info,policy,mismatched_entity_disclosure,device info,we,True,Redbull,False,disney.api.edge.bamgrid.com,1st_to_3rd
+6478573714,pii,policy,mismatched_entity_disclosure,pii,we,True,Rebuyengine,False,geo.rebuyengine.com,1st_to_3rd
+282935706,person name,policy,mismatched_entity_disclosure,person name,we,True,Redbull,False,api.arte.tv,1st_to_3rd
+410395246,browser type,policy,mismatched_entity_disclosure,browser type,microsoft,True,Decathlon,False,www.decathlon.com,1st_to_3rd
+1448744070,ip addr,policy,mismatched_entity_disclosure,ip addr,we,True,Dotomi,False,173bf10e.akstat.io,1st_to_3rd
+1229460906,app ver,policy,mismatched_entity_disclosure,app ver,we,True,Google APIs,False,firebaseinstallations.googleapis.com,1st_to_3rd
+6473833932,pii,policy,mismatched_entity_disclosure,pii,we,True,Cloudfront,False,us-central1-heyaiku.cloudfunctions.net,1st_to_3rd
+1264730676,pii,policy,mismatched_entity_disclosure,pii,we,True,T,False,id.rlcdn.com,1st_to_3rd
+6466659366,geo location,policy,mismatched_entity_disclosure,geo location,we,True,Google APIs,False,i.liadm.com,1st_to_3rd
+6476788088,account,policy,mismatched_entity_disclosure,account,we,True,YouTube,False,www.youtube.com,1st_to_3rd
+1446075923,identifier,policy,mismatched_entity_disclosure,identifier,we,True,Youversionapi,False,disney.api.edge.bamgrid.com,1st_to_3rd
+6466659366,pii,policy,mismatched_entity_disclosure,pii,we,True,Google APIs,False,www.facebook.com,1st_to_3rd
+6476788088,information,policy,mismatched_entity_disclosure,information,we,True,YouTube,False,www.youtube.com,1st_to_3rd
+6472360919,usage time,policy,mismatched_entity_disclosure,usage time,we,True,Mixpanel,False,api.mixpanel.com,1st_to_3rd
+1636872963,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Mixpanel,False,api.mixpanel.com,1st_to_3rd
+1229460906,geo location,policy,mismatched_entity_disclosure,geo location,we,True,Google APIs,False,api.safeshellvpn.com,1st_to_3rd
+1229460906,pii,policy,mismatched_entity_disclosure,pii,we,True,Firebase,False,firebaseremoteconfig.googleapis.com,1st_to_3rd
+1448744070,usage info,policy,mismatched_entity_disclosure,usage info,we,True,T,False,analytics.twitter.com,1st_to_3rd
+282935706,email addr,policy,mismatched_entity_disclosure,email addr,we,True,Biltapp,False,publishers.biltapp.com,1st_to_3rd
+1446075923,ip addr,policy,mismatched_entity_disclosure,ip addr,we,True,Braze,False,sdk.fra-02.braze.eu,1st_to_3rd
+1478757472,pii,policy,mismatched_entity_disclosure,pii,we,True,Arte,False,event.arte.tv,1st_to_3rd
+6472496232,phone num,policy,mismatched_entity_disclosure,phone num,we,True,Unity,False,us-central1-tripp-prod.cloudfunctions.net,1st_to_3rd
+6472496232,screen,policy,mismatched_entity_disclosure,screen,we,True,Unity,False,perf-events.cloud.unity3d.com,1st_to_3rd
+6479699008,usage time,policy,mismatched_entity_disclosure,usage time,we,True,Amazon,False,unagi.amazon.com,1st_to_3rd
+6472496232,vr headset,policy,mismatched_entity_disclosure,vr headset,we,True,Cloudfunctions,False,us-central1-tripp-prod.cloudfunctions.net,1st_to_3rd
+1523682319,geo location,policy,mismatched_entity_disclosure,geo location,we,True,Liadm,False,i.liadm.com,1st_to_3rd
+410395246,phone num,policy,mismatched_entity_disclosure,phone num,we,True,Decathlon,False,www.decathlon.com,1st_to_3rd
+1264730676,language,policy,mismatched_entity_disclosure,language,we,True,Company-target,False,api.company-target.com,1st_to_3rd
+475772902,geo location,policy,mismatched_entity_disclosure,geo location,we,True,TelemetryDeck,False,api.segment.io,1st_to_3rd
+1616385207,pii,policy,mismatched_entity_disclosure,pii,we,True,Com,False,apiv2.cricket.com.au,1st_to_3rd
+1472875808,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Cardpointers,False,api.cardpointers.com,1st_to_3rd
+1446075923,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Redbull,False,disney.api.edge.bamgrid.com,1st_to_3rd
+6472555496,pii,policy,mismatched_entity_disclosure,pii,we,True,Demandbase,False,www.facebook.com,1st_to_3rd
+6478573714,browsing,policy,mismatched_entity_disclosure,browsing,we,True,Restockrocket,False,www.facebook.com,1st_to_3rd
+6466716447,pii,policy,mismatched_entity_disclosure,pii,we,True,Cloudfunctions,False,restcountries.com,1st_to_3rd
+1469995354,pii,policy,mismatched_entity_disclosure,pii,we,True,Google APIs,False,de2.api.radio-browser.info,1st_to_3rd
+334876990,app ver,policy,mismatched_entity_disclosure,app ver,we,True,TelemetryDeck,False,nom.telemetrydeck.com,1st_to_3rd
+6472496232,usage time,policy,mismatched_entity_disclosure,usage time,we,True,Medium,False,us-central1-tripp-prod.cloudfunctions.net,1st_to_3rd
+6476047156,app ver,policy,mismatched_entity_disclosure,app ver,we,True,Mixpanel,False,api.mixpanel.com,1st_to_3rd
+1296674639,person name,policy,mismatched_entity_disclosure,person name,we,True,Amplitude,False,api2.amplitude.com,1st_to_3rd
+711503134,information,policy,mismatched_entity_disclosure,information,we,True,Mixpanel,False,api.mixpanel.com,1st_to_3rd
+6477695159,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Spatialstation,False,api.prod.spatial-station-api.spatialstation.app,1st_to_3rd
+6473833932,browsing,policy,mismatched_entity_disclosure,browsing,we,True,Redbull,False,www.arte.tv,1st_to_3rd
+493619333,user id,policy,mismatched_entity_disclosure,user id,twitter,True,Biltapp,False,publishers.biltapp.com,1st_to_3rd
+6474254673,pii,policy,mismatched_entity_disclosure,pii,we,True,Cardpointers,False,api.cardpointers.com,1st_to_3rd
+6466659366,identifier,policy,mismatched_entity_disclosure,identifier,we,True,Rebuyengine,False,www.facebook.com,1st_to_3rd
+6461209319,pii,policy,mismatched_entity_disclosure,pii,we,True,Google APIs,False,analytics.google.com,1st_to_3rd
+410395246,usage time,policy,mismatched_entity_disclosure,usage time,microsoft,True,Decathlon,False,www.decathlon.com,1st_to_3rd
+334876990,geo location,policy,mismatched_entity_disclosure,geo location,we,True,TelemetryDeck,False,api.themoviedb.org,1st_to_3rd
+334876990,pii,policy,mismatched_entity_disclosure,pii,we,True,Themoviedb,False,api.themoviedb.org,1st_to_3rd
+1448744070,gameplay,policy,mismatched_entity_disclosure,gameplay,we,True,Amazon-adsystem,False,analytics.google.com,1st_to_3rd
+6476882081,pii,policy,mismatched_entity_disclosure,pii,we,True,Googlesyndication,False,www.googleadservices.com,1st_to_3rd
+6479699008,browsing,policy,mismatched_entity_disclosure,browsing,we,True,Amazon,False,www.amazon.com,1st_to_3rd
+1229460906,face,policy,mismatched_entity_disclosure,face,we,True,Google APIs,False,firebaseinstallations.googleapis.com,1st_to_3rd
+6443904179,information,policy,mismatched_entity_disclosure,information,we,True,YouTube,False,www.youtube.com,1st_to_3rd
+6523429904,pii,policy,mismatched_entity_disclosure,pii,we,True,Google APIs,False,securetoken.googleapis.com,1st_to_3rd
+1460319993,geo location,policy,mismatched_entity_disclosure,geo location,we,True,TelemetryDeck,False,nom.telemetrydeck.com,1st_to_3rd
+6466659366,ip addr,policy,mismatched_entity_disclosure,ip addr,we,True,Impact,False,trkapi.impact.com,1st_to_3rd
+1460319993,pii,policy,mismatched_entity_disclosure,pii,we,True,Google,False,api.icandiapps.com,1st_to_3rd
+6476788088,geo location,policy,mismatched_entity_disclosure,geo location,we,True,YouTube,False,www.youtube.com,1st_to_3rd
+1112433234,geo location,policy,mismatched_entity_disclosure,geo location,we,True,YouTube,False,www.youtube.com,1st_to_3rd
+6476788088,pii,policy,mismatched_entity_disclosure,pii,we,True,Googlevideo,False,www.youtube.com,1st_to_3rd
+1478757472,browsing,policy,mismatched_entity_disclosure,browsing,we,True,Arte,False,event.arte.tv,1st_to_3rd
+1448744070,browser type,policy,mismatched_entity_disclosure,browser type,we,True,Dotomi,False,login-ds.dotomi.com,1st_to_3rd
+1542143627,browsing,policy,mismatched_entity_disclosure,browsing,we,True,Liadm,False,login.aol.com,1st_to_3rd
+1630222596,geo location,policy,mismatched_entity_disclosure,geo location,we,True,Youversionapi,False,metrics-a.wbx2.com,1st_to_3rd
+6473833932,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Redbull,False,publishers.biltapp.com,1st_to_3rd
+6475634958,identifier,policy,mismatched_entity_disclosure,identifier,we,True,Gamepass,False,catalog.gamepass.com,1st_to_3rd
+6472555496,employment,policy,mismatched_entity_disclosure,employment,we,True,Googleadservices,False,www.google.com,1st_to_3rd
+282935706,system ver,policy,mismatched_entity_disclosure,system ver,we,True,Redbull,False,publishers.biltapp.com,1st_to_3rd
+493619333,type,policy,mismatched_entity_disclosure,type,we,True,Google APIs,False,disney.api.edge.bamgrid.com,1st_to_3rd
+6476806312,information,policy,mismatched_entity_disclosure,information,we,True,Tvsquared,False,collector-29673.us.tvsquared.com,1st_to_3rd
+1264730676,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Amplitude,False,collector-29673.us.tvsquared.com,1st_to_3rd
+6472496232,system ver,policy,mismatched_entity_disclosure,system ver,we,True,Unity,False,us-central1-tripp-prod.cloudfunctions.net,1st_to_3rd
+6466659366,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Impact,False,monorail-edge.shopifysvc.com,1st_to_3rd
+700695106,information,policy,mismatched_entity_disclosure,information,we,True,Google APIs,False,gcs-us-00003.content-storage-upload.googleapis.com,1st_to_3rd
+1449511522,usage time,policy,mismatched_entity_disclosure,usage time,we,True,Braze,False,sdk.fra-02.braze.eu,1st_to_3rd
+493619333,account,policy,mismatched_entity_disclosure,account,we,True,Cloudfront,False,metrics-a.wbx2.com,1st_to_3rd
+6444380323,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Mixpanel,False,api.mixpanel.com,1st_to_3rd
+6472555496,education,policy,mismatched_entity_disclosure,education,we,True,Adobe,False,sstats.adobe.com,1st_to_3rd
+493619333,information,policy,mismatched_entity_disclosure,information,google analytic,True,Disney,False,disney.connections.edge.bamgrid.com,1st_to_3rd
+334876990,language,policy,mismatched_entity_disclosure,language,we,True,TelemetryDeck,False,api.themoviedb.org,1st_to_3rd
+6472360919,password,policy,mismatched_entity_disclosure,password,we,True,Mixpanel,False,api.mixpanel.com,1st_to_3rd
+1229460906,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Google APIs,False,api.safeshellvpn.com,1st_to_3rd
+1446075923,browser type,policy,mismatched_entity_disclosure,browser type,we,True,Redbull,False,metrics-a.wbx2.com,1st_to_3rd
+6474096371,pii,policy,mismatched_entity_disclosure,pii,we,True,Datadog,False,firebase-settings.crashlytics.com,1st_to_3rd
+410395246,system ver,policy,mismatched_entity_disclosure,system ver,we,True,Decathlon,False,www.facebook.com,1st_to_3rd
+1478757472,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Arte,False,id.arte.tv,1st_to_3rd
+1112433234,device info,policy,mismatched_entity_disclosure,device info,we,True,YouTube,False,www.youtube.com,1st_to_3rd
+6480082996,pii,policy,mismatched_entity_disclosure,pii,we,True,Themoviedb,False,api.themoviedb.org,1st_to_3rd
+6496682427,person name,policy,mismatched_entity_disclosure,person name,we,True,Gorgias,False,api2.amplitude.com,1st_to_3rd
+1537372328,pii,policy,mismatched_entity_disclosure,pii,we,True,Firebase,False,firebaseremoteconfig.googleapis.com,1st_to_3rd
+6472555496,message log,policy,mismatched_entity_disclosure,message log,we,True,Adobe,False,idg.adobe.com,1st_to_3rd
+6484504330,information,policy,mismatched_entity_disclosure,information,we,True,Aggle,False,oirt.aggle.net,1st_to_3rd
+576588894,pii,policy,mismatched_entity_disclosure,pii,we,True,Fifthstarlabs,False,celestrak.org,1st_to_3rd
+6478209364,system ver,policy,mismatched_entity_disclosure,system ver,we,True,RevenueCat,False,api.revenuecat.com,1st_to_3rd
+6472555496,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Ispot,False,siteintercept.qualtrics.com,1st_to_3rd
+1296674639,geo location,policy,mismatched_entity_disclosure,geo location,we,True,Apple,False,edge-036.usqas5.icloud-content.com,1st_to_3rd
+6474687296,person name,policy,mismatched_entity_disclosure,person name,we,True,Gorgias,False,api2.amplitude.com,1st_to_3rd
+835599320,pii,policy,mismatched_entity_disclosure,pii,we,True,Firebase,False,firebase-settings.crashlytics.com,1st_to_3rd
+6474096371,language,policy,mismatched_entity_disclosure,language,we,True,Firebase,False,firebase-settings.crashlytics.com,1st_to_3rd
+1449511522,system ver,policy,mismatched_entity_disclosure,system ver,we,True,Redbull,False,tv-api.redbull.com,1st_to_3rd
+282935706,ip addr,policy,mismatched_entity_disclosure,ip addr,we,True,Braze,False,sdk.fra-02.braze.eu,1st_to_3rd
+6443904179,pii,policy,mismatched_entity_disclosure,pii,we,True,Googlevideo,False,www.youtube.com,1st_to_3rd
+1112433234,error report,policy,mismatched_entity_disclosure,error report,we,True,Firebase,False,cloud.timelines.app,1st_to_3rd
+1449511522,browsing,policy,mismatched_entity_disclosure,browsing,we,True,Redbull,False,www.arte.tv,1st_to_3rd
+1502142828,user id,policy,mismatched_entity_disclosure,user id,we,True,RevenueCat,False,api.adblockpro.app,1st_to_3rd
+6474254673,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Mixpanel,False,api.cardpointers.com,1st_to_3rd
+1112433234,ip addr,policy,mismatched_entity_disclosure,ip addr,we,True,Firebase,False,firebase-settings.crashlytics.com,1st_to_3rd
+1446075923,phone num,policy,mismatched_entity_disclosure,phone num,we,True,Cloudfront,False,installations.youversionapi.com,1st_to_3rd
+1229460906,model,policy,mismatched_entity_disclosure,model,we,True,TelemetryDeck,False,nom.telemetrydeck.com,1st_to_3rd
+6461209319,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Tiktokw,False,wa.appsflyer.com,1st_to_3rd
+334876990,usage info,policy,mismatched_entity_disclosure,usage info,we,True,TelemetryDeck,False,nom.telemetrydeck.com,1st_to_3rd
+410395246,password,policy,mismatched_entity_disclosure,password,microsoft,True,Rebuyengine,False,rebuyengine.com,1st_to_3rd
+6476882081,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Google,False,www.youtube.com,1st_to_3rd
+6466659366,browser type,policy,mismatched_entity_disclosure,browser type,we,True,Decathlon,False,www.decathlon.com,1st_to_3rd
+6523429904,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Mixpanel,False,api.mixpanel.com,1st_to_3rd
+6476806312,pii,policy,mismatched_entity_disclosure,pii,we,True,T,False,id.rlcdn.com,1st_to_3rd
+6474687296,screen,policy,mismatched_entity_disclosure,screen,we,True,Google,False,www.merchant-center-analytics.goog,1st_to_3rd
+1460319993,usage info,policy,mismatched_entity_disclosure,usage info,we,True,TelemetryDeck,False,api.icandiapps.com,1st_to_3rd
+700695106,geo location,policy,mismatched_entity_disclosure,geo location,we,True,Google APIs,False,gcs-us-00003.content-storage-upload.googleapis.com,1st_to_3rd
+6476788088,usage info,policy,mismatched_entity_disclosure,usage info,we,True,YouTube,False,www.youtube.com,1st_to_3rd
+700695106,pii,policy,mismatched_entity_disclosure,pii,we,True,Google APIs,False,gcs-us-00003.content-storage-upload.googleapis.com,1st_to_3rd
+282935706,user id,policy,mismatched_entity_disclosure,user id,we,True,Ziconic,False,publishers.biltapp.com,1st_to_3rd
+1296674639,device info,policy,mismatched_entity_disclosure,device info,we,True,YouTube,False,www.youtube.com,1st_to_3rd
+493619333,geo location,policy,mismatched_entity_disclosure,geo location,we,True,Youversionapi,False,metrics-a.wbx2.com,1st_to_3rd
+475772902,type,policy,mismatched_entity_disclosure,type,we,True,TelemetryDeck,False,cdn.contentful.com,1st_to_3rd
+6472360919,account,policy,mismatched_entity_disclosure,account,we,True,TelemetryDeck,False,nom.telemetrydeck.com,1st_to_3rd
+1523682319,information,policy,mismatched_entity_disclosure,information,we,True,Aggle,False,oirt.aggle.net,1st_to_3rd
+6472555496,body measure,policy,mismatched_entity_disclosure,body measure,we,True,Adobedc,False,dcs.adobedc.net,1st_to_3rd
+6472555496,gameplay,policy,mismatched_entity_disclosure,gameplay,we,True,Adobedc,False,dcs.adobedc.net,1st_to_3rd
+1636872963,system ver,policy,mismatched_entity_disclosure,system ver,we,True,Mixpanel,False,api.mixpanel.com,1st_to_3rd
+1493916909,identifier,policy,mismatched_entity_disclosure,identifier,we,True,Mixpanel,False,api.mixpanel.com,1st_to_3rd
+835599320,identifier,policy,mismatched_entity_disclosure,identifier,we,True,Mixpanel,False,api.mixpanel.com,1st_to_3rd
+6477695159,usage time,policy,mismatched_entity_disclosure,usage time,we,True,Spatialstation,False,api.prod.spatial-station-api.spatialstation.app,1st_to_3rd
+1542143627,person name,policy,mismatched_entity_disclosure,person name,we,True,Aol,False,aol.tt.omtrdc.net,1st_to_3rd
+6472496232,height,policy,mismatched_entity_disclosure,height,we,True,Cloudfunctions,False,us-central1-tripp-prod.cloudfunctions.net,1st_to_3rd
+6472555496,browser type,policy,mismatched_entity_disclosure,browser type,we,True,Tiktokw,False,tr6.snapchat.com,1st_to_3rd
+6484504330,pii,policy,mismatched_entity_disclosure,pii,we,True,Rebuyengine,False,geo.rebuyengine.com,1st_to_3rd
+1448744070,browsing,policy,mismatched_entity_disclosure,browsing,we,True,Infinitiusa,False,www.facebook.com,1st_to_3rd
+6466659366,phone num,policy,mismatched_entity_disclosure,phone num,we,True,Decathlon,False,geo.rebuyengine.com,1st_to_3rd
+6466659366,app ver,policy,mismatched_entity_disclosure,app ver,we,True,Google APIs,False,www.facebook.com,1st_to_3rd
+6472555496,audio,policy,mismatched_entity_disclosure,audio,we,True,Adobe,False,green-server.messaging.adobe.com,1st_to_3rd
+493619333,device info,policy,mismatched_entity_disclosure,device info,we,True,Biltapp,False,disney.api.edge.bamgrid.com,1st_to_3rd
+6472496232,person name,policy,mismatched_entity_disclosure,person name,we,True,Cloudfunctions,False,us-central1-tripp-prod.cloudfunctions.net,1st_to_3rd
+1229460906,phone num,policy,mismatched_entity_disclosure,phone num,we,True,Safeshellvpn,False,api.safeshellvpn.com,1st_to_3rd
+6474096371,password,policy,mismatched_entity_disclosure,password,we,True,Lowes,False,apis.lowes.com,1st_to_3rd
+576588894,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Fifthstarlabs,False,stats.fifthstarlabs.io,1st_to_3rd
+6472496232,account,policy,mismatched_entity_disclosure,account,we,True,Unity,False,us-central1-tripp-prod.cloudfunctions.net,1st_to_3rd
+6476788088,gameplay,policy,mismatched_entity_disclosure,gameplay,we,True,YouTube,False,www.youtube.com,1st_to_3rd
+410395246,person name,policy,mismatched_entity_disclosure,person name,microsoft,True,Gorgias,False,signup.live.com,1st_to_3rd
+1112433234,information,policy,mismatched_entity_disclosure,information,twitter,True,YouTube,False,www.youtube.com,1st_to_3rd
+1542143627,phone num,policy,mismatched_entity_disclosure,phone num,we,True,Googlesyndication,False,onetag-sys.com,1st_to_3rd
+478686126,email addr,policy,mismatched_entity_disclosure,email addr,we,True,Biltapp,False,publishers.biltapp.com,1st_to_3rd
+835599320,usage info,policy,mismatched_entity_disclosure,usage info,third party,True,Mixpanel,False,api.mixpanel.com,1st_to_3rd
+1082170746,information,policy,mismatched_entity_disclosure,information,we,True,Parastorage,False,siteassets.parastorage.com,1st_to_3rd
+493619333,identifier,policy,mismatched_entity_disclosure,identifier,platform provider,True,Youversionapi,False,disney.api.edge.bamgrid.com,1st_to_3rd
+410395246,account,policy,mismatched_entity_disclosure,account,we,True,Rebuyengine,False,rebuyengine.com,1st_to_3rd
+1630222596,information,policy,mismatched_entity_disclosure,information,we,True,Disney,False,disney.connections.edge.bamgrid.com,1st_to_3rd
+6466659366,usage time,policy,mismatched_entity_disclosure,usage time,we,True,Decathlon,False,www.decathlon.com,1st_to_3rd
+6472496232,email addr,policy,mismatched_entity_disclosure,email addr,we,True,Unity,False,perf-events.cloud.unity3d.com,1st_to_3rd
+1502142828,billing,policy,mismatched_entity_disclosure,billing,we,True,Unity,False,storage.googleapis.com,1st_to_3rd
+6472555496,phone num,policy,mismatched_entity_disclosure,phone num,we,True,Demandbase,False,geo2.adobe.com,1st_to_3rd
+6477569162,account,policy,mismatched_entity_disclosure,account,we,True,Dotomi,False,login-ds.dotomi.com,1st_to_3rd
+6477569162,information,policy,mismatched_entity_disclosure,information,we,True,Nissandime,False,www.google.com,1st_to_3rd
+1446075923,device id,policy,mismatched_entity_disclosure,device id,we,True,Disney,False,disney.api.edge.bamgrid.com,1st_to_3rd
+6472360919,geo location,policy,mismatched_entity_disclosure,geo location,we,True,Google APIs,False,gcs-us-00003.content-storage-download.googleapis.com,1st_to_3rd
+1082170746,audio,policy,mismatched_entity_disclosure,audio,we,True,Itecheverything,False,www.itecheverything.com,1st_to_3rd
+1523682319,pii,policy,mismatched_entity_disclosure,pii,we,True,Rebuyengine,False,geo.rebuyengine.com,1st_to_3rd
+546505307,user id,policy,mismatched_entity_disclosure,user id,we,True,Amplitude,False,api.company-target.com,1st_to_3rd
+6469053057,person name,policy,mismatched_entity_disclosure,person name,we,True,Redbull,False,api.arte.tv,1st_to_3rd
+833967564,pii,policy,mismatched_entity_disclosure,pii,we,True,Cloudfront,False,us-central1-heyaiku.cloudfunctions.net,1st_to_3rd
+6477896692,information,policy,mismatched_entity_disclosure,information,we,True,Vaultdcr,False,ttip-ipv6-prod.telemetry.vaultdcr.com,1st_to_3rd
+6475701291,pii,policy,mismatched_entity_disclosure,pii,we,True,Illusion,False,metrics.illusion.tech,1st_to_3rd
+6478573714,system ver,policy,mismatched_entity_disclosure,system ver,we,True,Lijit,False,www.facebook.com,1st_to_3rd
+1502142828,geo location,policy,mismatched_entity_disclosure,geo location,we,True,Atmo-aura,False,gcs-us-00003.content-storage-download.googleapis.com,1st_to_3rd
+1502142828,pii,policy,mismatched_entity_disclosure,pii,we,True,Com,False,apiv2.cricket.com.au,1st_to_3rd
+493619333,usage info,policy,mismatched_entity_disclosure,usage info,platform provider,True,Google APIs,False,disney.api.edge.bamgrid.com,1st_to_3rd
+282935706,billing,policy,mismatched_entity_disclosure,billing,we,True,Biltapp,False,publishers.biltapp.com,1st_to_3rd
+6477863393,pii,policy,mismatched_entity_disclosure,pii,we,True,Google APIs,False,edge-036.usqas5.icloud-content.com,1st_to_3rd
+1614950275,app ver,policy,mismatched_entity_disclosure,app ver,we,True,Themoviedb,False,api.themoviedb.org,1st_to_3rd
+1296674639,type,policy,mismatched_entity_disclosure,type,we,True,TelemetryDeck,False,nom.telemetrydeck.com,1st_to_3rd
+6472555496,usage time,policy,mismatched_entity_disclosure,usage time,we,True,Qualtrics,False,siteintercept.qualtrics.com,1st_to_3rd
+1264730676,system ver,policy,mismatched_entity_disclosure,system ver,we,True,Optimizely,False,connect.facebook.net,1st_to_3rd
+1446075923,password,policy,mismatched_entity_disclosure,password,we,True,Youversionapi,False,biblecontent.youversionapi.com,1st_to_3rd
+1460319993,phone num,policy,mismatched_entity_disclosure,phone num,we,True,Icandiapps,False,icandiapps.com,1st_to_3rd
+6476788088,phone num,policy,mismatched_entity_disclosure,phone num,we,True,Googlevideo,False,rr3---sn-p5qlsnrl.googlevideo.com,1st_to_3rd
+6466659366,browsing,policy,mismatched_entity_disclosure,browsing,we,True,Restockrocket,False,www.facebook.com,1st_to_3rd
+1621800675,geo location,policy,mismatched_entity_disclosure,geo location,we,True,Amazonaws,False,us-std-00001.s3.dualstack.us-east-1.amazonaws.com,1st_to_3rd
+1510467732,pii,policy,mismatched_entity_disclosure,pii,we,True,Google APIs,False,firebaseremoteconfig.googleapis.com,1st_to_3rd
+6472360919,device info,policy,mismatched_entity_disclosure,device info,we,True,Widgetsmith,False,data.widgetsmith.app,1st_to_3rd
+282935706,geo location,policy,mismatched_entity_disclosure,geo location,we,True,Arte,False,metrics-a.wbx2.com,1st_to_3rd
+6466820347,pii,policy,mismatched_entity_disclosure,pii,we,True,Illusion,False,metrics.illusion.tech,1st_to_3rd
+282935706,pii,policy,mismatched_entity_disclosure,pii,we,True,Cloudfront,False,us-central1-heyaiku.cloudfunctions.net,1st_to_3rd
+6484504330,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Impact,False,monorail-edge.shopifysvc.com,1st_to_3rd
+6472496232,geo location,policy,mismatched_entity_disclosure,geo location,we,True,Medium,False,us-central1-tripp-prod.cloudfunctions.net,1st_to_3rd
+6477569162,billing,policy,mismatched_entity_disclosure,billing,we,True,Nissandime,False,api.nissandime.com,1st_to_3rd
+546505307,information,policy,mismatched_entity_disclosure,information,we,True,Tvsquared,False,collector-29673.us.tvsquared.com,1st_to_3rd
+1112433234,pii,policy,mismatched_entity_disclosure,pii,we,True,YouTube,False,www.youtube.com,1st_to_3rd
+1502142828,language,policy,mismatched_entity_disclosure,language,we,True,Unity,False,mastapi.mobile.mlbinfra.com,1st_to_3rd
+6496859848,information,policy,mismatched_entity_disclosure,information,we,True,Aggle,False,oirt.aggle.net,1st_to_3rd
+1630222596,pii,policy,mismatched_entity_disclosure,pii,we,True,Google APIs,False,disney.api.edge.bamgrid.com,1st_to_3rd
+6472360919,identifier,policy,mismatched_entity_disclosure,identifier,we,True,Mixpanel,False,api.mixpanel.com,1st_to_3rd
+1448744070,person name,policy,mismatched_entity_disclosure,person name,we,True,Infinitiusa,False,www.infinitiusa.com,1st_to_3rd
+6466742380,geo location,policy,mismatched_entity_disclosure,geo location,we,True,Google APIs,False,gcs-us-00003.content-storage-download.googleapis.com,1st_to_3rd
+6466742380,pii,policy,mismatched_entity_disclosure,pii,we,True,Google APIs,False,www.youtube.com,1st_to_3rd
+478686126,device info,policy,mismatched_entity_disclosure,device info,we,True,Redbull,False,publishers.biltapp.com,1st_to_3rd
+530168168,billing,policy,mismatched_entity_disclosure,billing,we,True,Huggingface,False,huggingface.co,1st_to_3rd
+6472555496,browsing,policy,mismatched_entity_disclosure,browsing,we,True,Pinimg,False,www.facebook.com,1st_to_3rd
+6477569162,pii,policy,mismatched_entity_disclosure,pii,we,True,Infinitiusa,False,www.facebook.com,1st_to_3rd
+875319874,person name,policy,mismatched_entity_disclosure,person name,we,True,Evergent,False,rest-prod-nba.evergent.com,1st_to_3rd
+282935706,device info,policy,mismatched_entity_disclosure,device info,we,True,Redbull,False,publishers.biltapp.com,1st_to_3rd
+6477896692,pii,policy,mismatched_entity_disclosure,pii,we,True,Google APIs,False,analytics.google.com,1st_to_3rd
+493619333,browser type,policy,mismatched_entity_disclosure,browser type,we,True,Wbx2,False,metrics-a.wbx2.com,1st_to_3rd
+961390574,geo location,policy,mismatched_entity_disclosure,geo location,social network,True,Apple,False,edge-036.usqas5.icloud-content.com,1st_to_3rd
+6473689339,information,policy,mismatched_entity_disclosure,information,we,True,Google APIs,False,gcs-us-00003.content-storage-upload.googleapis.com,1st_to_3rd
+1229460906,password,policy,mismatched_entity_disclosure,password,we,True,Safeshellvpn,False,api.safeshellvpn.com,1st_to_3rd
+1446075923,person name,policy,mismatched_entity_disclosure,person name,we,True,Redbull,False,pcs.bamgrid.com,1st_to_3rd
+530168168,geo location,policy,mismatched_entity_disclosure,geo location,we,True,Apple,False,publicassets.cdn-apple.com,1st_to_3rd
+334876990,system ver,policy,mismatched_entity_disclosure,system ver,we,True,TelemetryDeck,False,nom.telemetrydeck.com,1st_to_3rd
+530168168,pii,policy,mismatched_entity_disclosure,pii,social network,True,Apple,False,publicassets.cdn-apple.com,1st_to_3rd
+6475634958,usage info,policy,mismatched_entity_disclosure,usage info,third party,True,Igdb,False,api.igdb.com,1st_to_3rd
+1448744070,email addr,policy,mismatched_entity_disclosure,email addr,we,True,Nissandime,False,api.nissandime.com,1st_to_3rd
+6476047156,system ver,policy,mismatched_entity_disclosure,system ver,we,True,Mixpanel,False,api.mixpanel.com,1st_to_3rd
+1448744070,phone num,policy,mismatched_entity_disclosure,phone num,we,True,Google APIs,False,173bf10e.akstat.io,1st_to_3rd
+410395246,session,policy,mismatched_entity_disclosure,session,we,True,Decathlon,False,iframe.hsprotect.net,1st_to_3rd
+1502142828,device id,policy,mismatched_entity_disclosure,device id,we,True,Unity,False,collect.analytics.unity3d.com,1st_to_3rd
+833967564,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Redbull,False,publishers.biltapp.com,1st_to_3rd
+546505307,billing,policy,mismatched_entity_disclosure,billing,we,True,Company-target,False,api.company-target.com,1st_to_3rd
+6496682427,information,policy,mismatched_entity_disclosure,information,we,True,Aggle,False,oirt.aggle.net,1st_to_3rd
+6475701291,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Illusion,False,metrics.illusion.tech,1st_to_3rd
+6472496232,identifier,policy,mismatched_entity_disclosure,identifier,we,True,Googletagmanager,False,us-central1-tripp-prod.cloudfunctions.net,1st_to_3rd
+6466742380,device info,policy,mismatched_entity_disclosure,device info,we,True,YouTube,False,www.youtube.com,1st_to_3rd
+1573261774,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Mixpanel,False,api.mixpanel.com,1st_to_3rd
+6473639841,identifier,policy,mismatched_entity_disclosure,identifier,we,True,Heypster-gif,False,heypster-gif.com,1st_to_3rd
+1460319993,browsing,policy,mismatched_entity_disclosure,browsing,we,True,Cdn-cookieyes,False,ajax.googleapis.com,1st_to_3rd
+6472496232,face,policy,mismatched_entity_disclosure,face,we,True,Cloudfunctions,False,medium.com,1st_to_3rd
+1493916909,pii,policy,mismatched_entity_disclosure,pii,we,True,Google APIs,False,www.youtube.com,1st_to_3rd
+1296674639,pii,policy,mismatched_entity_disclosure,pii,we,True,Apple,False,www.youtube.com,1st_to_3rd
+6476788088,browsing,policy,mismatched_entity_disclosure,browsing,we,True,Gstatic,False,www.gstatic.com,1st_to_3rd
+1502142828,usage info,policy,mismatched_entity_disclosure,usage info,we,True,Unity,False,storage.googleapis.com,1st_to_3rd

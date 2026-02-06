@@ -1,0 +1,404 @@
+app_id,data_type,purpose,linked,tracking
+1120099014,Device ID,Analytics,False,False
+1120099014,Product Interaction,Analytics,False,False
+6449408612,Product Interaction,Analytics,False,False
+6449408612,Device ID,Analytics,False,False
+6449408612,Device ID,App Functionality,False,False
+6449408612,User ID,Analytics,False,False
+6449408612,User ID,App Functionality,False,False
+6449408612,Coarse Location,Analytics,False,False
+6449408612,Email Address,Developer's Advertising or Marketing,False,False
+1666653815,Name,Developer's Advertising or Marketing,True,True
+1666653815,Name,Product Personalization,True,True
+1666653815,Email Address,Third-Party Advertising,True,True
+1666653815,Email Address,App Functionality,True,True
+1666653815,Email Address,Product Personalization,True,True
+1666653815,Email Address,Developer's Advertising or Marketing,True,True
+1666653815,Other User Contact Info,Product Personalization,True,True
+1666653815,Coarse Location,App Functionality,True,True
+1666653815,Coarse Location,Developer's Advertising or Marketing,True,True
+1666653815,Coarse Location,Analytics,True,True
+1666653815,Coarse Location,Product Personalization,True,True
+1666653815,Coarse Location,Third-Party Advertising,True,True
+1666653815,Other User Content,Analytics,False,True
+1666653815,Search History,Analytics,True,True
+1666653815,Search History,Product Personalization,True,True
+1666653815,Search History,App Functionality,True,True
+1666653815,User ID,Analytics,True,True
+1666653815,User ID,Product Personalization,True,True
+1666653815,User ID,App Functionality,True,True
+1666653815,User ID,Developer's Advertising or Marketing,True,True
+1666653815,User ID,Third-Party Advertising,True,True
+1666653815,Device ID,Analytics,True,True
+1666653815,Device ID,Product Personalization,True,True
+1666653815,Device ID,App Functionality,True,True
+1666653815,Device ID,Developer's Advertising or Marketing,True,True
+1666653815,Device ID,Third-Party Advertising,True,True
+1666653815,Purchase History,Analytics,True,True
+1666653815,Purchase History,Product Personalization,True,True
+1666653815,Purchase History,App Functionality,True,True
+1666653815,Purchase History,Developer's Advertising or Marketing,True,True
+1666653815,Purchase History,Third-Party Advertising,True,True
+1666653815,Product Interaction,Analytics,True,True
+1666653815,Product Interaction,Product Personalization,True,True
+1666653815,Product Interaction,App Functionality,True,True
+1666653815,Product Interaction,Developer's Advertising or Marketing,True,True
+1666653815,Product Interaction,Third-Party Advertising,True,True
+1666653815,Advertising Data,Analytics,True,True
+1666653815,Advertising Data,Product Personalization,True,True
+1666653815,Advertising Data,Developer's Advertising or Marketing,True,True
+1666653815,Advertising Data,Third-Party Advertising,True,True
+1666653815,Other Usage Data,App Functionality,False,True
+1666653815,Crash Data,App Functionality,True,True
+1666653815,Crash Data,Analytics,True,True
+1666653815,Performance Data,App Functionality,True,True
+1666653815,Performance Data,Analytics,True,True
+1666653815,Other Diagnostic Data,App Functionality,False,True
+1666653815,Other Diagnostic Data,Analytics,False,True
+1666653815,Other Data Types,App Functionality,True,True
+1666653815,Other Data Types,Developer's Advertising or Marketing,True,True
+1666653815,Other Data Types,Analytics,True,True
+1663047912,Crash Data,App Functionality,False,False
+1663047912,Device ID,App Functionality,False,False
+1663047912,User ID,App Functionality,False,False
+6446116532,Other Diagnostic Data,App Functionality,False,False
+6446116532,Purchase History,App Functionality,True,False
+6446116532,Device ID,App Functionality,True,False
+6446116532,User ID,App Functionality,True,False
+6446116532,Email Address,Developer's Advertising or Marketing,True,False
+6446116532,Email Address,App Functionality,True,False
+405028510,Name,App Functionality,True,False
+405028510,Phone Number,App Functionality,True,False
+405028510,Physical Address,App Functionality,True,False
+405028510,Email Address,App Functionality,True,True
+405028510,Other User Contact Info,App Functionality,True,False
+405028510,Performance Data,App Functionality,True,True
+405028510,Crash Data,App Functionality,True,False
+405028510,Product Interaction,App Functionality,True,True
+405028510,Product Interaction,Analytics,True,True
+405028510,User ID,Analytics,True,True
+867539680,,,False,False
+6473833932,Other Diagnostic Data,App Functionality,True,False
+6473833932,Other Diagnostic Data,Analytics,True,False
+6473833932,Performance Data,App Functionality,True,False
+6473833932,Crash Data,App Functionality,True,False
+6473833932,Other Usage Data,Analytics,True,False
+6473833932,Other Usage Data,App Functionality,True,False
+6473833932,Other Usage Data,Product Personalization,True,False
+6473833932,Product Interaction,Analytics,True,False
+6473833932,Product Interaction,App Functionality,True,False
+6473833932,Product Interaction,Developer's Advertising or Marketing,True,False
+6473833932,Device ID,Analytics,True,False
+6473833932,Device ID,App Functionality,True,False
+6473833932,Device ID,Developer's Advertising or Marketing,True,False
+6473833932,Device ID,Product Personalization,True,False
+6473833932,User ID,Analytics,True,False
+6473833932,User ID,App Functionality,True,False
+6473833932,User ID,Developer's Advertising or Marketing,True,False
+6473833932,User ID,Product Personalization,True,False
+6473833932,Search History,App Functionality,True,False
+6473833932,Search History,Analytics,True,False
+6473833932,Other User Content,App Functionality,True,False
+6473833932,Other User Content,Product Personalization,True,False
+6473833932,Photosor Videos,App Functionality,True,False
+6473833932,Emails Or Text Messages,App Functionality,True,False
+6473833932,Contacts,App Functionality,True,False
+6473833932,Contacts,Analytics,True,False
+6473833932,Contacts,Product Personalization,True,False
+6473833932,Coarse Location,App Functionality,True,False
+6473833932,Precise Location,App Functionality,True,False
+6446053076,Crash Data,App Functionality,False,False
+6446053076,Other Usage Data,Analytics,False,False
+6446053076,Product Interaction,Analytics,False,False
+6448773500,Diagnostics,App functionality,False,False
+1492055171,Device ID,App Functionality,True,True
+1572102565,Product Interaction,Analytics,False,False
+1346247457,Health,Product Personalization,True,False
+1346247457,Health,App Functionality,True,False
+1346247457,Coarse Location,Product Personalization,True,False
+1346247457,Coarse Location,App Functionality,True,False
+1346247457,User ID,Analytics,True,False
+1346247457,User ID,Product Personalization,True,False
+1346247457,User ID,App Functionality,True,False
+1346247457,Device ID,Analytics,True,False
+1346247457,Product Interaction,Analytics,True,False
+1346247457,Product Interaction,Product Personalization,True,False
+1346247457,Product Interaction,App Functionality,True,False
+1346247457,Advertising Data,Analytics,True,False
+6475262918,Email Address,App Functionality,True,False
+6475262918,Email Address,Developer's Advertising or Marketing,True,False
+6475262918,Precise Location,App Functionality,True,False
+6475262918,Precise Location,Product Personalization,True,False
+6475262918,Photosor Videos,App Functionality,True,False
+6475262918,Search History,Analytics,True,False
+6475262918,Search History,Product Personalization,True,False
+6475262918,User ID,App Functionality,True,False
+6475262918,Purchase History,App Functionality,True,False
+6475262918,Purchase History,Analytics,True,False
+6475262918,Product Interaction,Analytics,False,False
+6475262918,Crash Data,Analytics,False,False
+1448744070,Name,App Functionality,True,False
+1448744070,Email Address,App Functionality,True,False
+1448744070,User ID,App Functionality,True,False
+1448744070,Device ID,App Functionality,True,False
+1448744070,Other Diagnostic Data,App Functionality,True,False
+6496682427,,,False,False
+743843090,Name,App Functionality,True,False
+743843090,Email Address,Analytics,True,False
+743843090,Email Address,App Functionality,True,False
+743843090,Payment Info,Analytics,False,False
+743843090,Payment Info,App Functionality,False,False
+743843090,User ID,Analytics,True,False
+743843090,User ID,App Functionality,True,False
+743843090,Device ID,Analytics,False,False
+743843090,Device ID,App Functionality,False,False
+743843090,Crash Data,Analytics,False,False
+743843090,Performance Data,Analytics,False,False
+743843090,Precise Location,App Functionality,False,False
+989642198,Other Financial Info,Analytics,False,False
+989642198,Other Financial Info,Product Personalization,False,False
+989642198,Other Financial Info,App Functionality,False,False
+989642198,Device ID,App Functionality,False,False
+989642198,Purchase History,App Functionality,False,False
+989642198,Crash Data,App Functionality,False,False
+989642198,Other Diagnostic Data,Analytics,False,False
+989642198,Other Diagnostic Data,App Functionality,False,False
+989642198,Other Data Types,Analytics,False,False
+989642198,Product Interaction,Analytics,False,False
+989642198,Product Interaction,Product Personalization,False,False
+989642198,Product Interaction,App Functionality,False,False
+410395246,Name,App Functionality,True,False
+410395246,Name,Product Personalization,True,False
+410395246,Email Address,App Functionality,True,False
+410395246,Phone Number,App Functionality,True,False
+410395246,Payment Info,App Functionality,True,False
+410395246,Coarse Location,App Functionality,True,False
+410395246,Contacts,App Functionality,True,False
+410395246,Photosor Videos,App Functionality,True,False
+410395246,Audio Data,App Functionality,True,False
+410395246,Customer Support,App Functionality,True,False
+410395246,Customer Support,Analytics,True,False
+410395246,User ID,App Functionality,True,False
+410395246,User ID,Analytics,True,False
+410395246,Device ID,App Functionality,True,False
+410395246,Device ID,Analytics,True,False
+410395246,Product Interaction,App Functionality,True,False
+410395246,Product Interaction,Analytics,True,False
+410395246,Other Usage Data,Analytics,False,False
+410395246,Crash Data,App Functionality,True,False
+410395246,Performance Data,App Functionality,True,False
+410395246,Performance Data,Analytics,True,False
+410395246,Other Diagnostic Data,App Functionality,True,False
+410395246,Other Diagnostic Data,Analytics,True,False
+653031147,Product Interaction,Analytics,False,True
+653031147,Health,App Functionality,False,False
+653031147,Name,App Functionality,True,False
+1024791122,Crash Data,Analytics,False,False
+1024791122,Crash Data,App Functionality,False,False
+1024791122,Product Interaction,Analytics,False,False
+1024791122,Product Interaction,App Functionality,False,False
+1024791122,Performance Data,Analytics,False,False
+1024791122,Performance Data,App Functionality,False,False
+1546754798,Product Interaction,Analytics,False,False
+1644376309,Product Interaction,Analytics,False,True
+334876990,Performance Data,App Functionality,False,False
+334876990,Crash Data,App Functionality,False,False
+334876990,Product Interaction,Analytics,False,False
+334876990,User ID,App Functionality,True,False
+334876990,User ID,Analytics,True,False
+334876990,Coarse Location,App Functionality,True,False
+334876990,Coarse Location,Analytics,True,False
+334876990,Precise Location,Product Personalization,False,False
+334876990,Precise Location,Developer's Advertising or Marketing,False,False
+334876990,Precise Location,App Functionality,False,False
+334876990,Precise Location,Analytics,False,False
+334876990,Other User Contact Info,Developer's Advertising or Marketing,True,False
+334876990,Email Address,Developer's Advertising or Marketing,True,False
+334876990,Email Address,App Functionality,True,False
+334876990,Name,Developer's Advertising or Marketing,True,False
+334876990,Name,App Functionality,True,False
+6476618172,Crash Data,Analytics,False,False
+6476618172,Other Diagnostic Data,Analytics,False,False
+1630746993,Product Interaction,Analytics,False,False
+1630746993,Device ID,Analytics,False,False
+1630746993,Coarse Location,Analytics,False,False
+964118383,Name,Product Personalization,True,False
+964118383,Name,App Functionality,True,False
+964118383,Email Address,Developer's Advertising or Marketing,True,False
+964118383,Email Address,Analytics,True,False
+964118383,Email Address,Product Personalization,True,False
+964118383,Email Address,App Functionality,True,False
+964118383,Phone Number,Analytics,True,False
+964118383,Phone Number,App Functionality,True,False
+964118383,Photosor Videos,App Functionality,False,False
+964118383,Audio Data,App Functionality,True,False
+964118383,Customer Support,App Functionality,True,False
+964118383,User ID,Developer's Advertising or Marketing,True,False
+964118383,User ID,Analytics,True,False
+964118383,User ID,Product Personalization,True,False
+964118383,User ID,App Functionality,True,False
+964118383,Device ID,Developer's Advertising or Marketing,True,False
+964118383,Device ID,Analytics,True,False
+964118383,Device ID,Product Personalization,True,False
+964118383,Device ID,App Functionality,True,False
+964118383,Purchase History,App Functionality,True,False
+964118383,Product Interaction,Developer's Advertising or Marketing,True,False
+964118383,Product Interaction,Analytics,True,False
+964118383,Advertising Data,Third-Party Advertising,False,False
+964118383,Crash Data,App Functionality,False,False
+364899325,User ID,App Functionality,True,False
+364899325,Device ID,App Functionality,True,False
+835599320,Name,App Functionality,True,False
+835599320,Name,Other,True,False
+835599320,Email Address,Third-Party Advertising,True,True
+835599320,Email Address,Developer's Advertising or Marketing,True,True
+835599320,Email Address,App Functionality,True,True
+835599320,Phone Number,Third-Party Advertising,True,True
+835599320,Phone Number,Developer's Advertising or Marketing,True,True
+835599320,Phone Number,App Functionality,True,True
+835599320,Physical Address,App Functionality,True,False
+835599320,Physical Address,Other,True,False
+835599320,Other User Contact Info,App Functionality,True,False
+835599320,Payment Info,App Functionality,True,False
+835599320,Payment Info,Other,True,False
+835599320,Other Financial Info,App Functionality,True,False
+835599320,Other Financial Info,Other,True,False
+835599320,Coarse Location,Third-Party Advertising,True,False
+835599320,Coarse Location,Analytics,True,False
+835599320,Coarse Location,Product Personalization,True,False
+835599320,Coarse Location,App Functionality,True,False
+835599320,Contacts,Product Personalization,True,False
+835599320,Contacts,App Functionality,True,False
+835599320,Photosor Videos,App Functionality,True,False
+835599320,Audio Data,App Functionality,True,False
+835599320,Customer Support,Analytics,True,False
+835599320,Customer Support,App Functionality,True,False
+835599320,Other User Content,App Functionality,True,False
+835599320,Browsing History,Third-Party Advertising,True,False
+835599320,Search History,Analytics,True,False
+835599320,Search History,Product Personalization,True,False
+835599320,Search History,App Functionality,True,False
+835599320,User ID,Third-Party Advertising,True,False
+835599320,User ID,Developer's Advertising or Marketing,True,False
+835599320,User ID,Analytics,True,False
+835599320,User ID,Product Personalization,True,False
+835599320,User ID,App Functionality,True,False
+835599320,Device ID,Third-Party Advertising,True,True
+835599320,Device ID,Developer's Advertising or Marketing,True,True
+835599320,Device ID,Analytics,True,True
+835599320,Device ID,Product Personalization,True,True
+835599320,Device ID,App Functionality,True,True
+835599320,Device ID,Other,True,True
+835599320,Purchase History,Analytics,True,False
+835599320,Purchase History,App Functionality,True,False
+835599320,Product Interaction,Third-Party Advertising,True,False
+835599320,Product Interaction,Developer's Advertising or Marketing,True,False
+835599320,Product Interaction,Analytics,True,False
+835599320,Product Interaction,Product Personalization,True,False
+835599320,Product Interaction,App Functionality,True,False
+835599320,Advertising Data,Third-Party Advertising,True,False
+835599320,Other Usage Data,Analytics,False,False
+835599320,Crash Data,App Functionality,True,False
+835599320,Performance Data,Analytics,True,False
+835599320,Performance Data,App Functionality,True,False
+835599320,Other Diagnostic Data,Analytics,True,False
+835599320,Other Diagnostic Data,App Functionality,True,False
+835599320,Other Diagnostic Data,Other,True,False
+546505307,Name,Developer's Advertising or Marketing,True,False
+546505307,Name,App Functionality,True,False
+546505307,Email Address,Developer's Advertising or Marketing,True,False
+546505307,Email Address,Analytics,True,False
+546505307,Email Address,App Functionality,True,False
+546505307,Phone Number,App Functionality,True,False
+546505307,Precise Location,App Functionality,True,False
+546505307,Coarse Location,App Functionality,True,False
+546505307,Emails Or Text Messages,Analytics,True,False
+546505307,Emails Or Text Messages,App Functionality,True,False
+546505307,Photosor Videos,Analytics,True,False
+546505307,Photosor Videos,App Functionality,True,False
+546505307,Audio Data,Analytics,True,False
+546505307,Audio Data,App Functionality,True,False
+546505307,Customer Support,Analytics,True,False
+546505307,Customer Support,App Functionality,True,False
+546505307,User ID,Developer's Advertising or Marketing,True,False
+546505307,User ID,Analytics,True,False
+546505307,User ID,App Functionality,True,False
+546505307,Device ID,App Functionality,True,False
+546505307,Product Interaction,Analytics,True,False
+546505307,Crash Data,Analytics,True,False
+546505307,Crash Data,App Functionality,True,False
+546505307,Performance Data,Analytics,True,False
+546505307,Performance Data,App Functionality,True,False
+546505307,Other Diagnostic Data,Analytics,True,False
+546505307,Other Diagnostic Data,App Functionality,True,False
+493619333,Email Address,Third-Party Advertising,True,True
+493619333,Email Address,Developer's Advertising or Marketing,True,True
+493619333,Email Address,Analytics,True,True
+493619333,Email Address,Product Personalization,True,True
+493619333,Email Address,App Functionality,True,True
+493619333,Precise Location,Third-Party Advertising,False,False
+493619333,Precise Location,Developer's Advertising or Marketing,False,False
+493619333,Precise Location,Analytics,False,False
+493619333,Precise Location,Product Personalization,False,False
+493619333,Precise Location,App Functionality,False,False
+493619333,Coarse Location,Third-Party Advertising,True,True
+493619333,Coarse Location,Developer's Advertising or Marketing,True,True
+493619333,Coarse Location,Analytics,True,True
+493619333,Coarse Location,Product Personalization,True,True
+493619333,Coarse Location,App Functionality,True,True
+493619333,Customer Support,Analytics,True,True
+493619333,Customer Support,App Functionality,True,True
+493619333,Search History,Analytics,True,True
+493619333,User ID,Third-Party Advertising,True,True
+493619333,User ID,Developer's Advertising or Marketing,True,True
+493619333,User ID,Analytics,True,True
+493619333,User ID,Product Personalization,True,True
+493619333,User ID,App Functionality,True,True
+493619333,Device ID,Third-Party Advertising,True,True
+493619333,Device ID,Developer's Advertising or Marketing,True,True
+493619333,Device ID,Analytics,True,True
+493619333,Device ID,Product Personalization,True,True
+493619333,Device ID,App Functionality,True,True
+493619333,Purchase History,Third-Party Advertising,True,True
+493619333,Purchase History,Developer's Advertising or Marketing,True,True
+493619333,Purchase History,Analytics,True,True
+493619333,Purchase History,Product Personalization,True,True
+493619333,Purchase History,App Functionality,True,True
+493619333,Product Interaction,Third-Party Advertising,True,True
+493619333,Product Interaction,Developer's Advertising or Marketing,True,True
+493619333,Product Interaction,Analytics,True,True
+493619333,Product Interaction,Product Personalization,True,True
+493619333,Product Interaction,App Functionality,True,True
+493619333,Advertising Data,Third-Party Advertising,True,True
+493619333,Advertising Data,Developer's Advertising or Marketing,True,True
+493619333,Advertising Data,Analytics,True,True
+493619333,Advertising Data,Product Personalization,True,True
+493619333,Advertising Data,App Functionality,True,True
+493619333,Crash Data,Analytics,True,True
+493619333,Crash Data,App Functionality,True,True
+493619333,Performance Data,Analytics,True,True
+493619333,Performance Data,App Functionality,True,True
+493619333,Other Diagnostic Data,Analytics,True,True
+493619333,Other Diagnostic Data,App Functionality,True,True
+1472875808,Email Address,App Functionality,True,False
+1472875808,User ID,App Functionality,True,False
+1472875808,Other User Content,Product Personalization,True,False
+1472875808,Other User Content,App Functionality,True,False
+6472360919,Precise Location,App Functionality,True,False
+6472360919,Precise Location,Analytics,True,False
+6472360919,Precise Location,Product Personalization,True,False
+6472360919,Coarse Location,App Functionality,True,False
+6472360919,Coarse Location,Analytics,True,False
+6472360919,Coarse Location,Product Personalization,True,False
+6472360919,Search History,Analytics,True,False
+6472360919,Search History,Developer's Advertising or Marketing,True,False
+6472360919,Search History,App Functionality,True,False
+6472360919,Search History,Product Personalization,True,False
+6472360919,Device ID,Developer's Advertising or Marketing,True,False
+6472360919,Product Interaction,Analytics,True,False
+6472360919,Product Interaction,Developer's Advertising or Marketing,True,False
+6472360919,Crash Data,Analytics,True,False
+6472360919,Crash Data,Developer's Advertising or Marketing,True,False
+6472360919,Performance Data,Analytics,True,False
+6472360919,Other Diagnostic Data,Developer's Advertising or Marketing,True,False
+6444380323,Product Interaction,Analytics,False,False

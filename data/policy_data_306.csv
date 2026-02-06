@@ -1,0 +1,307 @@
+app_id,policy_file,total_tuples,collect_count,not_collect_count,total_data_types,data_types_collect,data_types_not_collect
+1365531024,1365531024_1blocker_com_privacy_policy.json,7,1,3,3,pii,geo location|information|pii
+6476902378,N/A,0,0,0,0,N/A,N/A
+1631145223,1631145223_model-viewer-67411_web_app_privacy_policy.json,19,6,1,6,browsing|device id|information|ip addr|pii|system ver,information
+6469645676,6469645676_brieg_eu_privacy_policy.json,0,0,0,0,N/A,N/A
+6476882081,6476882081_app_ludenso_com_privacy_policy.json,2,0,2,2,N/A,pii|usage info
+6459834117,6459834117_caseadri_com_privacy_policy.json,14,3,1,4,information|ip addr|usage info,pii
+6444638017,6444638017_caseadri_com_privacy_policy.json,14,3,1,4,information|ip addr|usage info,pii
+6448279734,6448279734_heyaiku_app_privacy_policy.json,1,1,0,1,information,N/A
+1051726944,1051726944_roadfiresoftware_com_privacy_policy.json,1,0,1,1,N/A,information
+405028510,405028510_arte_tv_privacy_policy.json,14,4,0,4,comment|information|pii|usage info,N/A
+700695106,700695106_darfdesign_com_privacy_policy.json,32,9,2,9,browsing|device id|email addr|geo location|information|ip addr|pii|system ver|usage info,information|pii
+1018301773,1018301773_adblockpro_com_privacy_policy.json,0,0,0,0,N/A,N/A
+6476893267,N/A,0,0,0,0,N/A,N/A
+1289012427,1289012427_benricemccarthy_com_privacy_policy.json,0,0,0,0,N/A,N/A
+1183533416,1183533416_studioamanga_com_privacy_policy.json,1,0,1,1,N/A,pii
+1296674639,1296674639_apparentlogic_com_privacy_policy.json,22,13,1,13,audio|camera|contact|device info|geo location|identifier|information|non-pii|person name|photo|pii|type|usage info,pii
+364899325,364899325_aircoaster_ziconic_com_privacy_policy.json,14,7,1,7,browsing|device id|email addr|information|ip addr|pii|system ver,information
+6477749286,6477749286_labs_laan_com_privacy_policy.json,23,10,1,10,browser type|device id|device info|geo location|information|ip addr|non-pii|system ver|type|usage info,geo location
+993160329,993160329_iubenda_com_privacy_policy.json,59,13,1,13,device info|email addr|error report|geo location|identifier|information|interest|ip addr|message log|password|pii|usage info|usage time,pii
+1669560515,N/A,0,0,0,0,N/A,N/A
+978589174,978589174_alpenglowapp_com_privacy_policy.json,12,4,0,4,geo location|information|pii|usage info,N/A
+1102236212,1102236212_ambi_se_privacy_policy.json,6,2,0,2,information|usage info,N/A
+6476312652,6476312652_adamfoot_dev_privacy_policy.json,9,5,1,5,email addr|information|person name|phone num|pii,information
+1449511522,1449511522_acalc_de_privacy_policy.json,50,10,2,10,account|app ver|browsing|email addr|information|ip addr|pii|system ver|usage info|usage time,information|pii
+743843090,743843090_athanpro_com_privacy_policy.json,51,8,0,8,device id|error report|identifier|information|ip addr|pii|usage info|usage time,N/A
+6446608944,N/A,0,0,0,0,N/A,N/A
+6475745854,N/A,0,0,0,0,N/A,N/A
+1082170746,1082170746_awaremac_com_privacy_policy.json,5,2,1,2,audio|information,information
+1560309401,1560309401_aware_leonifrancesco_com_privacy_policy.json,258,28,2,28,app ver|audio|billing|browser type|browsing|device id|device info|email addr|employment|error report|gameplay|geo location|hardware|identifier|information|interest|ip addr|language|manufacturer|message log|model|phone num|pii|system ver|type|usage info|usage time|vr movement,information|pii
+1532017999,1532017999_axnote_app_privacy_policy.json,8,1,2,2,information,information|pii
+6469053057,6469053057_biltapp_com_privacy_policy.json,133,15,1,15,audio|billing|camera|device info|email addr|identifier|information|ip addr|non-pii|person name|pii|session|usage info|usage time|user id,pii
+6467695476,6467695476_bonkbonkbonk_app_privacy_policy.json,53,7,0,7,audio|email addr|information|non-pii|phone num|pii|usage info,N/A
+6443711183,6443711183_elitehoopsapp_com_privacy_policy.json,0,0,0,0,N/A,N/A
+6477874436,6477874436_docs_google_com_privacy_policy.json,0,0,0,0,N/A,N/A
+711503134,711503134_peterborgapps_com_privacy_policy.json,12,2,0,2,information|pii,N/A
+6468541457,6468541457_thatvirtualboy_com_privacy_policy.json,0,0,0,0,N/A,N/A
+6481528867,N/A,0,0,0,0,N/A,N/A
+282935706,282935706_bible_com_privacy_policy.json,315,30,3,30,age|audio|belief|billing|browser type|browsing|contact|device id|device info|education|email addr|ethnic|gameplay|geo location|information|interest|ip addr|language|mental|message log|non-pii|person name|phone num|photo|pii|sexuality|system ver|usage info|usage time|user id,billing|information|pii
+605766199,605766199_abras_me_privacy_policy.json,13,3,2,3,information|pii|usage info,information|usage info
+478686126,478686126_bibliajfa_com_br_privacy_policy.json,65,9,3,9,camera|contact|device id|device info|email addr|information|person name|pii|usage info,information|pii|usage info
+6478182067,N/A,0,0,0,0,N/A,N/A
+6473833932,6473833932_bloomberg_com_privacy_policy.json,167,17,1,17,audio|billing|browsing|device info|education|email addr|employment|geo location|identifier|information|interest|network|password|person name|pii|usage info|user id,pii
+1630222596,1630222596_kllandinc_com_privacy_policy.json,10,1,8,9,pii,contact|email addr|geo location|information|person name|phone num|photo|usage info
+1478757472,1478757472_bluebird_app_privacy_policy.json,7,1,6,6,information,browsing|device info|geo location|information|pii|usage info
+1531591752,N/A,0,0,0,0,N/A,N/A
+6478508584,6478508584_toastylabsnyc_github_io_privacy_policy.json,15,6,0,6,billing|contact|email addr|information|person name|pii,N/A
+1605558336,1605558336_keepfloating_com_privacy_policy.json,81,18,1,18,ad id|age|billing|browsing|device info|email addr|hardware|height|information|ip addr|message log|person name|pii|software|type|usage info|usage time|weight,information
+290853822,N/A,0,0,0,0,N/A,N/A
+6443904179,6443904179_breadpad_com_privacy_policy.json,27,6,1,6,contact|error report|information|person name|pii|usage info,information
+1512681263,1512681263_alexanderlogan_co_uk_privacy_policy.json,11,3,3,4,billing|information|usage info,billing|information|pii
+6478073283,6478073283_bridgesapp_app_privacy_policy.json,4,3,0,3,information|non-pii|usage info,N/A
+6478857571,N/A,0,0,0,0,N/A,N/A
+1469995354,1469995354_highcaffeinecontent_com_privacy_policy.json,1,1,0,1,pii,N/A
+6479172232,N/A,0,0,0,0,N/A,N/A
+694580816,N/A,0,0,0,0,N/A,N/A
+961390574,961390574_support_meetcarrot_com_privacy_policy.json,106,14,1,14,browser type|browsing|email addr|geo location|information|ip addr|language|message log|network|non-pii|pii|system ver|type|usage info,geo location
+1565667811,1565667811_smicker_com_privacy_policy.json,0,0,0,0,N/A,N/A
+1631243885,N/A,0,0,0,0,N/A,N/A
+1672356376,1672356376_caseyliss_com_privacy_policy.json,6,1,1,2,usage info,pii
+1472875808,1472875808_cardpointers_com_privacy_policy.json,39,11,1,11,browser type|browsing|geo location|information|ip addr|network|pii|system ver|type|usage info|usage time,information
+1448744070,1448744070_flexibits_com_privacy_policy.json,86,19,2,19,billing|browser type|browsing|contact|device info|email addr|gameplay|geo location|identifier|information|ip addr|message log|non-pii|person name|phone num|pii|system ver|type|usage info,pii|usage info
+6476697957,N/A,0,0,0,0,N/A,N/A
+6477806929,N/A,0,0,0,0,N/A,N/A
+6448189664,6448189664_tanrohan_com_privacy_policy.json,5,1,1,2,photo,information
+6476618172,6476618172_celestia_mobi_privacy_policy.json,23,3,0,3,error report|information|pii,N/A
+6450510658,N/A,0,0,0,0,N/A,N/A
+6443633176,6443633176_xrlab_ai_privacy_policy.json,0,0,0,0,N/A,N/A
+1636872963,1636872963_billstobudget_com_privacy_policy.json,20,7,1,7,browsing|device id|information|ip addr|pii|system ver|usage info,information
+493558583,493558583_getchemistry_io_privacy_policy.json,264,27,2,27,app ver|audio|billing|browser type|browsing|device id|device info|employment|error report|gameplay|geo location|hardware|identifier|information|interest|ip addr|language|manufacturer|message log|model|phone num|pii|system ver|type|usage info|usage time|vr movement,information|pii
+6450800917,N/A,0,0,0,0,N/A,N/A
+6478800800,6478800800_drewbaumann_com_privacy_policy.json,71,14,1,14,billing|browser type|device id|email addr|error report|information|password|photo|pii|system ver|type|usage info|usage time|user id,billing
+6445992145,6445992145_chroniclingapp_com_privacy_policy.json,8,2,2,3,information|non-pii,information|pii
+6479238634,6479238634_raw_githubusercontent_com_privacy_policy.json,6,2,1,2,information|pii,information
+6444069568,6444069568_eshumarneedi_com_privacy_policy.json,0,0,0,0,N/A,N/A
+1463073824,N/A,0,0,0,0,N/A,N/A
+6451395577,6451395577_clic_dance_privacy_policy.json,5,1,1,1,pii,pii
+6480027632,6480027632_bkwebhero_com_privacy_policy.json,2,0,1,1,N/A,information
+466715015,N/A,0,0,0,0,N/A,N/A
+6477896692,6477896692_zanegolas_com_privacy_policy.json,5,2,0,2,information|pii,N/A
+867539680,867539680_airwolf_space_privacy_policy.json,6,2,0,2,information|pii,N/A
+6476446473,6476446473_coachboard_app_privacy_policy.json,31,11,1,11,browser type|browsing|geo location|information|ip addr|network|person name|phone num|pii|usage info|usage time,information
+6476788088,6476788088_karlstorz_com_privacy_policy.json,80,18,1,18,account|browsing|comment|contact|device info|email addr|gameplay|geo location|information|ip addr|non-pii|password|person name|phone num|pii|sexuality|usage info|usage time,pii
+6466742380,6466742380_appsfromouterspace_com_privacy_policy.json,81,12,1,12,camera|device id|device info|email addr|face|geo location|information|ip addr|non-pii|person name|photo|pii,pii
+1532027293,1532027293_nickbaughan_com_privacy_policy.json,1,0,1,1,N/A,pii
+1487937127,N/A,0,0,0,0,N/A,N/A
+1616385207,1616385207_fpstudios_com_privacy_policy.json,46,8,0,8,browser type|email addr|information|ip addr|person name|pii|sexuality|user id,N/A
+1614950275,1614950275_oncronica_com_privacy_policy.json,12,4,1,4,app ver|information|system ver|usage info,information
+1461650987,1461650987_crouton_app_privacy_policy.json,84,14,3,14,billing|camera|contact|device id|device info|email addr|information|non-pii|person name|phone num|photo|pii|system ver|usage info,billing|information|pii
+6467974863,N/A,0,0,0,0,N/A,N/A
+1575093276,N/A,0,0,0,0,N/A,N/A
+6478470622,N/A,0,0,0,0,N/A,N/A
+6467633766,6467633766_davincieyeapp_com_privacy_policy.json,196,22,0,22,audio|browser type|browsing|camera|contact|device info|email addr|information|ip addr|language|network|non-pii|password|person name|photo|pii|system memory|system ver|type|usage info|usage time|user id,N/A
+1519935634,1519935634_everlog_app_privacy_policy.json,5,4,0,4,information|photo|pii|usage info,N/A
+1673607132,N/A,0,0,0,0,N/A,N/A
+6474687296,6474687296_decathlon_com_privacy_policy.json,225,32,3,32,account|age|app ver|billing|browser type|browsing|button|camera|contact|device id|device info|email addr|gameplay|geo location|information|interest|ip addr|language|message log|network|non-pii|person name|phone num|photo|pii|screen|session|sexuality|system ver|type|usage info|usage time,browsing|pii|usage info
+6472541408,N/A,0,0,0,0,N/A,N/A
+6478209364,6478209364_swiftfox_co_privacy_policy.json,18,7,3,8,browsing|device id|information|ip addr|non-pii|pii|system ver,information|pii|usage info
+1663958329,1663958329_staplegames_com_privacy_policy.json,0,0,0,0,N/A,N/A
+6449253324,6449253324_diggirl_smicker_com_privacy_policy.json,0,0,0,0,N/A,N/A
+1446075923,1446075923_privacy_thewaltdisneycompany_com_privacy_policy.json,237,23,0,23,account|age|audio|billing|browser type|camera|device id|device info|email addr|geo location|identifier|information|ip addr|message log|non-pii|password|person name|phone num|pii|sexuality|type|usage info|user id,N/A
+6477725759,N/A,0,0,0,0,N/A,N/A
+588358613,588358613_4axissolutions_com_privacy_policy.json,71,20,3,20,account|billing|contact list|device info|email addr|error report|gameplay|geo location|information|non-pii|password|person name|photo|pii|sexuality|system ver|type|usage info|user id|vr avatar,billing|geo location|pii
+6451126617,6451126617_sites_google_com_privacy_policy.json,0,0,0,0,N/A,N/A
+6476938283,6476938283_lumen-digital_com_privacy_policy.json,8,1,5,5,usage info,email addr|information|person name|pii|usage info
+1572102565,1572102565_appsfortheliving_com_privacy_policy.json,16,7,4,8,app ver|email addr|information|pii|system ver|type|usage info,email addr|person name|pii|usage info
+1346247457,N/A,0,0,0,0,N/A,N/A
+1595934993,N/A,0,0,0,0,N/A,N/A
+1492055171,1492055171_bluecometlabs_com_privacy_policy.json,5,2,1,2,information|pii,pii
+6475634958,6475634958_jpl_nasa_gov_privacy_policy.json,82,17,0,17,ad id|audio|billing|browsing|camera|comment|device id|device info|gameplay|hardware|identifier|information|ip addr|mac addr|photo|system ver|usage info,N/A
+6443868157,6443868157_michaelsteeber_com_privacy_policy.json,2,2,0,2,message log|photo,N/A
+1489698531,N/A,0,0,0,0,N/A,N/A
+1522268839,1522268839_appsbykevinreutter_com_privacy_policy.json,43,9,2,10,audio|billing|device info|geo location|identifier|information|interest|pii|usage info,information|non-pii
+6477862240,6477862240_github_com_privacy_policy.json,0,0,0,0,N/A,N/A
+6444421373,6444421373_camplan_ai_privacy_policy.json,44,9,1,9,account|device info|email addr|geo location|information|interest|pii|system ver|usage info,pii
+975017240,975017240_meaningful-things_com_privacy_policy.json,74,11,2,11,billing|browser type|email addr|error report|gameplay|information|person name|pii|usage info|usage time|user id,information|pii
+6477829138,6477829138_fline_dev_privacy_policy.json,12,9,0,9,app ver|billing|build|geo location|information|ip addr|message log|pii|usage time,N/A
+1523968394,1523968394_focusedwork_app_privacy_policy.json,3,2,0,2,pii|usage info,N/A
+1524068804,N/A,0,0,0,0,N/A,N/A
+6480134993,6480134993_fline_dev_privacy_policy.json,12,9,0,9,app ver|billing|build|geo location|information|ip addr|message log|pii|usage time,N/A
+334876990,334876990_com-gucci-app-privacy_s3-eu-west-1_amazonaws_com_privacy_policy.json,101,15,1,15,app ver|biometric|camera|device id|device info|geo location|information|language|network|pii|system ver|type|usage info|usage time|user id,pii
+1136800740,N/A,0,0,0,0,N/A,N/A
+1302737642,1302737642_nikolakirev_com_privacy_policy.json,3,1,1,2,information,pii
+6477764879,6477764879_glancebar_com_privacy_policy.json,3,1,0,1,information,N/A
+6447008785,6447008785_glisten_ist_privacy_policy.json,18,7,2,7,browsing|contact|email addr|information|non-pii|pii|usage info,contact|information
+6480082996,6480082996_berniejenny_info_privacy_policy.json,6,3,1,4,contact|email addr|information,pii
+6474892768,6474892768_swankyshark_com_privacy_policy.json,29,8,2,8,camera|information|ip addr|message log|person name|photo|pii|type,information|pii
+6479207869,6479207869_fline_dev_privacy_policy.json,12,9,0,9,app ver|billing|build|geo location|information|ip addr|message log|pii|usage time,N/A
+1666653815,1666653815_max_com_privacy_policy.json,0,0,0,0,N/A,N/A
+1671376442,N/A,0,0,0,0,N/A,N/A
+1403144098,1403144098_tryhealium_com_privacy_policy.json,64,15,2,15,billing|biometric|browsing|contact|email addr|geo location|heart rate|information|person name|phone num|pii|session|system ver|usage info|user id,information|pii
+1610634186,N/A,0,0,0,0,N/A,N/A
+1644376309,1644376309_funnmedia_com_privacy_policy.json,71,6,2,6,billing|comment|email addr|information|pii|usage info,billing|pii
+6450958030,6450958030_adamfoot_dev_privacy_policy.json,9,5,1,5,email addr|information|person name|phone num|pii,information
+1537376352,N/A,0,0,0,0,N/A,N/A
+1280845473,N/A,0,0,0,0,N/A,N/A
+6474424557,6474424557_parjanya_org_privacy_policy.json,63,6,0,6,device info|health|information|pii|usage info|workout,N/A
+6473689339,6473689339_yoshi_dev_privacy_policy.json,5,1,2,2,information,information|pii
+6476831214,N/A,0,0,0,0,N/A,N/A
+6479699008,6479699008_treeview_studio_privacy_policy.json,32,9,1,9,app ver|browser type|browsing|information|non-pii|pii|type|usage info|usage time,pii
+1312926037,1312926037_getstoic_com_privacy_policy.json,64,14,3,14,billing|browsing|contact|device id|email addr|health|information|ip addr|message log|non-pii|person name|pii|system ver|usage info,contact|information|person name
+286948844,286948844_kineo_app_privacy_policy.json,5,4,1,4,browser type|browsing|information|ip addr,information
+6466716447,6466716447_alexandremadeira_dev_privacy_policy.json,10,2,1,2,information|pii,information
+1024791122,N/A,0,0,0,0,N/A,N/A
+6477230272,6477230272_nbcuniversal_com_privacy_policy.json,292,31,1,31,account|ad id|age|audio|billing|camera|comment|contact|contact list|device id|device info|email addr|geo location|identifier|information|interest|ip addr|license|network|non-pii|nutrition|password|person name|phone num|photo|pii|sexuality|usage info|usage time|user id|vr avatar,pii
+1629902861,N/A,0,0,0,0,N/A,N/A
+6446065798,6446065798_landmarks_foyerobjet_com_privacy_policy.json,13,4,1,4,email addr|information|person name|pii,information
+6478033172,6478033172_termsfeed_com_privacy_policy.json,78,8,0,8,browser type|device id|information|ip addr|pii|system ver|type|usage info,N/A
+1183059317,1183059317_vatthikorn_com_privacy_policy.json,3,2,0,2,information|usage info,N/A
+6474254673,6474254673_livesurface_com_privacy_policy.json,97,10,5,11,billing|email addr|employment|geo location|information|ip addr|person name|phone num|pii|usage info,email addr|information|password|pii|usage info
+6472232397,6472232397_lowes_com_privacy_policy.json,396,35,1,35,age|app ver|audio|billing|browser type|browsing|button|camera|contact|device info|education|email addr|employment|environment|ethnic|gameplay|geo location|hardware|identifier|information|ip addr|language|marriage|medical|message log|non-pii|person name|phone num|photo|pii|sexuality|signature|system ver|usage info|user id,pii
+6449252717,N/A,0,0,0,0,N/A,N/A
+6463897900,N/A,0,0,0,0,N/A,N/A
+1606306441,1606306441_miidii_super_site_privacy_policy.json,236,26,1,26,account|app ver|billing|browser type|browsing|device id|device info|error report|gameplay|geo location|hardware|health|identifier|information|ip addr|language|manufacturer|message log|model|pii|system ver|type|usage info|usage time|user id|vr movement,pii
+493619333,493619333_mlb_com_privacy_policy.json,485,24,6,24,account|age|audio|body measure|browser type|contact list|device id|device info|email addr|geo location|identifier|information|interest|ip addr|non-pii|person name|phone num|photo|pii|system ver|type|usage info|usage time|user id,email addr|geo location|information|person name|phone num|pii
+1546754798,1546754798_lionseyeapp_com_privacy_policy.json,2,2,0,2,information|pii,N/A
+626148774,626148774_mubi_com_privacy_policy.json,0,0,0,0,N/A,N/A
+1547800025,1547800025_heestand_xyz_privacy_policy.json,0,0,0,0,N/A,N/A
+6475737516,6475737516_mic_st_privacy_policy.json,20,7,1,7,browsing|device id|information|ip addr|non-pii|pii|system ver,information
+6497486318,6497486318_github_com_privacy_policy.json,0,0,0,0,N/A,N/A
+1624262731,1624262731_math-guru_app_privacy_policy.json,17,6,1,6,browsing|device id|information|ip addr|pii|system ver,information
+1631928972,N/A,0,0,0,0,N/A,N/A
+1621800675,1621800675_tripleglazedstudios_com_privacy_policy.json,8,1,1,1,geo location,geo location
+6467555424,6467555424_multiaccountmessenger_com_privacy_policy.json,5,2,0,2,pii|usage info,N/A
+1438400795,1438400795_metaspace_rocks_privacy_policy.json,10,3,2,3,information|pii|usage info,information|pii
+6476817424,N/A,0,0,0,0,N/A,N/A
+410395246,410395246_aka_ms_privacy_policy.json,1814,53,7,53,account|ad id|age|app name|app ver|audio|billing|body measure|browser type|browsing|build|camera|contact|contact list|device id|device info|email addr|employment|error report|eye tracking|face|fingerprint|gameplay|geo location|hardware|identifier|information|infrared|interest|ip addr|language|manufacturer|message log|model|network|non-pii|password|person name|phone num|photo|pii|project|session|software|system memory|system ver|type|usage info|usage time|user id|vr avatar|vr headset|vr movement,audio|billing|email addr|information|pii|usage info|user id
+6446116532,6446116532_mindnode_com_privacy_policy.json,99,18,1,18,account|app ver|billing|browser type|browsing|contact|email addr|geo location|information|ip addr|model|non-pii|person name|pii|system ver|type|usage info|user id,information
+6476806312,6476806312_minghin_letvar_io_privacy_policy.json,12,3,0,3,geo location|information|pii,N/A
+1592728145,1592728145_kavsoft_dev_privacy_policy.json,2,0,2,2,N/A,information|usage info
+989642198,989642198_moneycoach_ai_privacy_policy.json,31,10,2,10,app ver|billing|device info|error report|identifier|information|language|screen|usage time|user id,billing|information
+6458221141,N/A,0,0,0,0,N/A,N/A
+6496682427,6496682427_augmenos_com_privacy_policy.json,30,4,5,7,browsing|information|pii|usage time,contact|email addr|information|person name|pii
+6448710452,N/A,0,0,0,0,N/A,N/A
+1264730676,1264730676_app_myexpenses_cz_privacy_policy.json,51,12,0,12,app ver|contact|device id|email addr|geo location|information|ip addr|language|person name|pii|system ver|usage info,N/A
+6502086753,6502086753_bluelineturtle_nl_privacy_policy.json,9,3,2,3,information|ip addr|pii,information|pii
+484672289,484672289_nba_com_privacy_policy.json,178,29,0,29,age|app ver|billing|body measure|browser type|contact|device id|device info|education|email addr|employment|error report|gameplay|geo location|information|interest|ip addr|language|model|password|person name|phone num|pii|sexuality|system ver|type|usage info|user id|vr movement,N/A
+1573261774,1573261774_impresskit_net_privacy_policy.json,4,2,1,3,information|message log,usage info
+1627725502,1627725502_neontripapp_com_privacy_policy.json,5,2,2,2,pii|usage info,pii|usage info
+475772902,475772902_iCandiApps_com_privacy_policy.json,219,14,2,14,age|billing|browser type|contact|device id|genetic|geo location|information|ip addr|pii|sexuality|system ver|type|usage info,billing|pii
+6476380797,N/A,0,0,0,0,N/A,N/A
+1667217062,N/A,0,0,0,0,N/A,N/A
+875319874,875319874_cynapse_com_privacy_policy.json,8,4,0,4,email addr|information|person name|pii,N/A
+1556016869,1556016869_odio_app_privacy_policy.json,118,16,1,16,age|app ver|billing|device info|email addr|error report|geo location|identifier|information|ip addr|person name|pii|type|usage info|usage time|user id,pii
+1542143627,1542143627_omnigroup_com_privacy_policy.json,166,18,3,18,billing|browser type|browsing|contact|email addr|employment|geo location|information|ip addr|non-pii|password|person name|phone num|pii|project|signature|usage info|user id,employment|information|pii
+1460319993,1460319993_omnigroup_com_privacy_policy.json,166,18,3,18,billing|browser type|browsing|contact|email addr|employment|geo location|information|ip addr|non-pii|password|person name|phone num|pii|project|signature|usage info|user id,employment|information|pii
+6480038330,N/A,0,0,0,0,N/A,N/A
+6475752732,N/A,0,0,0,0,N/A,N/A
+6476047156,6476047156_appsfortheliving_com_privacy_policy.json,16,7,4,8,app ver|email addr|information|pii|system ver|type|usage info,email addr|person name|pii|usage info
+6475262918,6475262918_oversoul_love_privacy_policy.json,23,7,0,7,contact|device info|information|non-pii|person name|pii|usage info,N/A
+1120099014,1120099014_pdfviewer_io_privacy_policy.json,329,28,3,28,account|app ver|billing|browser type|browsing|comment|contact|device info|email addr|employment|error report|geo location|identifier|information|ip addr|language|non-pii|password|person name|phone num|pii|sexuality|signature|system ver|type|usage info|user id|vr avatar,information|ip addr|usage info
+6471858717,6471858717_pgatour_com_privacy_policy.json,333,31,3,31,ad id|age|audio|billing|body measure|browser type|browsing|camera|comment|contact|email addr|error report|gameplay|geo location|identifier|information|interest|ip addr|message log|network|non-pii|password|person name|phone num|photo|pii|sexuality|system ver|usage info|usage time|user id,information|phone num|pii
+1487295703,1487295703_playavr_com_privacy_policy.json,129,24,0,24,account|audio|browser type|browsing|camera|contact|contact list|device id|device info|education|email addr|geo location|identifier|information|ip addr|manufacturer|network|non-pii|person name|phone num|photo|pii|system ver|usage info,N/A
+6476072118,6476072118_sites_google_com_privacy_policy.json,3,1,1,1,information,information
+6478573714,6478573714_pano-vision_netlify_app_privacy_policy.json,19,6,1,6,browsing|device id|information|ip addr|pii|system ver,information
+530168168,530168168_privacy_paramount_com_privacy_policy.json,586,29,3,29,ad id|age|belief|billing|browsing|camera|comment|device id|device info|email addr|ethnic|gameplay|geo location|identifier|information|interest|ip addr|language|mac addr|message log|network|password|person name|phone num|photo|pii|sexuality|usage info|user id,device info|email addr|person name
+6446053076,6446053076_penjoapp_com_privacy_policy.json,38,14,3,14,browsing|contact|device info|error report|geo location|information|language|message log|non-pii|person name|photo|pii|system ver|usage info,device info|error report|pii
+6479210516,N/A,0,0,0,0,N/A,N/A
+6476118377,N/A,0,0,0,0,N/A,N/A
+6480587175,6480587175_flipbyblink_github_io_privacy_policy.json,0,0,0,0,N/A,N/A
+6478835604,6478835604_sites_google_com_privacy_policy.json,12,6,1,6,information|non-pii|pii|system ver|type|usage info,pii
+1620268476,1620268476_flipbyblink_github_io_privacy_policy.json,0,0,0,0,N/A,N/A
+1515324201,1515324201_appsbykevinreutter_com_privacy_policy.json,51,11,1,11,audio|billing|device info|geo location|identifier|information|interest|phone num|photo|pii|usage info,information
+1497476884,1497476884_plantdaddy_app_privacy_policy.json,5,1,1,1,information,information
+751712884,751712884_privacy_paramount_com_privacy_policy.json,585,29,3,29,ad id|age|belief|billing|browsing|camera|comment|device id|device info|email addr|ethnic|gameplay|geo location|identifier|information|interest|ip addr|language|mac addr|message log|network|password|person name|phone num|photo|pii|sexuality|usage info|user id,device info|email addr|person name
+1493916909,1493916909_iubenda_com_privacy_policy.json,48,8,0,8,error report|identifier|information|interest|ip addr|pii|usage info|usage time,N/A
+1664339685,1664339685_github_com_privacy_policy.json,0,0,0,0,N/A,N/A
+6478062053,6478062053_fline_dev_privacy_policy.json,12,9,0,9,app ver|billing|build|geo location|information|ip addr|message log|pii|usage time,N/A
+1630781823,1630781823_actowise_com_privacy_policy.json,22,9,0,9,browser type|browsing|geo location|information|ip addr|network|pii|usage info|usage time,N/A
+6479620842,6479620842_yuntingzhao_com_privacy_policy.json,1,1,0,1,pii,N/A
+6473639841,6473639841_realities_io_privacy_policy.json,110,13,1,13,browsing|device info|email addr|gameplay|geo location|identifier|information|person name|phone num|pii|usage info|usage time|user id,pii
+1229460906,1229460906_eyecue-tech_com_privacy_policy.json,108,16,1,16,account|app ver|billing|browser type|email addr|face|geo location|information|ip addr|model|non-pii|password|person name|phone num|pii|usage info,pii
+1620283380,1620283380_github_com_privacy_policy.json,18,6,1,6,browsing|device id|information|ip addr|pii|system ver,information
+6458535284,N/A,0,0,0,0,N/A,N/A
+1603644458,1603644458_pages_flycricket_io_privacy_policy.json,20,7,1,7,browsing|device id|information|ip addr|non-pii|pii|system ver,information
+6477569162,6477569162_hifineapp_com_privacy_policy.json,29,4,5,7,information|non-pii|pii|usage info,account|billing|email addr|non-pii|pii
+364269164,364269164_redbull_tv_privacy_policy.json,152,27,0,27,age|app ver|belief|billing|biometric|browser type|browsing|device info|email addr|ethnic|geo location|health|identifier|information|ip addr|medical|network|non-pii|password|person name|phone num|pii|political|sexuality|system ver|usage info|user id,N/A
+6476718767,6476718767_resolvebim_com_privacy_policy.json,83,11,1,11,billing|browser type|device id|error report|information|ip addr|person name|pii|system ver|type|usage info,billing
+1537372328,1537372328_retrogram_app_privacy_policy.json,5,4,0,4,billing|error report|information|pii,N/A
+1548193893,1548193893_runestone_app_privacy_policy.json,4,0,2,2,N/A,geo location|pii
+6445987502,6445987502_safeshellvpn_com_privacy_policy.json,207,26,6,26,account|audio|belief|billing|biographical|body measure|contact|contact list|device id|email addr|gameplay|geo location|identifier|information|ip addr|network|password|person name|phone num|photo|pii|political|sexuality|usage info|user id|vr avatar,belief|identifier|information|pii|political|sexuality
+6472820126,6472820126_apposite_ai_privacy_policy.json,7,4,1,5,email addr|information|person name|phone num,pii
+1465687472,1465687472_sunapps_org_privacy_policy.json,6,1,1,1,information,information
+1663047912,1663047912_edovia_com_privacy_policy.json,9,4,1,4,information|non-pii|password|user id,information
+6468994506,6468994506_illusion_tech_privacy_policy.json,11,5,0,5,device info|geo location|information|ip addr|network,N/A
+6478131984,N/A,0,0,0,0,N/A,N/A
+1630746993,1630746993_getsequel_app_privacy_policy.json,25,7,2,7,email addr|information|ip addr|pii|system ver|type|usage info,information|usage info
+6476447511,6476447511_cislune_com_privacy_policy.json,0,0,0,0,N/A,N/A
+6448773500,N/A,0,0,0,0,N/A,N/A
+576588894,576588894_fifthstarlabs_com_privacy_policy.json,35,8,3,9,account|email addr|geo location|information|non-pii|person name|pii|usage info,camera|geo location|non-pii
+6499123392,6499123392_aigczoom_com_privacy_policy.json,0,0,0,0,N/A,N/A
+6479167838,6479167838_github_com_privacy_policy.json,0,0,0,0,N/A,N/A
+6474096371,6474096371_thespacevision_com_privacy_policy.json,101,13,0,13,browser type|device id|error report|information|ip addr|language|password|pii|session|system ver|type|usage info|usage time,N/A
+6477695159,6477695159_sparlit_com_privacy_policy.json,40,12,0,12,billing|contact|email addr|frequency|information|password|person name|pii|usage info|usage time|user id|vr movement,N/A
+6475701291,6475701291_dicyaninlabs_com_privacy_policy.json,15,5,0,5,email addr|information|person name|pii|usage info,N/A
+6477200179,6477200179_impresskit_net_privacy_policy.json,0,0,0,0,N/A,N/A
+6478706331,6478706331_app-privacy-policy_com_privacy_policy.json,12,8,1,8,browser type|browsing|information|ip addr|message log|pii|usage info|usage time,information
+6476788209,6476788209_github_com_privacy_policy.json,0,0,0,0,N/A,N/A
+6496859848,6496859848_bluevinesolutions_com_privacy_policy.json,13,2,2,2,email addr|information,email addr|information
+6478412831,N/A,0,0,0,0,N/A,N/A
+6475733934,6475733934_filipvabrousek_github_io_privacy_policy.json,0,0,0,0,N/A,N/A
+6480322995,6480322995_danieltperry_me_privacy_policy.json,6,3,1,3,information|ip addr|usage info,information
+6484504330,6484504330_sites_google_com_privacy_policy.json,33,8,0,8,device id|device info|hardware|information|network|pii|system ver|usage info,N/A
+6476346004,6476346004_spatialstation_app_privacy_policy.json,15,9,0,9,biographical|camera|comment|email addr|information|password|photo|usage info|user id,N/A
+6476616491,6476616491_hudson_uk_privacy_policy.json,2,1,1,2,pii,information
+6523429904,6523429904_spatial-video-studio_com_privacy_policy.json,19,6,2,7,button|camera|information|photo|pii|usage info,billing|pii
+6478015121,N/A,0,0,0,0,N/A,N/A
+441968334,441968334_pxlwaves_com_privacy_policy.json,115,12,2,12,browsing|device id|email addr|geo location|identifier|information|interest|ip addr|pii|system ver|usage info|usage time,browsing|information
+1468191822,1468191822_roboticsnailsoftware_com_privacy_policy.json,4,0,2,2,N/A,geo location|pii
+6478007837,6478007837_splitscreen_vision_privacy_policy.json,2,2,0,2,information|usage info,N/A
+1604274234,N/A,0,0,0,0,N/A,N/A
+6477863393,6477863393_stellarexplorer_app_privacy_policy.json,20,7,1,7,browsing|device id|information|ip addr|non-pii|pii|system ver,information
+881599819,N/A,0,0,0,0,N/A,N/A
+1510429086,1510429086_stress-radar_app_privacy_policy.json,7,4,1,5,email addr|health|information|usage info,pii
+6444380323,6444380323_study_subwords_app_privacy_policy.json,10,3,1,3,information|language|usage info,information
+6443965587,N/A,0,0,0,0,N/A,N/A
+6473759577,6473759577_meson_tokyo_privacy_policy.json,125,11,1,11,billing|browser type|device id|error report|geo location|information|ip addr|pii|system ver|type|usage info,pii
+6478713707,N/A,0,0,0,0,N/A,N/A
+1598173381,1598173381_alemohamad_com_privacy_policy.json,5,1,0,1,pii,N/A
+6449050657,6449050657_natechan_com_privacy_policy.json,21,4,1,4,browsing|information|pii|usage info,browsing
+6472496232,6472496232_tripp_com_privacy_policy.json,587,47,1,47,account|age|app ver|audio|billing|biometric|body measure|browser type|browsing|camera|comment|contact|contact list|device info|email addr|error report|face|genetic|geo location|health|heart rate|height|identifier|information|ip addr|language|manufacturer|marriage|model|network|non-pii|password|person name|phone num|photo|pii|screen|sexuality|system memory|system ver|type|usage info|usage time|user id|vr headset|vr movement|workout,usage info
+1502142828,1502142828_gettalentbook_com_privacy_policy.json,223,27,2,27,account|audio|billing|browser type|browsing|contact list|device id|device info|email addr|employment|error report|gameplay|geo location|information|interest|ip addr|language|message log|person name|phone num|photo|pii|system ver|usage info|usage time|user id|vr movement,information|pii
+1271546805,1271546805_tapemeasure_app_privacy_policy.json,2,1,0,1,pii,N/A
+6503707761,N/A,0,0,0,0,N/A,N/A
+6502666560,6502666560_sandwich_co_privacy_policy.json,20,2,3,3,information|pii,information|pii|usage info
+6466820347,6466820347_termsfeed_com_privacy_policy.json,82,8,0,8,browser type|device id|information|ip addr|pii|system ver|type|usage info,N/A
+1406371071,N/A,0,0,0,0,N/A,N/A
+1583238971,N/A,0,0,0,0,N/A,N/A
+835599320,835599320_tiktok_com_privacy_policy.json,369,37,3,37,account|age|audio|belief|billing|biometric|browser type|browsing|camera|comment|contact|contact list|device id|device info|email addr|ethnic|geo location|identifier|information|interest|ip addr|language|mental|message log|network|password|person name|phone num|photo|pii|project|screen|sexuality|system ver|type|usage info|user id,billing|message log|pii
+6449408612,6449408612_tizipizi_alpennec_com_privacy_policy.json,40,7,2,7,error report|information|pii|system ver|type|usage info|usage time,information|pii
+1112433234,1112433234_timelines_app_privacy_policy.json,65,13,0,13,ad id|device id|device info|email addr|error report|geo location|identifier|information|interest|ip addr|pii|usage info|usage time,N/A
+1632777736,N/A,0,0,0,0,N/A,N/A
+6499172465,6499172465_1984_dev_privacy_policy.json,0,0,0,0,N/A,N/A
+1663556775,1663556775_ultimatefocus_app_privacy_policy.json,1,0,1,1,N/A,information
+1668309493,N/A,0,0,0,0,N/A,N/A
+6469049274,6469049274_access_foyerobjet_com_privacy_policy.json,2,1,0,1,information,N/A
+6479974997,6479974997_sharpforks_com_privacy_policy.json,0,0,0,0,N/A,N/A
+964118383,964118383_vuz_com_privacy_policy.json,33,5,0,5,email addr|information|person name|photo|pii,N/A
+6475644261,6475644261_chatbotplus_codekit_co_uk_privacy_policy.json,14,9,2,9,device info|email addr|information|ip addr|person name|pii|system ver|type|usage info,information|pii
+6478754569,6478754569_apps_c2_me_privacy_policy.json,24,3,1,3,information|pii|usage info,pii
+6478897915,6478897915_visitnyc_store_privacy_policy.json,3,2,0,2,information|ip addr,N/A
+1090744587,1090744587_emailmeapp_net_privacy_policy.json,18,8,2,8,information|network|non-pii|password|pii|system ver|type|usage info,information|network
+1510467732,1510467732_voosey_com_privacy_policy.json,8,1,2,2,pii,information|pii
+6475702074,6475702074_cerio_app_privacy_policy.json,0,0,0,0,N/A,N/A
+6479647844,N/A,0,0,0,0,N/A,N/A
+653031147,653031147_iubenda_com_privacy_policy.json,79,17,0,17,age|body measure|device id|email addr|error report|geo location|identifier|information|ip addr|person name|pii|sexuality|type|usage info|usage time|user id|vr movement,N/A
+833967564,833967564_cisco_com_privacy_policy.json,10,3,0,3,information|pii|usage info,N/A
+6478838107,6478838107_allinpodcast_co_privacy_policy.json,0,0,0,0,N/A,N/A
+1523682319,1523682319_david-smith_org_privacy_policy.json,48,8,1,8,calendar|contact|geo location|health|information|non-pii|photo|pii,pii
+6478598855,N/A,0,0,0,0,N/A,N/A
+6477783956,6477783956_docs_google_com_privacy_policy.json,25,4,2,4,information|ip addr|pii|usage info,information|pii
+6461209319,6461209319_wisda_app_privacy_policy.json,4,2,1,2,pii|usage info,pii
+1603247748,N/A,0,0,0,0,N/A,N/A
+6451323433,N/A,0,0,0,0,N/A,N/A
+1591269922,1591269922_actowise_com_privacy_policy.json,22,9,0,9,browser type|browsing|geo location|information|ip addr|network|pii|usage info|usage time,N/A
+6472360919,6472360919_zillowgroup_com_privacy_policy.json,588,29,1,29,account|ad id|audio|billing|body measure|browser type|browsing|button|contact|device id|device info|email addr|employment|gameplay|geo location|health|identifier|information|ip addr|message log|non-pii|password|person name|phone num|pii|system ver|usage info|usage time|user id,pii
+546505307,546505307_zoom_us_privacy_policy.json,312,23,1,23,audio|billing|browsing|button|calendar|camera|contact|device info|education|email addr|employment|error report|gameplay|information|message log|person name|phone num|photo|pii|usage info|user id|vr avatar|vr movement,pii
+6472555496,6472555496_aloyoga_com_privacy_policy.json,396,29,2,29,age|audio|billing|body measure|browser type|browsing|camera|contact|device id|device info|education|email addr|employment|gameplay|geo location|identifier|information|ip addr|message log|network|password|person name|phone num|photo|pii|sexuality|usage info|usage time|user id,camera|pii
+6475752596,6475752596_jayagra_com_privacy_policy.json,17,6,2,6,browser type|information|ip addr|language|pii|usage info,pii|usage info
+6479165827,N/A,0,0,0,0,N/A,N/A
+1571127299,1571127299_heypster_com_privacy_policy.json,8,2,1,2,information|pii,pii
+6470272751,N/A,0,0,0,0,N/A,N/A
+6473711864,N/A,0,0,0,0,N/A,N/A
+6471967539,6471967539_docs_google_com_privacy_policy.json,109,5,2,5,audio|employment|information|interest|pii,information|pii
+1286558019,1286558019_apfelapps_ch_privacy_policy.json,23,3,1,3,information|ip addr|usage info,information
+6466659366,6466659366_swatchbook_us_privacy_policy.json,104,23,4,23,age|app ver|billing|browser type|browsing|contact|device info|email addr|geo location|identifier|information|interest|ip addr|manufacturer|model|person name|phone num|pii|sexuality|system ver|usage info|usage time|user id,geo location|information|ip addr|pii
+400751858,N/A,0,0,0,0,N/A,N/A
