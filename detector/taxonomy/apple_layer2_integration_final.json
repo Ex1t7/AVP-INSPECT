@@ -1,0 +1,188 @@
+{
+  "layer2_only": true,
+  "total_nodes": 35,
+  "integration_map": {
+    "Email Address": {
+      "parent": "pii",
+      "children": [
+        "email addr"
+      ]
+    },
+    "Phone Number": {
+      "parent": "pii",
+      "children": [
+        "phone num"
+      ]
+    },
+    "Name": {
+      "parent": "pii",
+      "children": [
+        "person name"
+      ]
+    },
+    "Physical Address": {
+      "parent": "pii",
+      "children": []
+    },
+    "Other User Contact Info": {
+      "parent": "pii",
+      "children": [
+        "contact"
+      ]
+    },
+    "Payment Info": {
+      "parent": "pii",
+      "children": [
+        "billing"
+      ]
+    },
+    "Credit Info": {
+      "parent": "pii",
+      "children": []
+    },
+    "Other Financial Info": {
+      "parent": "pii",
+      "children": []
+    },
+    "Precise Location": {
+      "parent": "pii",
+      "children": [
+        "geo location"
+      ]
+    },
+    "Coarse Location": {
+      "parent": "pii",
+      "children": []
+    },
+    "Device ID": {
+      "parent": "pii",
+      "children": [
+        "device id",
+        "android id"
+      ]
+    },
+    "User ID": {
+      "parent": "pii",
+      "children": [
+        "user id"
+      ]
+    },
+    "Advertising Data": {
+      "parent": "pii",
+      "children": [
+        "ad id"
+      ]
+    },
+    "Sensitive Info": {
+      "parent": "pii",
+      "children": [
+        "biometric data"
+      ]
+    },
+    "Hands": {
+      "parent": "biometric data",
+      "children": [
+        "hand tracking data"
+      ]
+    },
+    "Head": {
+      "parent": "biometric data",
+      "children": []
+    },
+    "Health": {
+      "parent": "biometric data",
+      "children": [
+        "health biometric"
+      ]
+    },
+    "Fitness": {
+      "parent": "biometric data",
+      "children": []
+    },
+    "Environment Scanning": {
+      "parent": "spatial data",
+      "children": [
+        "surrounding environment",
+        "spatial map"
+      ]
+    },
+    "Product Interaction": {
+      "parent": "usage info",
+      "children": []
+    },
+    "Other Usage Data": {
+      "parent": "usage info",
+      "children": []
+    },
+    "Browsing History": {
+      "parent": "usage info",
+      "children": [
+        "browsing"
+      ]
+    },
+    "Search History": {
+      "parent": "usage info",
+      "children": []
+    },
+    "Photos or Videos": {
+      "parent": "pii",
+      "children": [
+        "photo"
+      ]
+    },
+    "Audio Data": {
+      "parent": "pii",
+      "children": [
+        "audio"
+      ]
+    },
+    "Gameplay Content": {
+      "parent": "usage info",
+      "children": [
+        "gameplay"
+      ]
+    },
+    "Emails or Text Messages": {
+      "parent": "pii",
+      "children": [
+        "message log"
+      ]
+    },
+    "Other User Content": {
+      "parent": "pii",
+      "children": []
+    },
+    "Purchase History": {
+      "parent": "pii",
+      "children": []
+    },
+    "Crash Data": {
+      "parent": "device info",
+      "children": [
+        "error report"
+      ]
+    },
+    "Performance Data": {
+      "parent": "device info",
+      "children": []
+    },
+    "Other Diagnostic Data": {
+      "parent": "device info",
+      "children": []
+    },
+    "Contacts": {
+      "parent": "pii",
+      "children": [
+        "contact list"
+      ]
+    },
+    "Customer Support": {
+      "parent": "pii",
+      "children": []
+    },
+    "Other Data Types": {
+      "parent": "information",
+      "children": []
+    }
+  }
+}
