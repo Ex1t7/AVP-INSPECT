@@ -1,12 +1,7 @@
-# VRMonkey: Automated Privacy Compliance Analysis for Apple Vision Pro Apps
+# AVP-INSPECT: Detecting Privacy Violations in Network Traffic of COTS
+Apple Vision Pro Applications Through Coordinated Cyber-Physical Testing
 
-This repository contains the code and data artifacts for our large-scale privacy compliance study of 306 Apple Vision Pro (visionOS) applications. The study examines discrepancies between privacy policies, Apple App Store privacy labels, privacy manifests, and actual network traffic behavior.
-
-## Overview
-
-We developed **VRMonkey**, an automated UI exploration system that interacts with visionOS apps via an ESP32-based Bluetooth mouse emulator while capturing network traffic through a MITM proxy. Combined with NLP-based privacy policy analysis (via PPAudit) and Apple privacy label/manifest extraction, VRMonkey enables systematic detection of privacy compliance violations across multiple data sources.
-
-## Repository Structure
+This repository contains the code and data artifacts for our large-scale privacy compliance study of 370 Apple Vision Pro (visionOS) applications. The study examines discrepancies between privacy policies, Apple App Store privacy labels, privacy manifests, and actual network traffic behavior.
 
 ```
 open_science/
